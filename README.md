@@ -13,13 +13,13 @@ If you have run out of energy or time for your project, put a note at the top of
 
 #### $$$ PROJECT CONFIGURATIONS
 
-    > admin-login-url: {{protocol}}/{{domain}}/lionnic-admin-login/
+    > admin-login-url: {{protocol}}/{{domain}}/newzfox-admin-login/
     > username: None(set own)
     > email: None(set own)
 
 ### MINI ADMIN LOGIN
-
-    - [] {{protocol}}/{{domain}}/lionnic-dashbord-admin/
+    
+    - [] {{protocol}}/{{domain}}/newzfox-dashbord-admin/
             (credentials will be provied by the superadmin)
 
 ## FRONTEND ADMIN FOR WRITERS
