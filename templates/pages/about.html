@@ -1,0 +1,182 @@
+{% extends "base.html" %} {% load static %}
+<!---->
+{% block title %}
+{{ block.super }} about us 
+{% endblock title %}
+<!---->
+
+{% block content %}
+ <!--section   -->
+ <div class="breadcrumbs-header fl-wrap">
+    <div class="container">
+        <div class="breadcrumbs-header_url">
+            <a href="{% url  'posts:home' %}">Home</a><span>About</span>
+        </div>
+        <div class="scroll-down-wrap">
+            <div class="mousey">
+                <div class="scroller"></div>
+            </div>
+            <span>Scroll Down To Discover</span>
+        </div>
+    </div>
+    <div class="pwh_bg"></div>
+</div>
+<!-- section end  -->
+<!--section   -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-title sect_dec">
+                    <h2>Our Story</h2>
+                    <h4>Who we are</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>Welcome to Newzfox, your portal to the world of credible and compelling news. Our mission is to empower you with accurate, up-to-the-minute information that shapes our world. We dream of a society well-informed, united by knowledge, and driven by facts. At Newzfox, our sources are diverse, drawing from trusted global outlets, ensuring the utmost legitimacy. Join us on this journey towards a brighter, more informed future, where truth reigns supreme. Trust in Newzfox for news that matters, because we believe knowledge is the key to progress.</p>
+                    <p>Newzfox is a prominent global media brand with a rich legacy, earning the trust and respect of over 10 million people worldwide across our various platforms. Established in 2022, Newzfox initially served as the pioneer weekly news updates, offering a concise overview of global events tailored for those with busy schedules</p>
+                    <p>Our core mission at Newzfox is to provide reliable insights into the key ideas and individuals shaping and enhancing our world. This commitment forms the cornerstone of our rapidly expanding divisions, innovative products, and partnership solutions.</p>
+                    <!-- <a href="" class="btn float-btn color-btn image-popup"> <span>Our Story Video</span> <i class="fas fa-caret-right"></i></a> -->
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                
+                <div class="about-img fl-wrap">
+                    <img src="{% static 'images/bg/newspap.jpg' %}" class="respimg" alt="">
+                    <div class="about-img-hotifer color-bg">
+                        <p>In a world where information and knowledge wield immense power, our purpose is to empower individuals with the right information at the right moment.</p>
+                        <h4>Dan De Lion</h4>
+                        <h5>Newzfox CEO</h5>
+                    </div>
+                </div>
+                <br>
+                <br>
+                
+                
+                <div class="about-img fl-wrap">
+                    <img src="{% static 'images/bg/founder.jpg' %}" class="respimg" alt="">
+                    <div class="about-img-hotifer color-bg">
+                        <p>"In an age defined by the currency of knowledge, our mission is to empower individuals with precisely curated information at precisely the right juncture, guiding them towards informed decisions and boundless opportunities."</p>
+                        <h4>Prof. Oscar K. Kach</h4>
+                        <h5>Newzfox Founder</h5>
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            <br>
+            
+        </div>
+    </div>
+    <div class="sec-dec"></div>
+</section>
+<br>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-title sect_dec">
+                    
+                    <h4>Ethical Principles</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>At Newzfox, we aspire to be the most trusted global news source. Our unwavering dedication is to produce journalism that consistently upholds the highest standards. Regardless of the subject matter or target audience, our journalism reflects our unwavering commitment to quality and integrity. Our company's reputation and the credibility of our journalism hinge on our steadfast adherence to these shared values.</p>
+                    
+                </div>
+                <div class="section-title sect_dec">
+                    
+                    <h4>Error Corrections:</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>We take any identified errors in our published content seriously. Upon confirmation, Newzfox promptly issues corrections through the appropriate medium, whether it's in print, digital, video, or social media. For articles on our website, a correction notice is appended to rectify any inaccuracies.</p>
+                    
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="about-img fl-wrap">
+                    <img src="{% static 'images/bg/newza.jpg' %}" class="respimg" alt="">
+                    <div class="about-img-hotifer color-bg">
+                        <p>"During times when news can be noise, as an editor, I ensure that only the most impactful stories reach the audience."</p>
+                        <h4>Les Lee</h4>
+                        <h5>Newzfox Editor</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sec-dec"></div>
+</section>
+<br>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-title sect_dec">
+                    
+                    <h4>Subscriptions</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>As part of our revenue model, Newzfox offers subscriptions to our products. Rest assured, our revenue-generating activities never compromise our editorial standards.</p>
+                    
+                </div>
+                <div class="section-title sect_dec">
+                    
+                    <h4>Advertising and Sponsored Content</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>Newzfox generates revenue through advertising and branded content. It's important to note that advertisements and branded content are developed and sold separately from Newzfox's categories. All branded content is clearly labeled as such, and it's essential to understand that advertisements do not reflect the views of Newzfox's editorial staff.</p>
+                        <p> Occasionally, the editorial team may create packages, stories, and newsletters sponsored by advertisers. In such cases, these pieces are clearly marked as "sponsored by." However, please be assured that editorial content produced in collaboration with sponsors is developed in the same rigorous manner as our standard editorial content and adheres to the same high editorial standards.
+                        </p>
+                    
+                </div>
+                <div class="section-title sect_dec">
+                    
+                    <h4>Affiliate Links</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>In some of our blog posts and news articles, you may find affiliate links. When you make a purchase through these links, Newzfox may receive a commission, without any additional cost to you as the purchaser. We want to emphasize that Newzfox is never compensated to provide a positive review of a product or to include it in a buying guide. Our reviews remain entirely independent and unbiased.</p>
+                    
+                </div>
+                <div class="section-title sect_dec">
+                    
+                    <h4>Get In Touch</h4>
+                </div>
+                <div class="about-wrap">
+                    <p>We welcome your feedback and contributions. If you wish to reach out to our editorial team, please send your letters to editor.Newzfox@gmail.com. For publication consideration, please include your full name, location, and contact information. </p>
+                    <p>Stay informed with Newzfox - Your Source for Global News Updates. </p>
+                    
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="about-img fl-wrap">
+                    <img src="{% static 'images/bg/newsa.jpg' %}" class="respimg" alt="">
+                    <div class="about-img-hotifer color-bg">
+                        <p>"Newzfox embodies the essence of responsible journalism, and as a article writer, I take pride in being a part of this noble mission."</p>
+                        <h4>Milimo D.</h4>
+                        <h5>Newzfox Writer</h5>
+                    </div>
+                </div>
+                
+                <br>
+                <div class="about-img fl-wrap">
+                    <img src="{% static 'images/bg/jecks.jpg' %}" class="respimg" alt="">
+                    <div class="about-img-hotifer color-bg">
+                        <p>"Software engineers are the architects of the virtual world, designing and building the future, one code block at a time."</p>
+                        <h4>Prof J Kwasa.</h4>
+                        <h5>Newzfox Software Engineer</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sec-dec"></div>
+</section>
+<br>
+<br>
+<!--about end   -->
+{% endblock content %}
