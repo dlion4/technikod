@@ -18,7 +18,7 @@ If you have run out of energy or time for your project, put a note at the top of
     > email: None(set own)
 
 ### MINI ADMIN LOGIN
-    
+
     - [] {{protocol}}/{{domain}}/newzfox-dashbord-admin/
             (credentials will be provied by the superadmin)
 
@@ -37,3 +37,17 @@ For open source projects, say how it is licensed.
 ## Project status
 
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+server{
+listen 81;
+server_name ip_address newzfox.com;
+#return 301 http://newzfox.com;
+#location = /favicon.ico { access_log off; log_not_found off; }
+location /static/ {
+root /home/kwasa/myprojectdir/blogmag;
+}
+
+location / {
+proxy_pass http://ip_address:8100;
+}
+}
