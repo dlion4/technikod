@@ -36,10 +36,6 @@ ALLOWED_HOSTS = ["*", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
-    # General use templates & template tags (should appear first)
-    # 'adminlte3',
-    # Optional: Django admin theme (must be before django.contrib.admin)
-    # 'adminlte3_theme',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -138,11 +134,7 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.environ.get("API_KEY"),
     "API_SECRET": os.environ.get("API_SECRET"),
 }
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': "dlksfjzxf",
-#     'API_KEY': "727431587246357",
-#     'API_SECRET': "3ThAdnbb1Tuce0xN3Ek036fLtNk"
-# }
+
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 

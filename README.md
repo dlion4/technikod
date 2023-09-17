@@ -46,8 +46,9 @@ server_name ip_address newzfox.com;
 location /static/ {
 root /home/kwasa/myprojectdir/blogmag;
 }
+    
+    location / {
+    proxy_pass http://ip_address:8100;
+    }
 
-location / {
-proxy_pass http://ip_address:8100;
-}
 }
