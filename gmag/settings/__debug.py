@@ -15,7 +15,9 @@ FRAMEWORK_APPS = [
     "ckeditor_uploader",
     "cloudinary_storage",
     "cloudinary",
+    "corsheaders",
 ]
+
 
 
 # context
@@ -51,3 +53,41 @@ HELPLINE = "+2545848786198"
 # sending emails
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "newsment@info.co.ke"
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://newzfox.com",
+    # Add other allowed origins here
+]
+
+# Allow all headers and methods for simplicity. Adjust this according to your needs.
+# CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+# ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://newzfox.com",
+    "203.161.61.35"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://newzfox.com",
+    "203.161.61.35"
+]
