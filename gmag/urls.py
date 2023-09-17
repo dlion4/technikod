@@ -43,6 +43,6 @@ handler404 = "handlers.views.handler404"
 handler500 = "handlers.views.handler500"
 
 
-admin.site.site_header = "Lionnic Margazone"
-admin.site.site_title = "Lionnic Margazone Admin Site"
-admin.site.index_title = "Lionnic Margazone Admin Site"
+admin.site.site_header = "NewzFox Margazone"
+admin.site.site_title = "NewzFox Margazone Admin Site"
+admin.site.index_title = "NewzFox Margazone Admin Site"
