@@ -31,8 +31,33 @@ class WriterProfileView(Paginator, generic.TemplateView):
         context = super(WriterProfileView, self).get_context_data(**kwargs)
         context["profile"] = self.get_profile(**kwargs)
         context["total_views"] = post_view_count(self.get_profile(**kwargs), "views")
-        print(context)
+        
         return context
 
     def get_profile(self, **kwargs):
         return Profile.objects.filter(id=kwargs.get("pk")).first()
+
+
+
+class WriterPublicProfileView(Paginator, generic.TemplateView):
+    template_name = "writer/author.html"
+    queryset = Post
+    paginate_by = 10
+    context_object_name = "posts"
+
+    def gq_queryset(self, **kwargs):
+        return (
+            self.queryset.objects.filter(writer=self.get_profile(**kwargs))
+            .all()
+            .order_by("-createdAt")
+        )
+    
+    def get_profile(self, **kwargs):
+        return Profile.objects.filter(id=kwargs.get("pk")).first()
+
+    def get_context_data(self, **kwargs):
+        context = super(WriterPublicProfileView, self).get_context_data(**kwargs)
+        context["profile"] = self.get_profile(**kwargs)
+        context["total_views"] = post_view_count(self.get_profile(**kwargs), "views")['total_views']
+        print(context["total_views"])
+        return context

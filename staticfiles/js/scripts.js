@@ -274,29 +274,29 @@ function initGmag() {
         else hideCart();
     });
     // Share   ------------------
-    $(".share-container").share({
-        networks: ['facebook', 'pinterest', 'twitter', 'linkedin', 'tumblr']
-    });
-    var swra = $(".share-wrapper"),
-        clsh = $(".close-share-btn"),
-        ssbtn = $(".showshare");
-    function showShare() {
-        ssbtn.addClass("uncl-share");
-        swra.removeClass("isShare").addClass("share-wrapper_vis");
-        hideSearch();
-        hideCart();
-    }
-    function hideShare() {
-        ssbtn.removeClass("uncl-share");
-        swra.addClass("isShare").removeClass("share-wrapper_vis");
-    }
-    clsh.on("click", function () {
-        hideShare();
-    });
-    ssbtn.on("click", function () {
-        if (swra.hasClass("isShare")) showShare();
-        else hideShare();
-    });
+    // $(".share-container").share({
+    //     networks: ['facebook', 'pinterest', 'twitter', 'linkedin', 'tumblr']
+    // });
+    // var swra = $(".share-wrapper"),
+    //     clsh = $(".close-share-btn"),
+    //     ssbtn = $(".showshare");
+    // function showShare() {
+    //     ssbtn.addClass("uncl-share");
+    //     swra.removeClass("isShare").addClass("share-wrapper_vis");
+    //     hideSearch();
+    //     hideCart();
+    // }
+    // function hideShare() {
+    //     ssbtn.removeClass("uncl-share");
+    //     swra.addClass("isShare").removeClass("share-wrapper_vis");
+    // }
+    // clsh.on("click", function () {
+    //     hideShare();
+    // });
+    // ssbtn.on("click", function () {
+    //     if (swra.hasClass("isShare")) showShare();
+    //     else hideShare();
+    // });
     $(".show-reg-form").on("click", function () {
         showModal();
     });

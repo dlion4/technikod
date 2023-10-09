@@ -16,6 +16,7 @@ FRAMEWORK_APPS = [
     "cloudinary_storage",
     "cloudinary",
     "corsheaders",
+    'django_social_share',
 ]
 
 

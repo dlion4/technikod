@@ -22,6 +22,10 @@ def sites_context_data(request):
         protocol="https"
     protocol = "http"
     return dict(
-        site_domail=get_current_site(request).domain,
+        site_domain=get_current_site(request).domain,
         protocol=protocol,
+        site_social_fab="https://www.tumblr.com/newz-fox",
+        site_social_twitter="https://www.tumblr.com/newz-fox",
+        site_social_youtube="https://www.tumblr.com/newz-fox",
+        site_social_instagram="https://www.tumblr.com/newz-fox",
     )

@@ -1,0 +1,157 @@
+{% extends "base.html" %} {% load static %}
+{% load humanize %}
+<!---->
+{% block title %}
+{{ block.super }} {{profile.username}}
+{% endblock title %}
+<!---->
+
+
+{% block content %}
+
+<!---->
+
+
+         <!--section   -->
+         <section class="hero-section">
+            <div class="bg-wrap hero-section_bg">
+                <div class="bg" data-bg="{% static 'images/bg/11.jpg' %}"></div>
+            </div>
+            <div class="container">
+                <div class="hero-section_title">
+                    <h2>Author Page</h2>
+                </div>
+                <div class="clearfix"></div>
+                <div class="breadcrumbs-list fl-wrap">
+                    <a href="{% url 'posts:posts' %}">Home</a> <a href="{{profile.get_public_profile_url}}">Author</a> <span>{{profile}}</span>
+                </div>
+                <div class="scroll-down-wrap scw_transparent">
+                    <div class="mousey">
+                        <div class="scroller"></div>
+                    </div>
+                    <span>Scroll Down To Discover</span>
+                </div>
+            </div>
+        </section>
+        <!-- section end  -->
+
+                       <!--section   -->
+                       <section>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="left_fix-bar fl-wrap">
+                                        <div class="profile-card-wrap fl-wrap">
+                                            <div class="profile-card_media fl-wrap">
+                                                <img src="{% if profile.avatar %}{{profile.avatar.url}}{% else %}{% static 'images/avatar/2.jpg' %}{% endif %}" alt="{{profile}}">
+                                                <div class="profile-card_media_content">
+                                                    <h4>{{profile.username}}</h4>
+                                                    <h5>{{profile.user.date_joined|timesince}} of Membership</h5>
+                                                </div>
+                                                <div class="abs_bg"></div>
+                                                <div class="profile-card-stats">
+                                                    <ul>
+                                                        <li><span>{{profile.get_posts.count}}</span>Article{{profile.get_posts.count|pluralize}}</li>
+                                                        <li><span>{{total_views|intword}}</span> View{{total_views|pluralize}}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="profile-card_content">
+                                                <h4>About</h4>
+                                                <p>
+                                                    {% if profile.bio %}
+                                                    {{profile.bio}}
+                                                    {% else %}
+                                                    In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content still not being ready. Think of a news blog that’s filled with content hourly on the day of going live.</p>
+                                                    <p>Filled with content hourly on the day of going live.</p>
+                                                    {% endif %}
+                                                </p>
+                                                <div class="pc_contacts">
+                                                    <ul>
+                                                        <li>
+                                                            <span>Write:</span> <a href="mailto:{{profile.user.email}}">{{profile.user.email}}</a>
+                                                        </li>
+                                                        <li>
+                                                            <span>Call:</span> <a href="tell:{{profile.phone|default:"+254758489861"}}">+{{profile.phone|default:"018990001881"}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="profile-card-footer fl-wrap">
+                                                <div class="profile-card-footer_title">Follow: </div>
+                                                <div class="profile-card-social">
+                                                    <ul>
+                                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="main-container fl-wrap fix-container-init">
+                                        <div class="section-title">
+                                            <h3>{{profile.username}} Articles:</h3>
+                                            <div class="steader_opt steader_opt_abs">
+                                                <select name="filter" id="list" data-placeholder="Persons" class="style-select no-search-select">
+                                                    <option>Latest</option>
+                                                    <option>Most Read</option>
+                                                    <option>Most Viewed</option>
+                                                    <option>Most Commented</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--grid-post-wrap-->
+                                        <div class="grid-post-wrap">
+                                            <div class="row">
+                                                {% for post in posts %}
+                                                <!--grid-post-item-->
+                                                <div class="col-md-6">
+                                                    <div class="grid-post-item  bold_gpi  fl-wrap">
+                                                        <div class="grid-post-media">
+                                                            <a href="{{post.get_absolute_url}}" class="gpm_link">
+                                                                <div class="bg-wrap">
+                                                                    <div class="bg" data-bg="{{post.image.url}}"></div>
+                                                                </div>
+                                                            </a>
+                                                            <span class="post-media_title">&copy; Image Copyrights Title</span>
+                                                        </div>
+                                                        <a class="post-category-marker purp-bg" href="">{{post.topic.sub_category.name}}</a>
+                                                        <div class="grid-post-content">
+                                                            <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
+                                                            <span class="post-date"><i class="far fa-clock"></i> {{post.createdAt|date:"d M, Y"}}</span>
+                                                            <p>{{post.summary|truncatewords:"100"}}</p>
+                                                        </div>
+                                                        <div class="grid-post-footer">
+                                                            <ul class="post-opt" style="transform:translateY(-10px) !important;">
+                                                                <li><i class="far fa-comments-alt"></i> {{post.get_comments.count}}</li>
+                                                                <li><i class="fal fa-eye"></i>  {{post.views|intword}}</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--grid-post-item end-->
+                                                {% endfor %}				
+                                            </div>
+                                        </div>
+                                        <!--grid-post-wrap end-->
+                                        <div class="clearfix"></div>
+                                        <div class="load-more_btn"><i class="fal fa-undo"></i>Load More</div>
+                                        <!--pagination-->
+                                        {% include "common/pagination/pagination.html" %}
+                                        <!--pagination end-->						
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="limit-box fl-wrap"></div>
+                    </section>
+                    <!-- section end -->
+
+<!---->
+
+{% endblock content %}

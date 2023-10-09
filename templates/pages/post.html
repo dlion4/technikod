@@ -35,8 +35,8 @@
             <h2>{{post.title}}</h2>
             <h5>{{post.summary|truncatewords:"10"}}</h5>
             <div class="author-link">
-		<a href="">
-			<img src="{% if post.writer.avatar %}{{post.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="{{post.writer.username}}"><span>By {{post.writCer.full_name|default:post.writer.username|upper}}</span>
+		<a href="{{post.writer.get_public_profile_url}}">
+			<img src="{% if post.writer.avatar %}{{post.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="{{post.writer.username}}"><span>By {{post.writer.full_name|default:post.writer.username|upper}}</span>
 		</a>
 	    </div>
             <ul class="post-opt">
@@ -62,7 +62,7 @@
         </div>
         <div class="share-holder hor-share">
             <div class="share-title">Share: </div>
-            <div class="share-container  isShare"></div>
+            {% include "shared/socialplatforms.html" %}
         </div>
     </div>
     <div class="pwh_bg"></div>

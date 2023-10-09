@@ -61,6 +61,7 @@ class AccountUser(AbstractBaseUser, PermissionsMixin):
     
     def get_absolute_url(self, *args, **kwargs):
         return reverse("accounts:user_detail", args=[self.pk])
+    
 
 
 class Profile(models.Model):
@@ -79,7 +80,7 @@ class Profile(models.Model):
     @property
     def username(self):
         if self.full_name is not None:
-            return f"{self.full_name.split(' ')[0]}".title()
+            return f"{self.full_name.split(' ')[0]} {self.full_name.split(' ')[-1]}".title()
         else:
             return f"{self.user.email[:self.user.email.index('@')]}".title()
 
@@ -91,6 +92,9 @@ class Profile(models.Model):
     
     def get_absolute_url(self):
         return reverse("writer:writer_view", kwargs={"pk": self.pk})
+    
+    def get_public_profile_url(self):
+        return reverse("writer:public_profile_view", kwargs={"pk":self.pk})
     
     def save(self, *args, **kwargs):
         return super(Profile, self).save(*args, **kwargs)

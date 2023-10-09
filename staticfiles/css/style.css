@@ -1347,8 +1347,8 @@ section {
 .breadcrumbs-header_url a:before,
 .breadcrumbs-list span:before,
 .breadcrumbs-header_url span:before {
-  font-family: Font Awesome\5 Pro;
-  content: "\f0da";
+  /* font-family: Font Awesome\5 Pro;
+  content: "\f0da"; */
   position: absolute;
   left: 0;
   top: 2px;

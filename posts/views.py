@@ -28,7 +28,7 @@ class HomeView(generic.TemplateView):
             .order_by("-createdAt"),
             "top_hero": Post.objects.filter(is_approved=True).all().order_by("?")[:1],
             "bottom": Post.objects.filter(is_approved=True).all().order_by("?")[:2],
-            "top_posts": Post.objects.filter(topic__is_top_story=True).all()[:10],
+            "top_posts": Post.objects.filter(topic__is_top_story=True).all().order_by("-id")[:50],
             "best_category": Post.objects.is_popular(view_limit=100)
             .all()
             .order_by("?")
@@ -129,6 +129,11 @@ class PostDetailView(generic.TemplateView):
         context["related"] = self.related_posts(**kwargs)
         context["comment_form"] = PostCommentForm()
         return context
+    
+    def get(self, request, *args, **kwargs):
+        self.get_object(**kwargs).views += 1
+        self.get_object(**kwargs).save()
+        return super(PostDetailView, self).get(request, *args, **kwargs)
 
 
 # function views for posts request
