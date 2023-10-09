@@ -28,7 +28,11 @@
                         <div class="grid-post-item  bold_gpi  fl-wrap">
                             <div class="grid-post-media gpm_sing">
                                 <div class="bg" data-bg="{% if post.bg_image %}{{post.bg_image.url}}{% else %}{{post.image.url}}{% endif %}"></div>
-                                <div class="author-link"><a href=""><img src="{% static 'images/avatar/ceod.png' %}" alt="">  <span>By {{post.writer.username|upper}}</span></a></div>
+                                <div class="author-link">
+					<a href="">
+						<img src="{% if post.writer.avatar %}{{post.writer.avatar.url }}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="{{post.writer.username}}">  <span>By {{post.writer.username|upper}}</span>
+					</a>
+				</div>
                                 <div class="grid-post-media_title">
                                     <a class="post-category-marker" href="{% url 'posts:posts' %}">{{post.category|upper}}</a>
                                     <h4><a href="{{post.get_absolute_url}}">{{post.title|truncatewords:"30"}}</a></h4>

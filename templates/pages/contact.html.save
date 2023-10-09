@@ -32,9 +32,9 @@
                 <div class="pr-subtitle prs_big">Details</div>
                 <!--card-item -->
                 <ul class="contacts-list fl-wrap">
-                    <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a href="#">42 Elm Street, London W1A 1AA</a></li>
-                    <!--<li><span><i class="fal fa-phone"></i> Phone :</span> <a href="+98848474776">+98848474776</a></li>-->
-                    <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="mailto:info@newzfox.com">info@newzfox.com</a></li>
+                    <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a href="#">Uk London </a></li>
+                    <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="+98848474776">+98848474776</a></li>
+                    <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="mailto:info@newzfox.com">editor.newzfox@gmail.com</a></li>
                 </ul>
                 <!--card-item end -->
                 <div class="contact-social fl-wrap">

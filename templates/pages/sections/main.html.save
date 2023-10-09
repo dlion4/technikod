@@ -1,4 +1,3 @@
-
 {% load static %}
 
 
@@ -153,7 +152,7 @@
                     <div class="col-md-6">
                         <!--list-post-->	
                         <div class="list-post fl-wrap" >
-                            <a class="post-category-marker" href="javascript:void(0);">{{post.category}}</a>
+                            <a class="post-category-marker" href="category.html">{{post.category}}</a>
                             <div class="list-post-media">
                                 <a href="{{post.get_absolute_url}}">
                                     <div class="bg-wrap">

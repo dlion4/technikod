@@ -82,12 +82,8 @@ CORS_ALLOW_METHODS = [
 #     'x-requested-with',
 # ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://newzfox.com",
-    "203.161.61.35"
-]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://newzfox.com",
-    "203.161.61.35"
+    
 ]

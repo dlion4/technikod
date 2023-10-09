@@ -50,7 +50,6 @@ class SubCategory(models.Model):
         verbose_name = "subcategory"
 
     def __str__(self):
-        print(self.get_topics())
         return self.name
 
     @property

@@ -16,7 +16,11 @@
                                     <div class="grid-post-item  bold_gpi  fl-wrap">
                                         <div class="grid-post-media gpm_sing">
                                             <div class="bg" data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"></div>
-                                            <div class="author-link"><a href=""><img src="{% static 'images/avatar/ceod.png' %}" alt="">  <span>By {{slide.writer.username}}</span></a></div>
+                                            <div class="author-link">
+						<a href="">
+							<img src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="{{slide.writer.username}}">  <span>By {{slide.writer.username}}</span>
+						</a>
+					    </div>
                                             <div class="grid-post-media_title">
                                                 <a class="post-category-marker" href="">{{slide.category|title}}</a>
                                                 <h4><a href="{{slide.get_absolute_url}}">{{slide.title|truncatewords:"20"}}</a></h4>
@@ -46,7 +50,11 @@
                 <div class="grid-post-item  bold_gpi  fl-wrap">
                     <div class="grid-post-media gpm_sing">
                         <div class="bg" data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"></div>
-                        <div class="author-link"><a href=""><img src="{% static 'images/avatar/ceod.png' %}" alt="">  <span>By {{slide.writer.username}}</span></a></div>
+                        <div class="author-link">
+				<a href="">
+					<img src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="{{slide.writer.username}}"><span>By {{slide.writer.username}}</span>
+				</a>
+			</div>
                         <div class="grid-post-media_title">
                             <a class="post-category-marker" href="">{{slide.category|title}}</a>
                             <h4><a href="{{slide.get_absolute_url}}">{{slide.title|truncatewords:"8"}}</a></h4>
@@ -68,7 +76,11 @@
                 <div class="grid-post-item  bold_gpi    fl-wrap">
                     <div class="grid-post-media gpm_sing bold_gpi_half">
                         <div class="bg" data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"></div>
-                        <div class="author-link"><a href=""><img src="{% static 'images/avatar/ceod.png' %}" alt="">  <span>{{slide.writer.username}}</span></a></div>
+                        <div class="author-link">
+				<a href="">
+					<img src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="{{slide.writer.username}}">  <span>By {{slide.writer.username}}</span>
+				</a>
+			</div>
                         <div class="grid-post-media_title">
                             <a class="post-category-marker" href="">{{slide.category}}</a>
                             <h4><a href="{{slide.get_absolute_url}}">{{slide.title|truncatewords:"6"}}</a></h4>
