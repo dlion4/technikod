@@ -19,7 +19,7 @@ If you have run out of energy or time for your project, put a note at the top of
 
 ### MINI ADMIN LOGIN
 
-    - [] {{protocol}}/{{domain}}/newzfox-dashbord-admin/
+    - [] {{protocol}}/{{domain}}/newzfox-dashboard-admin/
             (credentials will be provied by the superadmin)
 
 ## FRONTEND ADMIN FOR WRITERS

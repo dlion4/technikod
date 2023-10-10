@@ -4,10 +4,10 @@
   <div class="card profile-header">
     <div class="body text-center">
       <div class="profile-image mb-3">
-        <img src="{% if profile.avatar %}{{ profile.avatar.url }}{% else %}{% static 'dashboard/images/user.png' %}{% endif %}" class="rounded-circle" alt="" />
+        <img style='max-width:200px; height:auto;' src="{% if profile.avatar %}{{ profile.avatar.url }}{% else %}{% static 'dashboard/images/user.png' %}{% endif %}" class="rounded-circle" alt="" />
       </div>
       <div>
-        <h4 class="mb-0"><strong>{{profile.username}}</strong> Wert</h4>
+        <h4 class="mb-0"><strong>{{profile.username}}</strong></h4>
         <span>San Francisco</span>
       </div>
       <div class="mt-3">

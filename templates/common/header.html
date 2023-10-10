@@ -73,10 +73,16 @@
       <div class="search_btn htact show_search-btn">
         <i class="far fa-search"></i> <span class="header-tooltip">Search</span>
       </div>
-      <div  class="srf_btn htact show-reg-form">
+      {% if request.user.is_authenticated %}
+      <a  href="{% url 'dashboard:home' %}" class="srf_btn htact show-reg-form">
+        <i class="fal fa-user"></i> <span class="header-tooltip">Dashboard</span>
+      </a>
+      {% else %}
+      <a  href="{% url 'dashboard:auth:login' %}" class="srf_btn htact show-reg-form">
         <i class="fal fa-user"></i> <span class="header-tooltip">Sign In</span>
-      </div>
-     
+      </a>
+
+      {% endif %}
       <!-- header-search-wrap -->
       <div class="header-search-wrap novis_sarch">
         <div class="widget-inner">

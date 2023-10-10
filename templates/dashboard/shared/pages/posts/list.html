@@ -1,5 +1,9 @@
 {% extends "dashboard/base.html" %}
 
+<!---->
+
+{% block title %} {{ block.super }} {{profile.username}} {% endblock title %}
+<!---->
 
 
 {% block content %}
@@ -44,7 +48,6 @@
           <!-- paginate -->
           {% include "dashboard/shared/pages/posts/paginate.html" %}
           
-       
 
         </div>
         

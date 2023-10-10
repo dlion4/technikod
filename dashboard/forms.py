@@ -24,8 +24,11 @@ class PostRegularForm(forms.ModelForm):
 
         widgets = {
             "title": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "post title"}
+                attrs={"class": "form-control", "placeholder": "post title testing"}
             ),
+            # "topic": forms.TextInput(
+            #     attrs={"class": "form-control", "placeholder": "post title testing"}
+            # ),
             "summary": forms.Textarea(
                 attrs={
                     "class": "form-control",

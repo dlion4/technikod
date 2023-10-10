@@ -47,3 +47,4 @@ class DashboardLockScreenView(generic.TemplateView):
 def logout_view(request):
     logout(request)
     return redirect("dashboard:auth:login")
+

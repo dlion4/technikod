@@ -12,6 +12,11 @@ from posts.models import Post
 from paginator.paginators import Paginator
 from .functions.forms import SubscriptionForm
 from .forms import PostRegularForm
+from django.db.models import Sum
+from .mixins import ProfileDashboardMixins
+def post_writer_fields(request, field):
+    return Post.objects.filter(writer=request).aggregate(total_views=Sum(field))
+
 
 
 class CustomAuthorizerCheck(object):
@@ -40,19 +45,24 @@ class DashboardHomeView(CustomAuthorizerCheck, generic.TemplateView):
             .order_by("-createdAt")[:limit]
         )
 
+    def get_profile(self, **kwargs):
+        return self._user().user_profile
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["my_posts"] = self._posts()
         context["posts"] = self.posts.objects.filter(
-            writer=self._user().user_profile
+            writer=self.get_profile(**kwargs)
         ).all()
+        context['total_views'] = post_writer_fields(request=self.get_profile(**kwargs), field="views")['total_views']
+
         return context
 
 
-class DashboardProfileView(CustomAuthorizerCheck, generic.TemplateView):
+class DashboardProfileView(CustomAuthorizerCheck, ProfileDashboardMixins,generic.TemplateView):
     template_name = "dashboard/shared/pages/profile/index.html"
     queryset = Profile
-    posts = Post
+    model = Post
     profile_form = UpdateProfileForm
 
     def _writers(self):
@@ -66,9 +76,10 @@ class DashboardProfileView(CustomAuthorizerCheck, generic.TemplateView):
     
     """
 
+
     def get_context_data(self, **kwargs):
         profile = Profile.objects.get(user=self.request.user)
-        context = super().get_context_data(**kwargs)
+        context = super(DashboardProfileView, self).get_context_data(**kwargs)
         context["writers"] = self._writers()
         context["pform"] = self.profile_form(
             initial={
@@ -79,6 +90,7 @@ class DashboardProfileView(CustomAuthorizerCheck, generic.TemplateView):
                 "bio": profile.bio,
             }
         )
+        context['total_views'] = post_writer_fields(request=profile, field="views")['total_views']
         return context
 
     def post(self, *args, **kwargs):
@@ -115,6 +127,8 @@ class DashboardListPostView(CustomAuthorizerCheck, Paginator, generic.TemplateVi
             view_limit=100
         ).order_by("-updatedAt")[:2]
         context["subscription_form"] = self.subscription_form()
+        context['total_views'] = post_writer_fields(request=self.request.user_profile, field="views")['total_views']
+
         return context
 
 
@@ -154,7 +168,6 @@ class DashboardPostReqularCreateView(CustomAuthorizerCheck, generic.FormView):
         return redirect(instance.get_dashboard_absolute_url(**kwargs))
 
     def form_invalid(self, form):
-        print(form.errors)
         return super(DashboardPostReqularCreateView, self).form_invalid(form)
 
 

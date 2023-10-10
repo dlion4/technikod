@@ -24,7 +24,7 @@ urlpatterns = [
     path('newzfox-admin-login/', admin.site.urls),
     path("subscribe/", views.SubscriptionView.as_view(), name="subscribe-view"),
     # path("admin/", admin.site.urls),
-    path("newzfox-dashbord-admin/", dashboard_admin_site.urls),
+    path("newzfox-dashboard-admin/", dashboard_admin_site.urls),
     path("", include("posts.urls", namespace="posts")),
     path("category/", include("category.urls", namespace="category")),
     path("accounts/", include("accounts.urls", namespace="accounts")),

@@ -131,8 +131,10 @@ class PostDetailView(generic.TemplateView):
         return context
     
     def get(self, request, *args, **kwargs):
-        self.get_object(**kwargs).views += 1
-        self.get_object(**kwargs).save()
+        post = Post.objects.filter(pk=kwargs.get("pk"), slug=kwargs.get("slug")).first()
+        if post:
+            post.views +=1
+            post.save()
         return super(PostDetailView, self).get(request, *args, **kwargs)
 
 

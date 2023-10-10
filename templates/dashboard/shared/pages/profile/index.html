@@ -1,6 +1,8 @@
 {% extends "dashboard/base.html" %}
 
-
+<!---->
+{% block title %} {{ block.super }} {{profile.username}} {% endblock title %}
+<!---->
 
 {% block content %}
 

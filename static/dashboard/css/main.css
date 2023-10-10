@@ -3289,7 +3289,7 @@ ul.choose-skin li div.orange {
   background: #eee;
 }
 ul.choose-skin li div.orange::before {
-  background: #feb800;
+  background: #27251f;
 }
 ul.choose-skin li div.blue {
   border-left: 15px solid #444;
@@ -7494,7 +7494,7 @@ ul.choose-skin li div,
   border: 2px solid #50d38a;
 }
 .new_timeline .bullet.orange {
-  border: 2px solid #feb800;
+  border: 2px solid #27251f;
 }
 .new_timeline .time {
   width: 20%;
@@ -7622,7 +7622,7 @@ ul.choose-skin li div,
   background: #0e9be2;
 }
 .taskboard .progress_task .dd-handle::after {
-  background: #feb800;
+  background: #27251f;
 }
 .taskboard .completed_task .dd-handle::after {
   background: #86c541;

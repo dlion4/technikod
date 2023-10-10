@@ -59,5 +59,4 @@ class WriterPublicProfileView(Paginator, generic.TemplateView):
         context = super(WriterPublicProfileView, self).get_context_data(**kwargs)
         context["profile"] = self.get_profile(**kwargs)
         context["total_views"] = post_view_count(self.get_profile(**kwargs), "views")['total_views']
-        print(context["total_views"])
         return context
