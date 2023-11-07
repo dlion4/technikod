@@ -1,74 +1,114 @@
 {% load static %}
 
-
-
-
-    <!-- hero-carousel-wrap    -->
+<!-- hero-carousel-wrap    -->
 <div class="hero-carousel-wrap fl-wrap">
-    <div class="hero-carousel fl-wrap full-height">
-        <div class="swiper-container full-height">
-            
-            <div class="swiper-wrapper">
-                {% if slider %}
-                    <!-- swiper-slide    -->
-               {% for slide in slider %}
-               <div class="swiper-slide">
-                <div class="hero-carousel-item fl-wrap">
-                    <div class="grid-post-item  bold_gpi  fl-wrap">
-                        <div class="grid-post-media gpm_sing">
-                            <div class="bg" data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"></div>
-                            <div class="author-link"><a href="{{slide.writer.get_public_profile_url}}"><img src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="profile image">  <span>By {{slide.writer.username|title}}</span></a></div>
-                            <div class="grid-post-media_title">
-                                <a class="post-category-marker" href="javascript:void">{{slide.category|title}}</a>
-                                <h4><a href="{{slide.get_absolute_url}}">{{slide.title|truncatewords:"20"}}</a></h4>
-                                <span class="video-date"><i class="far fa-clock"></i>  {{slide.createdAt|date:"d M Y"}}</span>
-                                <ul class="post-opt">
-                                    <li><i class="far fa-comments-alt"></i>  {{slide.comments}} </li>
-                                    <li><i class="fal fa-eye"></i> {{slide.views}} </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+  <div class="hero-carousel fl-wrap full-height">
+    <div class="swiper-container full-height">
+      <div class="swiper-wrapper">
+        {% if slider %}
+        <!-- swiper-slide    -->
+        {% for slide in slider %}
+        <div class="swiper-slide">
+          <div class="hero-carousel-item fl-wrap">
+            <div class="grid-post-item bold_gpi fl-wrap">
+              <div class="grid-post-media gpm_sing">
+                <div
+                  class="bg"
+                  data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"
+                ></div>
+                <div class="author-link">
+                  <a href="{{slide.writer.get_public_profile_url}}"
+                    ><img
+                      src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/images/avatar/ceod.png{% endif %}"
+                      alt="profile image"
+                    />
+                    <span>By {{slide.writer.username|title}}</span></a
+                  >
                 </div>
-            </div>
-           
-               {% endfor %}
-                <!-- swiper-slide end    -->
-                {% if grid_posts %}
-                <div class="swiper-slide">
-                    {% for slide in grid_posts %}
-                    <div class="hero-carousel-item hero-carousel-item_half fl-wrap">
-                        <div class="grid-post-item  bold_gpi  fl-wrap">
-                            <div class="grid-post-media gpm_sing">
-                                <div class="bg" data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"></div>
-                                <div class="author-link"><a href="{{slide.writer.get_public_profile_url}}"><img src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/avatar/ceod.png' %}{% endif %}" alt="profile image">  <span>By {{slide.writer.username|title}}</span></a></div>
-                                <div class="grid-post-media_title">
-                                    <a class="post-category-marker" href="javascript:void">{{slide.category|title}}</a>
-                                    <h4><a href="{{slide.get_absolute_url}}">{{slide.title|truncatewords:"20"}}</a></h4>
-                                    <span class="video-date"><i class="far fa-clock"></i>  {{slide.createdAt|date:"d M Y"}}</span>
-                                    <ul class="post-opt">
-                                        <li><i class="far fa-comments-alt"></i>  {{slide.comments}} </li>
-                                        <li><i class="fal fa-eye"></i> {{slide.views}} </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
+                <div class="grid-post-media_title">
+                  <a class="post-category-marker" href="javascript:void"
+                    >{{slide.category|title}}</a
+                  >
+                  <h4>
+                    <a href="{{slide.get_absolute_url}}"
+                      >{{slide.title|truncatewords:"20"}}</a
+                    >
+                  </h4>
+                  <span class="video-date"
+                    ><i class="far fa-clock"></i> {{slide.createdAt|date:"d M
+                    Y"}}</span
+                  >
+                  <ul class="post-opt">
+                    <li>
+                      <i class="far fa-comments-alt"></i> {{slide.comments}}
+                    </li>
+                    <li><i class="fal fa-eye"></i> {{slide.views}}</li>
+                  </ul>
                 </div>
-            {% endif %}
-                <!-- swiper-slide    -->
-                
-                <!-- swiper-slide end    -->	
-               						
-                {% endif %} 	
+              </div>
             </div>
+          </div>
         </div>
+
+        {% endfor %}
+        <!-- swiper-slide end    -->
+        {% if grid_posts %}
+        <div class="swiper-slide">
+          {% for slide in grid_posts %}
+          <div class="hero-carousel-item hero-carousel-item_half fl-wrap">
+            <div class="grid-post-item bold_gpi fl-wrap">
+              <div class="grid-post-media gpm_sing">
+                <div
+                  class="bg"
+                  data-bg="{% if slide.bg_image %}{{slide.bg_image.url}}{% else %}{{slide.image.url}}{% endif %}"
+                ></div>
+                <div class="author-link">
+                  <a href="{{slide.writer.get_public_profile_url}}"
+                    ><img
+                      src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/images/avatar/ceod.png{% endif %}"
+                      alt="profile image"
+                    />
+                    <span>By {{slide.writer.username|title}}</span></a
+                  >
+                </div>
+                <div class="grid-post-media_title">
+                  <a class="post-category-marker" href="javascript:void"
+                    >{{slide.category|title}}</a
+                  >
+                  <h4>
+                    <a href="{{slide.get_absolute_url}}"
+                      >{{slide.title|truncatewords:"20"}}</a
+                    >
+                  </h4>
+                  <span class="video-date"
+                    ><i class="far fa-clock"></i> {{slide.createdAt|date:"d M
+                    Y"}}</span
+                  >
+                  <ul class="post-opt">
+                    <li>
+                      <i class="far fa-comments-alt"></i> {{slide.comments}}
+                    </li>
+                    <li><i class="fal fa-eye"></i> {{slide.views}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <!-- swiper-slide    -->
+
+        <!-- swiper-slide end    -->
+
+        {% endif %}
+      </div>
     </div>
-    <div class="hero-carousel-controls">
-        <div class="clearfix"></div>
-        <div class="hc-cont hc-cont-next"><i class="fas fa-caret-right"></i></div>
-        <div class="hc-cont hc-cont-prev"><i class="fas fa-caret-left"></i></div>
-    </div>
+  </div>
+  <div class="hero-carousel-controls">
+    <div class="clearfix"></div>
+    <div class="hc-cont hc-cont-next"><i class="fas fa-caret-right"></i></div>
+    <div class="hc-cont hc-cont-prev"><i class="fas fa-caret-left"></i></div>
+  </div>
 </div>
 <!-- hero-slider-wrap  end   -->
