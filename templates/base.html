@@ -4,35 +4,38 @@
   <head>
     <!--=============== basic  ===============-->
     <meta charset="UTF-8" />
-    <title>
-      {% block title %}Newzfox | {% endblock title %}
-    </title>
+    <title>{% block title %}Lionnic | {% endblock title %}</title>
+    <meta name="google-adsense-account" content="ca-pub-5045497938538624" />
+    <meta name="google-adsense-account" content="ca-pub-5045497938538624" />
     <meta name="robots" content="index, follow" />
-    
+
     <meta name="description" content="" />
-    {% include "meta/meta_tags.html" %}
-    
-    {% block meta %}{% endblock meta %}
+    {% include "meta/meta_tags.html" %} {% block meta %}{% endblock meta %}
     <!--=============== css  ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
-      type="text/css"
       rel="stylesheet"
-      href="{% static 'css/plugins.css' %}"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link
       type="text/css"
       rel="stylesheet"
-      href="{% static 'css/style.css' %}"
+      href="https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/css/plugins.css"
     />
     <link
       type="text/css"
       rel="stylesheet"
-      href="{% static 'css/color.css' %}"
+      href="https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/css/style.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/css/color.css"
     />
     <!--=============== favicons ===============-->
-    <link rel="shortcut icon" href="{% static 'images/newsfoxn.png' %}" />
-  
+    <link rel="shortcut icon" href="{% static 'images/lion2.png' %}" />
   </head>
   <body>
     <!-- main start  -->
@@ -46,127 +49,143 @@
       <!-- header -->
       {% include "common/header.html" %}
       <!-- /header -->
-      
+
       <!--Wrapper-->
 
       <div id="wrapper">
-        <div class="content">
-        {% block content %} {% endblock content %}
-      </div>
+        <div class="content">{% block content %} {% endblock content %}</div>
         <!---->
 
         <!-- footer -->
         {% include "common/footer.html" %}
         <!-- /footer -->
 
-        {% block aside %}
-        
-        
-        
-        
-        {% endblock aside %}
-        
+        {% block aside %} {% endblock aside %}
+
         <div class="aside-panel">
           <ul>
-              <!-- <li> <a href="{% url 'posts:posts' %}"><i class="fa-brands fa-neos"></i><span>News</span></a></li> -->
-              <li> <a href="{% url 'posts:posts' %}"><i class="far  fa-podium"></i><span>News</span></a></li>
-              <li> <a href="{% url 'posts:posts' %}"><i class="far fa-atom"></i><span>Entertainment</span></a></li>
-              <li> <a href="{% url 'posts:posts' %}"><i class="far fa-user-chart"></i><span>Business</span></a></li>
-              <li> <a href="{% url 'posts:posts' %}"><i class="far fa-tennis-ball"></i><span>Sports</span></a></li>
-              <li> <a href="{% url 'posts:posts' %}"><i class="far fa-flask"></i><span>Internet</span></a></li>
+            <!-- <li> <a href="{% url 'posts:posts' %}"><i class="fa-brands fa-neos"></i><span>News</span></a></li> -->
+            <li>
+              <a href="{% url 'posts:posts' %}"
+                ><i class="far fa-podium"></i><span>News</span></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'posts:posts' %}"
+                ><i class="far fa-atom"></i><span>Entertainment</span></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'posts:posts' %}"
+                ><i class="far fa-user-chart"></i><span>Business</span></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'posts:posts' %}"
+                ><i class="far fa-tennis-ball"></i><span>Sports</span></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'posts:posts' %}"
+                ><i class="far fa-flask"></i><span>Internet</span></a
+              >
+            </li>
           </ul>
+        </div>
       </div>
-      </div>
-      
+
       <!--/Wrapper-->
 
       <!-- cookie-info-bar -->
       <div class="cookie-info-bar">
         <div class="container">
           <div class="cookie-info-bar_title">
-            <i class="fal fa-cookie"></i>Our site uses cookies to improve our services. Learn more about
-            our use of cookies: <a href="{% url 'privacy' %}">Cookie policy</a>
+            <i class="fal fa-cookie"></i>Our site uses cookies to improve our
+            services. Learn more about our use of cookies:
+            <a href="{% url 'privacy' %}">Cookie policy</a>
           </div>
           <a href="#" class="sicb_btn color-bg">Accept</a>
           <a href="#" class="sicb_btn">Reject</a>
         </div>
       </div>
       <!-- cookie-info-bar end -->
-      
-      
-      
+
       <script>
         // Check if the user has already seen the notification by looking for a cookie
-function hasCookieConsent() {
-  return document.cookie.indexOf('cookieConsent=true') !== -1;
-}
+        function hasCookieConsent() {
+          return document.cookie.indexOf("cookieConsent=true") !== -1;
+        }
 
-// Function to set a cookie that indicates the user has accepted the cookies
-function setCookieConsent() {
-  var expirationDate = new Date();
-  expirationDate.setFullYear(expirationDate.getFullYear() + 5); // Cookie valid for 1 year
-  document.cookie = 'cookieConsent=true; expires=' + expirationDate.toUTCString() + '; path=/';
-}
+        // Function to set a cookie that indicates the user has accepted the cookies
+        function setCookieConsent() {
+          var expirationDate = new Date();
+          expirationDate.setFullYear(expirationDate.getFullYear() + 5); // Cookie valid for 1 year
+          document.cookie =
+            "cookieConsent=true; expires=" +
+            expirationDate.toUTCString() +
+            "; path=/";
+        }
 
-// Show the cookie notification only if the user hasn't seen it before
-if (!hasCookieConsent()) {
-  var cookieInfoBar = document.getElementById('cookie-info-bar');
-  var acceptCookieButton = document.getElementById('accept-cookie');
-  var rejectCookieButton = document.getElementById('reject-cookie');
+        // Show the cookie notification only if the user hasn't seen it before
+        if (!hasCookieConsent()) {
+          var cookieInfoBar = document.getElementById("cookie-info-bar");
+          var acceptCookieButton = document.getElementById("accept-cookie");
+          var rejectCookieButton = document.getElementById("reject-cookie");
 
-  if (cookieInfoBar && acceptCookieButton && rejectCookieButton) {
-    cookieInfoBar.style.display = 'block';
+          if (cookieInfoBar && acceptCookieButton && rejectCookieButton) {
+            cookieInfoBar.style.display = "block";
 
-    acceptCookieButton.addEventListener('click', function () {
-      setCookieConsent();
-      cookieInfoBar.style.display = 'none';
-      // You can add code here to handle cookie acceptance
-    });
+            acceptCookieButton.addEventListener("click", function () {
+              setCookieConsent();
+              cookieInfoBar.style.display = "none";
+              // You can add code here to handle cookie acceptance
+            });
 
-    rejectCookieButton.addEventListener('click', function () {
-      cookieInfoBar.style.display = 'none';
-      // You can add code here to handle cookie rejection
-    });
-  }
-}
-      
-
-
+            rejectCookieButton.addEventListener("click", function () {
+              cookieInfoBar.style.display = "none";
+              // You can add code here to handle cookie rejection
+            });
+          }
+        }
       </script>
-      
     </div>
     <!--=============== scripts  ===============-->
+    {% comment %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% endcomment %}
+
+    <script src="https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/js/plugins.js"></script>
+    {% comment %}
     <script src="{% static 'js/plugins.js' %}"></script>
-    <script src="{% static 'js/scripts.js' %}"></script>
+    {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/gh/dlion4/namecheapcodetransfer/static/js/scripts.js"></script>
+    {% comment %}
     <script src="{% static 'js/contextmenu.js' %}"></script>
-    
+    {% endcomment %}
+
     <script>
-      const isNoticeSeen = window.localStorage['noticeSeen'] === 'true';
-      if(isNoticeSeen){
-        $(".cookie-info-bar").css("display", "none")
-      }else{
-        $(".sicb_btn").click(function(){
-          window.localStorage['noticeSeen']=true
-        })
+      const isNoticeSeen = window.localStorage["noticeSeen"] === "true";
+      if (isNoticeSeen) {
+        $(".cookie-info-bar").css("display", "none");
+      } else {
+        $(".sicb_btn").click(function () {
+          window.localStorage["noticeSeen"] = true;
+        });
       }
-      
     </script>
-  
-  <script>
 
-      const windowLocation = window.location.href
-      const searchInput = document.getElementById("lionnic_qs")
-      const searchForm = document.getElementById("lionnic_qs_form")
-      const resultBox = document.getElementById("lionnic_result")
-      const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value
-      console.log(csrfToken)
+    <script>
+      const windowLocation = window.location.href;
+      const searchInput = document.getElementById("lionnic_qs");
+      const searchForm = document.getElementById("lionnic_qs_form");
+      const resultBox = document.getElementById("lionnic_result");
+      const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0]
+        .value;
+      console.log(csrfToken);
 
-
-      searchInput.addEventListener("keyup", function (e){
-          console.log(e.target.value)
-      })
-  </script>
-  
+      searchInput.addEventListener("keyup", function (e) {
+        console.log(e.target.value);
+      });
+    </script>
   </body>
 </html>

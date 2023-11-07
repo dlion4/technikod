@@ -89,19 +89,24 @@ WSGI_APPLICATION = "gmag.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
+# DATABASES = {
+#     'default': {
         
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("DATABASE_NAME"),
-        'USER': os.environ.get("DATABASE_USER"),
-        'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
-        'HOST': 'localhost',
-        'PORT': '',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get("DATABASE_NAME"),
+#         'USER': os.environ.get("DATABASE_USER"),
+#         'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -149,6 +154,10 @@ CLOUDINARY_STORAGE = {
     "API_SECRET": os.environ.get("API_SECRET"),
 }
 
+
+
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 

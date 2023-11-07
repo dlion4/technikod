@@ -92,7 +92,7 @@ function showWithCustomIconMessage() {
 function showHtmlMessage() {
     swal({
         title: "HTML <small>Title</small>!",
-        text: "A custom <span style=\"color: #CC0000\">html<span> message.",
+        text: "A custom <span style=/"color: #CC0000/">html<span> message.",
         html: true
     });
 }

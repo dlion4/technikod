@@ -13,13 +13,13 @@ If you have run out of energy or time for your project, put a note at the top of
 
 #### $$$ PROJECT CONFIGURATIONS
 
-    > admin-login-url: {{protocol}}/{{domain}}/newzfox-admin-login/
+    > admin-login-url: {{protocol}}/{{domain}}/lionnic-admin-login/
     > username: None(set own)
     > email: None(set own)
 
 ### MINI ADMIN LOGIN
 
-    - [] {{protocol}}/{{domain}}/newzfox-dashboard-admin/
+    - [] {{protocol}}/{{domain}}/lionnic-dashboard-admin/
             (credentials will be provied by the superadmin)
 
 ## FRONTEND ADMIN FOR WRITERS
@@ -40,8 +40,8 @@ If you have run out of energy or time for your project, put a note at the top of
 
 server{
 listen 81;
-server_name ip_address newzfox.com;
-#return 301 http://newzfox.com;
+server_name ip_address lionnic.com;
+#return 301 https://lionnic.com;
 #location = /favicon.ico { access_log off; log_not_found off; }
 location /static/ {
 root /home/kwasa/myprojectdir/blogmag;

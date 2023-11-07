@@ -29,7 +29,7 @@
     // IE8 fix
     var is_old_ie = (function () {
         var n = navigator.userAgent,
-            r = /msie\s\d+/i,
+            r = /msie/s/d+/i,
             v;
         if (n.search(r) > 0) {
             v = r.exec(n).toString();
@@ -1822,7 +1822,7 @@
 
         prettify: function (num) {
             var n = num.toString();
-            return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + this.options.prettify_separator);
+            return n.replace(/(/d{1,3}(?=(?:/d/d/d)+(?!/d)))/g, "$1" + this.options.prettify_separator);
         },
 
         checkEdges: function (left, width) {

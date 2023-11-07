@@ -24,8 +24,8 @@ def sites_context_data(request):
     return dict(
         site_domain=get_current_site(request).domain,
         protocol=protocol,
-        site_social_fab="https://www.tumblr.com/newz-fox",
-        site_social_twitter="https://www.tumblr.com/newz-fox",
-        site_social_youtube="https://www.tumblr.com/newz-fox",
-        site_social_instagram="https://www.tumblr.com/newz-fox",
+        site_social_fab="https://www.facebook.com/",
+        site_social_twitter="https://www.twitter.com/",
+        site_social_youtube="https://www.youtube.com/",
+        site_social_instagram="https://www.Instagram.com/",
     )

@@ -31,7 +31,7 @@ Disallow:
 User-agent: yahoo-blogs/v3.9
 Disallow: 
 User-agent: *
-Disallow:/
+Disallow:
 Crawl-delay: 120
 Disallow: /cgi-bin/
 

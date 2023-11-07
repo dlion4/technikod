@@ -42,6 +42,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=100)
     is_editors_choice = models.BooleanField(default=False)
+    is_premium = models.BooleanField(default=False)
     slug = models.SlugField(max_length=100, blank=True, null=True)
     tags = models.ManyToManyField(Tag, related_name="post_tags", blank=True)
     content = RichTextField(config_name="default")

@@ -196,10 +196,10 @@
         isMSIE = /MSIE|Trident/i.test(userAgent),
         browserVersion;
     if (isMSIE) {
-        var matches = /MSIE (\d+[.]\d+)/.exec(userAgent);
-        matches && (browserVersion = parseFloat(matches[1])), matches = /Trident\/.*rv:([0-9]{1,}[\.0-9]{0,})/.exec(userAgent), matches && (browserVersion = parseFloat(matches[1]))
+        var matches = /MSIE (/d+[.]/d+)/.exec(userAgent);
+        matches && (browserVersion = parseFloat(matches[1])), matches = /Trident//.*rv:([0-9]{1,}[/.0-9]{0,})/.exec(userAgent), matches && (browserVersion = parseFloat(matches[1]))
     }
-    var isEdge = /Edge\/\d+/.test(userAgent),
+    var isEdge = /Edge///d+/.test(userAgent),
         hasCodeMirror = !!window.CodeMirror;
     if (!hasCodeMirror && isSupportAmd && "undefined" != typeof require)
         if ("undefined" != typeof require.resolve) try {
@@ -222,7 +222,7 @@
             isW3CRangeSupport: !!document.createRange
         },
         NBSP_CHAR = String.fromCharCode(160),
-        ZERO_WIDTH_NBSP_CHAR = "\ufeff",
+        ZERO_WIDTH_NBSP_CHAR = "/ufeff",
         dom = function() {
             var a = function(a) {
                     return a && $(a).hasClass("note-editable")
@@ -532,17 +532,17 @@
                 oa = c("TEXTAREA"),
                 pa = function(a, b) {
                     var c = oa(a[0]) ? a.val() : a.html();
-                    return b ? c.replace(/[\n\r]/g, "") : c
+                    return b ? c.replace(/[/n/r]/g, "") : c
                 },
                 qa = function(a, b) {
                     var c = pa(a);
                     if (b) {
-                        var d = /<(\/?)(\b(?!!)[^>\s]*)(.*?)(\s*\/?>)/g;
+                        var d = /<(//?)(/b(?!!)[^>/s]*)(.*?)(/s*//?>)/g;
                         c = c.replace(d, function(a, b, c) {
                             c = c.toUpperCase();
                             var d = /^DIV|^TD|^TH|^P|^LI|^H[1-7]/.test(c) && !!b,
                                 e = /^BLOCKQUOTE|^TABLE|^TBODY|^TR|^HR|^UL|^OL/.test(c);
-                            return a + (d || e ? "\n" : "")
+                            return a + (d || e ? "/n" : "")
                         }), c = $.trim(c)
                     }
                     return c
@@ -1084,7 +1084,7 @@
                         h.moveToElementText(d || e), h.collapse(!d), i = d ? d.nextSibling : e.firstChild;
                         var j = a.duplicate();
                         j.setEndPoint("StartToStart", h);
-                        for (var k = j.text.replace(/[\r\n]/g, "").length; k > i.nodeValue.length && i.nextSibling;) k -= i.nodeValue.length, i = i.nextSibling;
+                        for (var k = j.text.replace(/[/r/n]/g, "").length; k > i.nodeValue.length && i.nextSibling;) k -= i.nodeValue.length, i = i.nextSibling;
                         i.nodeValue;
                         b && i.nextSibling && dom.isText(i.nextSibling) && k === i.nodeValue.length && (k -= i.nodeValue.length, i = i.nextSibling), e = i, c = k
                     }
@@ -1828,7 +1828,7 @@
                     onlyPartialContains: !0
                 });
                 $.each(h, function(a, c) {
-                    b = /^[A-Za-z][A-Za-z0-9+-.]*\:[\/\/]?/.test(b) ? b : "http://" + b, $(c).attr("href", b), d ? $(c).attr("target", "_blank") : $(c).removeAttr("target")
+                    b = /^[A-Za-z][A-Za-z0-9+-.]*/:[////]?/.test(b) ? b : "http://" + b, $(c).attr("href", b), d ? $(c).attr("target", "_blank") : $(c).removeAttr("target")
                 });
                 var k = range.createFromNodeBefore(list.head(h)),
                     l = k.getStartPoint(),
@@ -2116,7 +2116,7 @@
         AutoLink = function(a) {
             var b = this,
                 c = "http://",
-                d = /^([A-Za-z][A-Za-z0-9+-.]*\:[\/\/]?|mailto:[A-Z0-9._%+-]+@)?(www\.)?(.+)$/i;
+                d = /^([A-Za-z][A-Za-z0-9+-.]*/:[////]?|mailto:[A-Z0-9._%+-]+@)?(www/.)?(.+)$/i;
             this.events = {
                 "summernote.keyup": function(a, c) {
                     c.isDefaultPrevented() || b.handleKeyup(c)
@@ -2190,7 +2190,7 @@
                 g = func.invertObject(e.keyMap[agent.isMac ? "mac" : "pc"]),
                 h = this.representShortcut = function(a) {
                     var b = g[a];
-                    return e.shortcuts && b ? (agent.isMac && (b = b.replace("CMD", "⌘").replace("SHIFT", "⇧")), b = b.replace("BACKSLASH", "\\").replace("SLASH", "/").replace("LEFTBRACKET", "[").replace("RIGHTBRACKET", "]"), " (" + b + ")") : ""
+                    return e.shortcuts && b ? (agent.isMac && (b = b.replace("CMD", "⌘").replace("SHIFT", "⇧")), b = b.replace("BACKSLASH", "//").replace("SLASH", "/").replace("LEFTBRACKET", "[").replace("RIGHTBRACKET", "]"), " (" + b + ")") : ""
                 };
             this.initialize = function() {
                 this.addToolbarButtons(), this.addImagePopoverButtons(), this.addLinkPopoverButtons(), this.fontInstalledMap = {}
@@ -2591,7 +2591,7 @@
                         }
                     }), c["font-family"]) {
                     var e = c["font-family"].split(",").map(function(a) {
-                            return a.replace(/[\'\"]/g, "").replace(/\s+$/, "").replace(/^\s+/, "")
+                            return a.replace(/[/'/"]/g, "").replace(//s+$/, "").replace(/^/s+/, "")
                         }),
                         f = list.find(e, b.isFontInstalled);
                     d.find(".dropdown-fontname li a").each(function() {
@@ -2884,17 +2884,17 @@
                     a.keyCode === key.code.ENTER && b.trigger("click")
                 })
             }, this.createVideoNode = function(a) {
-                var b, c = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/,
+                var b, c = /^(?:https?:////)?(?:www/.)?(?:youtu/.be//|youtube/.com//(?:embed//|v//|watch/?v=|watch/?.+&v=))((/w|-){11})(?:/S+)?$/,
                     d = a.match(c),
-                    e = /(?:www\.|\/\/)instagram\.com\/p\/(.[a-zA-Z0-9_-]*)/,
+                    e = /(?:www/.|////)instagram/.com//p//(.[a-zA-Z0-9_-]*)/,
                     f = a.match(e),
-                    g = /\/\/vine\.co\/v\/([a-zA-Z0-9]+)/,
+                    g = /////vine/.co//v//([a-zA-Z0-9]+)/,
                     h = a.match(g),
-                    i = /\/\/(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/,
+                    i = /////(player/.)?vimeo/.com//([a-z]*//)*([0-9]{6,11})[?]?.*/,
                     j = a.match(i),
-                    k = /.+dailymotion.com\/(video|hub)\/([^_]+)[^#]*(#video=([^_&]+))?/,
+                    k = /.+dailymotion.com//(video|hub)//([^_]+)[^#]*(#video=([^_&]+))?/,
                     l = a.match(k),
-                    m = /\/\/v\.youku\.com\/v_show\/id_(\w+)=*\.html/,
+                    m = /////v/.youku/.com//v_show//id_(/w+)=*/.html/,
                     n = a.match(m),
                     o = /^.+.(mp4|m4v)$/,
                     p = a.match(o),

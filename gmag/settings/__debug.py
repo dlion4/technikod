@@ -48,7 +48,7 @@ CKEDITOR_CONFIGS = CKEDITOR_CONFIGS
 
 # HELP
 
-HELPLINE = "+2545848786198"
+HELPLINE = "+254758489861"
 
 
 # sending emails
@@ -57,7 +57,7 @@ DEFAULT_FROM_EMAIL = "newsment@info.co.ke"
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://newzfox.com",
+    "http://lionnic.com",
     # Add other allowed origins here
 ]
 
@@ -85,6 +85,7 @@ CORS_ALLOW_METHODS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://newzfox.com",
-    
+    "http://lionnic.com",
+    "https://lionnic.com",
+
 ]

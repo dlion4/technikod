@@ -138,7 +138,7 @@ function mk_block_inspect() {
 
 var mk_block = Markdown.mk_block = function(block, trail, line) {
   // Be helpful for default case in tests.
-  if ( arguments.length == 1 ) trail = "\n\n";
+  if ( arguments.length == 1 ) trail = "/n/n";
 
   var s = new String(block);
   s.trailing = trail;
@@ -154,30 +154,30 @@ var mk_block = Markdown.mk_block = function(block, trail, line) {
 
 function count_lines( str ) {
   var n = 0, i = -1;
-  while ( ( i = str.indexOf("\n", i + 1) ) !== -1 ) n++;
+  while ( ( i = str.indexOf("/n", i + 1) ) !== -1 ) n++;
   return n;
 }
 
 // Internal - split source into rough blocks
 Markdown.prototype.split_blocks = function splitBlocks( input, startLine ) {
-  input = input.replace(/(\r\n|\n|\r)/g, "\n");
-  // [\s\S] matches _anything_ (newline or space)
+  input = input.replace(/(/r/n|/n|/r)/g, "/n");
+  // [/s/S] matches _anything_ (newline or space)
   // [^] is equivalent but doesn't work in IEs.
-  var re = /([\s\S]+?)($|\n#|\n(?:\s*\n|$)+)/g,
+  var re = /([/s/S]+?)($|/n#|/n(?:/s*/n|$)+)/g,
       blocks = [],
       m;
 
   var line_no = 1;
 
-  if ( ( m = /^(\s*\n)/.exec(input) ) != null ) {
+  if ( ( m = /^(/s*/n)/.exec(input) ) != null ) {
     // skip (but count) leading blank lines
     line_no += count_lines( m[0] );
     re.lastIndex = m[0].length;
   }
 
   while ( ( m = re.exec(input) ) !== null ) {
-    if (m[2] == "\n#") {
-      m[2] = "\n";
+    if (m[2] == "/n#") {
+      m[2] = "/n";
       re.lastIndex--;
     }
     blocks.push( mk_block( m[1], m[2], line_no ) );
@@ -309,7 +309,7 @@ Markdown.dialects = {};
 Markdown.dialects.Gruber = {
   block: {
     atxHeader: function atxHeader( block, next ) {
-      var m = block.match( /^(#{1,6})\s*(.*?)\s*#*\s*(?:\n|$)/ );
+      var m = block.match( /^(#{1,6})/s*(.*?)/s*#*/s*(?:/n|$)/ );
 
       if ( !m ) return undefined;
 
@@ -323,7 +323,7 @@ Markdown.dialects.Gruber = {
     },
 
     setextHeader: function setextHeader( block, next ) {
-      var m = block.match( /^(.*)\n([-=])\2\2+(?:\n|$)/ );
+      var m = block.match( /^(.*)/n([-=])/2/2+(?:/n|$)/ );
 
       if ( !m ) return undefined;
 
@@ -344,7 +344,7 @@ Markdown.dialects.Gruber = {
       // There might also be adjacent code block to merge.
 
       var ret = [],
-          re = /^(?: {0,3}\t| {4})(.*)\n?/,
+          re = /^(?: {0,3}/t| {4})(.*)/n?/,
           lines;
 
       // 4 spaces + content
@@ -366,7 +366,7 @@ Markdown.dialects.Gruber = {
           if ( !next[0].match( re ) ) break block_search;
 
           // Pull how how many blanks lines follow - minus two to account for .join
-          ret.push ( block.trailing.replace(/[^\n]/g, "").substring(2) );
+          ret.push ( block.trailing.replace(/[^/n]/g, "").substring(2) );
 
           block = next.shift();
         }
@@ -375,12 +375,12 @@ Markdown.dialects.Gruber = {
         }
       } while ( true );
 
-      return [ [ "code_block", ret.join("\n") ] ];
+      return [ [ "code_block", ret.join("/n") ] ];
     },
 
     horizRule: function horizRule( block, next ) {
       // this needs to find any hr in the block to handle abutting blocks
-      var m = block.match( /^(?:([\s\S]*?)\n)?[ \t]*([-_*])(?:[ \t]*\2){2,}[ \t]*(?:\n([\s\S]*))?$/ );
+      var m = block.match( /^(?:([/s/S]*?)/n)?[ /t]*([-_*])(?:[ /t]*/2){2,}[ /t]*(?:/n([/s/S]*))?$/ );
 
       if ( !m ) {
         return undefined;
@@ -420,12 +420,12 @@ Markdown.dialects.Gruber = {
     //
     lists: (function( ) {
       // Use a closure to hide a few variables.
-      var any_list = "[*+-]|\\d+\\.",
+      var any_list = "[*+-]|//d+//.",
           bullet_list = /[*+-]/,
-          number_list = /\d+\./,
+          number_list = //d+/./,
           // Capture leading indent as it matters for determining nested lists.
-          is_list_re = new RegExp( "^( {0,3})(" + any_list + ")[ \t]+" ),
-          indent_re = "(?: {0,3}\\t| {4})";
+          is_list_re = new RegExp( "^( {0,3})(" + any_list + ")[ /t]+" ),
+          indent_re = "(?: {0,3}//t| {4})";
 
       // TODO: Cache this regexp for certain depths.
       // Create a regexp suitable for matching an li for a given stack depth
@@ -433,13 +433,13 @@ Markdown.dialects.Gruber = {
 
         return new RegExp(
           // m[1] = indent, m[2] = list_type
-          "(?:^(" + indent_re + "{0," + depth + "} {0,3})(" + any_list + ")\\s+)|" +
+          "(?:^(" + indent_re + "{0," + depth + "} {0,3})(" + any_list + ")//s+)|" +
           // m[3] = cont
           "(^" + indent_re + "{0," + (depth-1) + "}[ ]{0,4})"
         );
       }
       function expand_tab( input ) {
-        return input.replace( / {0,3}\t/g, "    " );
+        return input.replace( / {0,3}/t/g, "    " );
       }
 
       // Add inline content `inline` to `li`. inline comes from processInline
@@ -473,7 +473,7 @@ Markdown.dialects.Gruber = {
       // *every* line in the block
       function get_contained_blocks( depth, blocks ) {
 
-        var re = new RegExp( "^(" + indent_re + "{" + depth + "}.*?\\n?)*$" ),
+        var re = new RegExp( "^(" + indent_re + "{" + depth + "}.*?//n?)*$" ),
             replace = new RegExp("^" + indent_re + "{" + depth + "}", "gm"),
             ret = [];
 
@@ -537,7 +537,7 @@ Markdown.dialects.Gruber = {
         loose_search:
         while ( true ) {
           // Split into lines preserving new lines at end of line
-          var lines = block.split( /(?=\n)/ );
+          var lines = block.split( /(?=/n)/ );
 
           // We have to grab all lines for a li and call processInline on them
           // once as there are some inline things that can span lines.
@@ -547,13 +547,13 @@ Markdown.dialects.Gruber = {
           tight_search:
           for ( var line_no = 0; line_no < lines.length; line_no++ ) {
             var nl = "",
-                l = lines[line_no].replace(/^\n/, function(n) { nl = n; return ""; });
+                l = lines[line_no].replace(/^/n/, function(n) { nl = n; return ""; });
 
             // TODO: really should cache this
             var line_re = regex_for_depth( stack.length );
 
             m = l.match( line_re );
-            //print( "line:", uneval(l), "\nline match:", uneval(m) );
+            //print( "line:", uneval(l), "/nline match:", uneval(m) );
 
             // We have a list item
             if ( m[1] !== undefined ) {
@@ -675,7 +675,7 @@ Markdown.dialects.Gruber = {
       //  > b
       //
       if ( block[ 0 ] != ">" ) {
-        var lines = block.split( /\n/ ),
+        var lines = block.split( //n/ ),
             prev = [],
             line_no = block.lineNumber;
 
@@ -685,10 +685,10 @@ Markdown.dialects.Gruber = {
             line_no++;
         }
 
-        var abutting = mk_block( prev.join( "\n" ), "\n", block.lineNumber );
+        var abutting = mk_block( prev.join( "/n" ), "/n", block.lineNumber );
         jsonml.push.apply( jsonml, this.processBlock( abutting, [] ) );
         // reassemble new block of just block quotes!
-        block = mk_block( lines.join( "\n" ), block.trailing, line_no );
+        block = mk_block( lines.join( "/n" ), block.trailing, line_no );
       }
 
 
@@ -718,7 +718,7 @@ Markdown.dialects.Gruber = {
     },
 
     referenceDefn: function referenceDefn( block, next) {
-      var re = /^\s*\[(.*?)\]:\s*(\S+)(?:\s+(?:(['"])(.*?)\3|\((.*?)\)))?\n?/;
+      var re = /^/s*/[(.*?)/]:/s*(/S+)(?:/s+(?:(['"])(.*?)/3|/((.*?)/)))?/n?/;
       // interesting matches are [ , ref_id, url, , title, title ]
 
       if ( !block.match(re) )
@@ -773,7 +773,7 @@ Markdown.dialects.Gruber.inline = {
           lastIndex = 0;
 
       patterns_or_re = patterns_or_re || this.dialect.inline.__patterns__;
-      var re = new RegExp( "([\\s\\S]*?)(" + (patterns_or_re.source || patterns_or_re) + ")" );
+      var re = new RegExp( "([//s//S]*?)(" + (patterns_or_re.source || patterns_or_re) + ")" );
 
       m = re.exec( text );
       if (!m) {
@@ -823,16 +823,16 @@ Markdown.dialects.Gruber.inline = {
     "]": function () {},
     "}": function () {},
 
-    __escape__ : /^\\[\\`\*_{}\[\]()#\+.!\-]/,
+    __escape__ : /^//[//`/*_{}/[/]()#/+.!/-]/,
 
-    "\\": function escaped( text ) {
+    "//": function escaped( text ) {
       // [ length of input processed, node/children to add... ]
-      // Only esacape: \ ` * _ { } [ ] ( ) # * + - . !
+      // Only esacape: / ` * _ { } [ ] ( ) # * + - . !
       if ( this.dialect.inline.__escape__.exec( text ) )
         return [ 2, text.charAt( 1 ) ];
       else
         // Not an esacpe
-        return [ 1, "\\" ];
+        return [ 1, "//" ];
     },
 
     "![": function image( text ) {
@@ -842,13 +842,13 @@ Markdown.dialects.Gruber.inline = {
 
       // ![Alt text](/path/to/img.jpg "Optional title")
       //      1          2            3       4         <--- captures
-      var m = text.match( /^!\[(.*?)\][ \t]*\([ \t]*([^")]*?)(?:[ \t]+(["'])(.*?)\3)?[ \t]*\)/ );
+      var m = text.match( /^!/[(.*?)/][ /t]*/([ /t]*([^")]*?)(?:[ /t]+(["'])(.*?)/3)?[ /t]*/)/ );
 
       if ( m ) {
         if ( m[2] && m[2][0] == "<" && m[2][m[2].length-1] == ">" )
           m[2] = m[2].substring( 1, m[2].length - 1 );
 
-        m[2] = this.dialect.inline.__call__.call( this, m[2], /\\/ )[0];
+        m[2] = this.dialect.inline.__call__.call( this, m[2], //// )[0];
 
         var attrs = { alt: m[1], href: m[2] || "" };
         if ( m[4] !== undefined)
@@ -858,7 +858,7 @@ Markdown.dialects.Gruber.inline = {
       }
 
       // ![Alt text][id]
-      m = text.match( /^!\[(.*?)\][ \t]*\[(.*?)\]/ );
+      m = text.match( /^!/[(.*?)/][ /t]*/[(.*?)/]/ );
 
       if ( m ) {
         // We can't check if the reference is known here as it likely wont be
@@ -894,7 +894,7 @@ Markdown.dialects.Gruber.inline = {
       // back based on if there a matching ones in the url
       //    ([here](/url/(test))
       // The parens have to be balanced
-      var m = text.match( /^\s*\([ \t]*([^"']*)(?:[ \t]+(["'])(.*?)\2)?[ \t]*\)/ );
+      var m = text.match( /^/s*/([ /t]*([^"']*)(?:[ /t]+(["'])(.*?)/2)?[ /t]*/)/ );
       if ( m ) {
         var url = m[1];
         consumed += m[0].length;
@@ -921,7 +921,7 @@ Markdown.dialects.Gruber.inline = {
         }
 
         // Process escapes only
-        url = this.dialect.inline.__call__.call( this, url, /\\/ )[0];
+        url = this.dialect.inline.__call__.call( this, url, //// )[0];
 
         attrs = { href: url || "" };
         if ( m[3] !== undefined)
@@ -933,7 +933,7 @@ Markdown.dialects.Gruber.inline = {
 
       // [Alt text][id]
       // [Alt text] [id]
-      m = text.match( /^\s*\[(.*?)\]/ );
+      m = text.match( /^/s*/[(.*?)/]/ );
 
       if ( m ) {
 
@@ -967,7 +967,7 @@ Markdown.dialects.Gruber.inline = {
     "<": function autoLink( text ) {
       var m;
 
-      if ( ( m = text.match( /^<(?:((https?|ftp|mailto):[^>]+)|(.*?@.*?\.[a-zA-Z]+))>/ ) ) != null ) {
+      if ( ( m = text.match( /^<(?:((https?|ftp|mailto):[^>]+)|(.*?@.*?/.[a-zA-Z]+))>/ ) ) != null ) {
         if ( m[3] ) {
           return [ m[0].length, [ "link", { href: "mailto:" + m[3] }, m[3] ] ];
 
@@ -985,7 +985,7 @@ Markdown.dialects.Gruber.inline = {
     "`": function inlineCode( text ) {
       // Inline code block. as many backticks as you like to start it
       // Always skip over the opening ticks.
-      var m = text.match( /(`+)(([\s\S]*?)\1)/ );
+      var m = text.match( /(`+)(([/s/S]*?)/1)/ );
 
       if ( m && m[2] )
         return [ m[1].length + m[2].length, [ "inlinecode", m[3] ] ];
@@ -995,7 +995,7 @@ Markdown.dialects.Gruber.inline = {
       }
     },
 
-    "  \n": function lineBreak( text ) {
+    "  /n": function lineBreak( text ) {
       return [ 3, [ "linebreak" ] ];
     }
 
@@ -1081,8 +1081,8 @@ Markdown.buildInlinePatterns = function(d) {
   for ( var i in d ) {
     // __foo__ is reserved and not a pattern
     if ( i.match( /^__.*__$/) ) continue;
-    var l = i.replace( /([\\.*+?|()\[\]{}])/g, "\\$1" )
-             .replace( /\n/, "\\n" );
+    var l = i.replace( /([//.*+?|()/[/]{}])/g, "//$1" )
+             .replace( //n/, "//n" );
     patterns.push( i.length == 1 ? l : "(?:" + l + ")" );
   }
 
@@ -1151,7 +1151,7 @@ Markdown.dialects.Maruku.processMetaHash = function processMetaHash( meta_string
       attr.id = meta[ i ].substring( 1 );
     }
     // class: .foo
-    else if ( /^\./.test( meta[ i ] ) ) {
+    else if ( /^/./.test( meta[ i ] ) ) {
       // if class already exists, append the new one
       if ( attr["class"] ) {
         attr["class"] = attr["class"] + meta[ i ].replace( /./, " " );
@@ -1161,8 +1161,8 @@ Markdown.dialects.Maruku.processMetaHash = function processMetaHash( meta_string
       }
     }
     // attribute: foo=bar
-    else if ( /\=/.test( meta[ i ] ) ) {
-      var s = meta[ i ].split( /\=/ );
+    else if ( //=/.test( meta[ i ] ) ) {
+      var s = meta[ i ].split( //=/ );
       attr[ s[ 0 ] ] = s[ 1 ];
     }
   }
@@ -1193,7 +1193,7 @@ function split_meta_hash( meta_string ) {
         // reverse the quotes and move straight on
         in_quotes = !in_quotes;
         break;
-      case "\\" :
+      case "//" :
         // shift off the next letter to be used straight away.
         // it was escaped so we'll keep it whatever it is
         letter = meta.shift();
@@ -1210,17 +1210,17 @@ Markdown.dialects.Maruku.block.document_meta = function document_meta( block, ne
   // we're only interested in the first block
   if ( block.lineNumber > 1 ) return undefined;
 
-  // document_meta blocks consist of one or more lines of `Key: Value\n`
-  if ( ! block.match( /^(?:\w+:.*\n)*\w+:.*$/ ) ) return undefined;
+  // document_meta blocks consist of one or more lines of `Key: Value/n`
+  if ( ! block.match( /^(?:/w+:.*/n)*/w+:.*$/ ) ) return undefined;
 
   // make an attribute node if it doesn't exist
   if ( !extract_attr( this.tree ) ) {
     this.tree.splice( 1, 0, {} );
   }
 
-  var pairs = block.split( /\n/ );
+  var pairs = block.split( //n/ );
   for ( p in pairs ) {
-    var m = pairs[ p ].match( /(\w+):\s*(.*)$/ ),
+    var m = pairs[ p ].match( /(/w+):/s*(.*)$/ ),
         key = m[ 1 ].toLowerCase(),
         value = m[ 2 ];
 
@@ -1233,7 +1233,7 @@ Markdown.dialects.Maruku.block.document_meta = function document_meta( block, ne
 
 Markdown.dialects.Maruku.block.block_meta = function block_meta( block, next ) {
   // check if the last line of the block is an meta hash
-  var m = block.match( /(^|\n) {0,3}\{:\s*((?:\\\}|[^\}])*)\s*\}$/ );
+  var m = block.match( /(^|/n) {0,3}/{:/s*((?:///}|[^/}])*)/s*/}$/ );
   if ( !m ) return undefined;
 
   // process the meta hash
@@ -1265,7 +1265,7 @@ Markdown.dialects.Maruku.block.block_meta = function block_meta( block, next ) {
   }
 
   // pull the meta hash off the block and process what's left
-  var b = block.replace( /\n.*$/, "" ),
+  var b = block.replace( //n.*$/, "" ),
       result = this.processBlock( b, [] );
 
   // get or make the attributes hash
@@ -1285,7 +1285,7 @@ Markdown.dialects.Maruku.block.block_meta = function block_meta( block, next ) {
 
 Markdown.dialects.Maruku.block.definition_list = function definition_list( block, next ) {
   // one or more terms followed by one or more definitions, in a single block
-  var tight = /^((?:[^\s:].*\n)+):\s+([\s\S]+)$/,
+  var tight = /^((?:[^/s:].*/n)+):/s+([/s/S]+)$/,
       list = [ "dl" ],
       i, m;
 
@@ -1299,8 +1299,8 @@ Markdown.dialects.Maruku.block.definition_list = function definition_list( block
 
     for ( var b = 0; b < blocks.length; ++b ) {
       var m = blocks[ b ].match( tight ),
-          terms = m[ 1 ].replace( /\n$/, "" ).split( /\n/ ),
-          defns = m[ 2 ].split( /\n:\s+/ );
+          terms = m[ 1 ].replace( //n$/, "" ).split( //n/ ),
+          defns = m[ 2 ].split( //n:/s+/ );
 
       // print( uneval( m ) );
 
@@ -1310,7 +1310,7 @@ Markdown.dialects.Maruku.block.definition_list = function definition_list( block
 
       for ( i = 0; i < defns.length; ++i ) {
         // run inline processing over the definition
-        list.push( [ "dd" ].concat( this.processInline( defns[ i ].replace( /(\n)\s+/, "$1" ) ) ) );
+        list.push( [ "dd" ].concat( this.processInline( defns[ i ].replace( /(/n)/s+/, "$1" ) ) ) );
       }
     }
   }
@@ -1327,10 +1327,10 @@ Markdown.dialects.Maruku.block.definition_list = function definition_list( block
 Markdown.dialects.Maruku.block.table = function table (block, next) {
 
     var _split_on_unescaped = function(s, ch) {
-        ch = ch || '\\s';
-        if (ch.match(/^[\\|\[\]{}?*.+^$]$/)) { ch = '\\' + ch; }
+        ch = ch || '//s';
+        if (ch.match(/^[//|/[/]{}?*.+^$]$/)) { ch = '//' + ch; }
         var res = [ ],
-            r = new RegExp('^((?:\\\\.|[^\\\\' + ch + '])*)' + ch + '(.*)'),
+            r = new RegExp('^((?:////.|[^////' + ch + '])*)' + ch + '(.*)'),
             m;
         while(m = s.match(r)) {
             res.push(m[1]);
@@ -1340,14 +1340,14 @@ Markdown.dialects.Maruku.block.table = function table (block, next) {
         return res;
     }
 
-    var leading_pipe = /^ {0,3}\|(.+)\n {0,3}\|\s*([\-:]+[\-| :]*)\n((?:\s*\|.*(?:\n|$))*)(?=\n|$)/,
+    var leading_pipe = /^ {0,3}/|(.+)/n {0,3}/|/s*([/-:]+[/-| :]*)/n((?:/s*/|.*(?:/n|$))*)(?=/n|$)/,
         // find at least an unescaped pipe in each line
-        no_leading_pipe = /^ {0,3}(\S(?:\\.|[^\\|])*\|.*)\n {0,3}([\-:]+\s*\|[\-| :]*)\n((?:(?:\\.|[^\\|])*\|.*(?:\n|$))*)(?=\n|$)/,
+        no_leading_pipe = /^ {0,3}(/S(?://.|[^//|])*/|.*)/n {0,3}([/-:]+/s*/|[/-| :]*)/n((?:(?://.|[^//|])*/|.*(?:/n|$))*)(?=/n|$)/,
         i, m;
     if (m = block.match(leading_pipe)) {
         // remove leading pipes in contents
         // (header and horizontal rule already have the leading pipe left out)
-        m[3] = m[3].replace(/^\s*\|/gm, '');
+        m[3] = m[3].replace(/^/s*/|/gm, '');
     } else if (! ( m = block.match(no_leading_pipe))) {
         return undefined;
     }
@@ -1356,26 +1356,26 @@ Markdown.dialects.Maruku.block.table = function table (block, next) {
 
     // remove trailing pipes, then split on pipes
     // (no escaped pipes are allowed in horizontal rule)
-    m[2] = m[2].replace(/\|\s*$/, '').split('|');
+    m[2] = m[2].replace(//|/s*$/, '').split('|');
 
     // process alignment
     var html_attrs = [ ];
     forEach (m[2], function (s) {
-        if (s.match(/^\s*-+:\s*$/))       html_attrs.push({align: "right"});
-        else if (s.match(/^\s*:-+\s*$/))  html_attrs.push({align: "left"});
-        else if (s.match(/^\s*:-+:\s*$/)) html_attrs.push({align: "center"});
+        if (s.match(/^/s*-+:/s*$/))       html_attrs.push({align: "right"});
+        else if (s.match(/^/s*:-+/s*$/))  html_attrs.push({align: "left"});
+        else if (s.match(/^/s*:-+:/s*$/)) html_attrs.push({align: "center"});
         else                              html_attrs.push({});
     });
 
     // now for the header, avoid escaped pipes
-    m[1] = _split_on_unescaped(m[1].replace(/\|\s*$/, ''), '|');
+    m[1] = _split_on_unescaped(m[1].replace(//|/s*$/, ''), '|');
     for (i = 0; i < m[1].length; i++) {
         table[1][1].push(['th', html_attrs[i] || {}].concat(
             this.processInline(m[1][i].trim())));
     }
 
     // now for body contents
-    forEach (m[3].replace(/\|\s*$/mg, '').split('\n'), function (row) {
+    forEach (m[3].replace(//|/s*$/mg, '').split('/n'), function (row) {
         var html_row = ['tr'];
         row = _split_on_unescaped(row, '|');
         for (i = 0; i < row.length; i++) {
@@ -1400,7 +1400,7 @@ Markdown.dialects.Maruku.inline[ "{:" ] = function inline_meta( text, matches, o
   }
 
   // match a meta hash
-  var m = text.match( /^\{:\s*((?:\\\}|[^\}])*)\s*\}/ );
+  var m = text.match( /^/{:/s*((?:///}|[^/}])*)/s*/}/ );
 
   // no match, false alarm
   if ( !m ) {
@@ -1424,7 +1424,7 @@ Markdown.dialects.Maruku.inline[ "{:" ] = function inline_meta( text, matches, o
   return [ m[ 0 ].length, "" ];
 };
 
-Markdown.dialects.Maruku.inline.__escape__ = /^\\[\\`\*_{}\[\]()#\+.!\-|:]/;
+Markdown.dialects.Maruku.inline.__escape__ = /^//[//`/*_{}/[/]()#/+.!/-|:]/;
 
 Markdown.buildBlockOrder ( Markdown.dialects.Maruku.block );
 Markdown.buildInlinePatterns( Markdown.dialects.Maruku.inline );
@@ -1503,7 +1503,7 @@ expose.renderJsonML = function( jsonml, options ) {
     }
   }
 
-  return content.join( "\n\n" );
+  return content.join( "/n/n" );
 };
 
 function escapeHTML( text ) {

@@ -132,8 +132,8 @@ function flankingWhitespace (node, content) {
   var trailing = ''
 
   if (!isBlock(node)) {
-    var hasLeading = /^[ \r\n\t]/.test(content)
-    var hasTrailing = /[ \r\n\t]$/.test(content)
+    var hasLeading = /^[ /r/n/t]/.test(content)
+    var hasTrailing = /[ /r/n/t]$/.test(content)
 
     if (hasLeading && !isFlankedByWhitespace('left', node)) {
       leading = ' '
@@ -156,7 +156,7 @@ function process (node) {
   var content = getContent(node)
 
   // Remove blank nodes
-  if (!isVoid(node) && !/A|TH|TD/.test(node.nodeName) && /^\s*$/i.test(content)) {
+  if (!isVoid(node) && !/A|TH|TD/.test(node.nodeName) && /^/s*$/i.test(content)) {
     node._replacement = ''
     return
   }
@@ -198,7 +198,7 @@ toMarkdown = function (input, options) {
   }
 
   // Escape potential ol triggers
-  input = input.replace(/(\d+)\. /g, '$1\\. ')
+  input = input.replace(/(/d+)/. /g, '$1//. ')
 
   var clone = htmlToDom(input).body
   var nodes = bfsOrder(clone)
@@ -219,9 +219,9 @@ toMarkdown = function (input, options) {
   }
   output = getContent(clone)
 
-  return output.replace(/^[\t\r\n]+|[\t\r\n\s]+$/g, '')
-    .replace(/\n\s+\n/g, '\n\n')
-    .replace(/\n{3,}/g, '\n\n')
+  return output.replace(/^[/t/r/n]+|[/t/r/n/s]+$/g, '')
+    .replace(//n/s+/n/g, '/n/n')
+    .replace(//n{3,}/g, '/n/n')
 }
 
 toMarkdown.isBlock = isBlock
@@ -240,13 +240,13 @@ function cell (content, node) {
   return prefix + content + ' |'
 }
 
-var highlightRegEx = /highlight highlight-(\S+)/
+var highlightRegEx = /highlight highlight-(/S+)/
 
 module.exports = [
   {
     filter: 'br',
     replacement: function () {
-      return '\n'
+      return '/n'
     }
   },
   {
@@ -288,14 +288,14 @@ module.exports = [
           borderCells += cell(border, node.childNodes[i])
         }
       }
-      return '\n' + content + (borderCells ? '\n' + borderCells : '')
+      return '/n' + content + (borderCells ? '/n' + borderCells : '')
     }
   },
 
   {
     filter: 'table',
     replacement: function (content) {
-      return '\n\n' + content + '\n\n'
+      return '/n/n' + content + '/n/n'
     }
   },
 
@@ -314,7 +314,7 @@ module.exports = [
       node.firstChild.nodeName === 'CODE'
     },
     replacement: function (content, node) {
-      return '\n\n```\n' + node.firstChild.textContent + '\n```\n\n'
+      return '/n/n```/n' + node.firstChild.textContent + '/n```/n/n'
     }
   },
 
@@ -327,7 +327,7 @@ module.exports = [
     },
     replacement: function (content, node) {
       var language = node.parentNode.className.match(highlightRegEx)[1]
-      return '\n\n```' + language + '\n' + node.textContent + '\n```\n\n'
+      return '/n/n```' + language + '/n' + node.textContent + '/n```/n/n'
     }
   },
 
@@ -337,7 +337,7 @@ module.exports = [
       highlightRegEx.test(node.className)
     },
     replacement: function (content) {
-      return '\n\n' + content + '\n\n'
+      return '/n/n' + content + '/n/n'
     }
   }
 ]
@@ -427,14 +427,14 @@ module.exports = [
   {
     filter: 'p',
     replacement: function (content) {
-      return '\n\n' + content + '\n\n'
+      return '/n/n' + content + '/n/n'
     }
   },
 
   {
     filter: 'br',
     replacement: function () {
-      return '  \n'
+      return '  /n'
     }
   },
 
@@ -446,14 +446,14 @@ module.exports = [
       for (var i = 0; i < hLevel; i++) {
         hPrefix += '#'
       }
-      return '\n\n' + hPrefix + ' ' + content + '\n\n'
+      return '/n/n' + hPrefix + ' ' + content + '/n/n'
     }
   },
 
   {
     filter: 'hr',
     replacement: function () {
-      return '\n\n* * *\n\n'
+      return '/n/n* * */n/n'
     }
   },
 
@@ -511,7 +511,7 @@ module.exports = [
       return node.nodeName === 'PRE' && node.firstChild.nodeName === 'CODE'
     },
     replacement: function (content, node) {
-      return '\n\n    ' + node.firstChild.textContent.replace(/\n/g, '\n    ') + '\n\n'
+      return '/n/n    ' + node.firstChild.textContent.replace(//n/g, '/n    ') + '/n/n'
     }
   },
 
@@ -519,16 +519,16 @@ module.exports = [
     filter: 'blockquote',
     replacement: function (content) {
       content = content.trim()
-      content = content.replace(/\n{3,}/g, '\n\n')
+      content = content.replace(//n{3,}/g, '/n/n')
       content = content.replace(/^/gm, '> ')
-      return '\n\n' + content + '\n\n'
+      return '/n/n' + content + '/n/n'
     }
   },
 
   {
     filter: 'li',
     replacement: function (content, node) {
-      content = content.replace(/^\s+/, '').replace(/\n/gm, '\n    ')
+      content = content.replace(/^/s+/, '').replace(//n/gm, '/n    ')
       var prefix = '*   '
       var parent = node.parentNode
       var index = Array.prototype.indexOf.call(parent.children, node) + 1
@@ -547,9 +547,9 @@ module.exports = [
       }
 
       if (/li/i.test(node.parentNode.nodeName)) {
-        return '\n' + strings.join('\n')
+        return '/n' + strings.join('/n')
       }
-      return '\n\n' + strings.join('\n') + '\n\n'
+      return '/n/n' + strings.join('/n') + '/n/n'
     }
   },
 
@@ -558,7 +558,7 @@ module.exports = [
       return this.isBlock(node)
     },
     replacement: function (content, node) {
-      return '\n\n' + this.outer(node, content) + '\n\n'
+      return '/n/n' + this.outer(node, content) + '/n/n'
     }
   },
 
@@ -678,7 +678,7 @@ function collapseWhitespace(elem, isBlock) {
   while (node !== elem) {
     if (node.nodeType === 3) {
       // Node.TEXT_NODE
-      var text = node.data.replace(/[ \r\n\t]+/g, ' ');
+      var text = node.data.replace(/[ /r/n/t]+/g, ' ');
 
       if ((!prevText || / $/.test(prevText.data)) && !prevVoid && text[0] === ' ') {
         text = text.substr(1);

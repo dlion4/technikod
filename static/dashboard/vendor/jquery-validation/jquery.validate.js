@@ -161,7 +161,7 @@ $.extend( $.fn, {
 					return existingRules;
 				}
 				filtered = {};
-				$.each( argument.split( /\s/ ), function( index, method ) {
+				$.each( argument.split( //s/ ), function( index, method ) {
 					filtered[ method ] = existingRules[ method ];
 					delete existingRules[ method ];
 					if ( method === "required" ) {
@@ -246,7 +246,7 @@ $.validator.format = function( source, params ) {
 		params = [ params ];
 	}
 	$.each( params, function( i, n ) {
-		source = source.replace( new RegExp( "\\{" + i + "\\}", "g" ), function() {
+		source = source.replace( new RegExp( "//{" + i + "//}", "g" ), function() {
 			return n;
 		} );
 	} );
@@ -383,7 +383,7 @@ $.extend( $.validator, {
 				rules;
 			$.each( this.settings.groups, function( key, value ) {
 				if ( typeof value === "string" ) {
-					value = value.split( /\s/ );
+					value = value.split( //s/ );
 				}
 				$.each( value, function( index, name ) {
 					groups[ name ] = key;
@@ -696,7 +696,7 @@ $.extend( $.validator, {
 			if ( type === "file" ) {
 
 				// Modern browser (chrome & safari)
-				if ( val.substr( 0, 12 ) === "C:\\fakepath\\" ) {
+				if ( val.substr( 0, 12 ) === "C://fakepath//" ) {
 					return val.substr( 12 );
 				}
 
@@ -708,7 +708,7 @@ $.extend( $.validator, {
 				}
 
 				// Windows-based path
-				idx = val.lastIndexOf( "\\" );
+				idx = val.lastIndexOf( "//" );
 				if ( idx >= 0 ) {
 					return val.substr( idx + 1 );
 				}
@@ -718,7 +718,7 @@ $.extend( $.validator, {
 			}
 
 			if ( typeof val === "string" ) {
-				return val.replace( /\r/g, "" );
+				return val.replace( //r/g, "" );
 			}
 			return val;
 		},
@@ -839,7 +839,7 @@ $.extend( $.validator, {
 					$.validator.messages[ rule.method ],
 					"<strong>Warning: No message defined for " + element.name + "</strong>"
 				),
-				theregex = /\$?\{(\d+)\}/g;
+				theregex = //$?/{(/d+)/}/g;
 			if ( typeof message === "function" ) {
 				message = message.call( this, rule.parameters, element );
 			} else if ( theregex.test( message ) ) {
@@ -957,7 +957,7 @@ $.extend( $.validator, {
 					// Respect existing non-error aria-describedby
 					if ( !describedBy ) {
 						describedBy = errorID;
-					} else if ( !describedBy.match( new RegExp( "\\b" + this.escapeCssMeta( errorID ) + "\\b" ) ) ) {
+					} else if ( !describedBy.match( new RegExp( "//b" + this.escapeCssMeta( errorID ) + "//b" ) ) ) {
 
 						// Add to end of list if not already present
 						describedBy += " " + errorID;
@@ -996,7 +996,7 @@ $.extend( $.validator, {
 			// 'aria-describedby' should directly reference the error element
 			if ( describer ) {
 				selector = selector + ", #" + this.escapeCssMeta( describer )
-					.replace( /\s+/g, ", #" );
+					.replace( //s+/g, ", #" );
 			}
 
 			return this
@@ -1008,7 +1008,7 @@ $.extend( $.validator, {
 		// meta-characters that should be escaped in order to be used with JQuery
 		// as a literal part of a name/id or any selector.
 		escapeCssMeta: function( string ) {
-			return string.replace( /([\\!"#$%&'()*+,./:;<=>?@\[\]^`{|}~])/g, "\\$1" );
+			return string.replace( /([//!"#$%&'()*+,./:;<=>?@/[/]^`{|}~])/g, "//$1" );
 		},
 
 		idOrName: function( element ) {
@@ -1277,7 +1277,7 @@ $.extend( $.validator, {
 				if ( $.isArray( rules[ this ] ) ) {
 					rules[ this ] = [ Number( rules[ this ][ 0 ] ), Number( rules[ this ][ 1 ] ) ];
 				} else if ( typeof rules[ this ] === "string" ) {
-					parts = rules[ this ].replace( /[\[\]]/g, "" ).split( /[\s,]+/ );
+					parts = rules[ this ].replace( /[/[/]]/g, "" ).split( /[/s,]+/ );
 					rules[ this ] = [ Number( parts[ 0 ] ), Number( parts[ 1 ] ) ];
 				}
 			}
@@ -1305,7 +1305,7 @@ $.extend( $.validator, {
 	normalizeRule: function( data ) {
 		if ( typeof data === "string" ) {
 			var transformed = {};
-			$.each( data.split( /\s/ ), function() {
+			$.each( data.split( //s/ ), function() {
 				transformed[ this ] = true;
 			} );
 			data = transformed;
@@ -1351,7 +1351,7 @@ $.extend( $.validator, {
 			// Retrieved 2014-01-14
 			// If you have a problem with this implementation, report a bug against the above spec
 			// Or use custom methods to implement your own email validation
-			return this.optional( element ) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test( value );
+			return this.optional( element ) || /^[a-zA-Z0-9.!#$%&'*+//=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:/.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test( value );
 		},
 
 		// http://jqueryvalidation.org/url-method/
@@ -1361,7 +1361,7 @@ $.extend( $.validator, {
 			// https://gist.github.com/dperini/729294
 			// see also https://mathiasbynens.be/demo/url-regex
 			// modified to allow protocol-relative URLs
-			return this.optional( element ) || /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})).?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test( value );
+			return this.optional( element ) || /^(?:(?:(?:https?|ftp):)?////)(?:/S+(?::/S*)?@)?(?:(?!(?:10|127)(?:/./d{1,3}){3})(?!(?:169/.254|192/.168)(?:/./d{1,3}){2})(?!172/.(?:1[6-9]|2/d|3[0-1])(?:/./d{1,3}){2})(?:[1-9]/d?|1/d/d|2[01]/d|22[0-3])(?:/.(?:1?/d{1,2}|2[0-4]/d|25[0-5])){2}(?:/.(?:[1-9]/d?|1/d/d|2[0-4]/d|25[0-4]))|(?:(?:[a-z/u00a1-/uffff0-9]-*)*[a-z/u00a1-/uffff0-9]+)(?:/.(?:[a-z/u00a1-/uffff0-9]-*)*[a-z/u00a1-/uffff0-9]+)*(?:/.(?:[a-z/u00a1-/uffff]{2,})).?)(?::/d{2,5})?(?:[/?#]/S*)?$/i.test( value );
 		},
 
 		// http://jqueryvalidation.org/date-method/
@@ -1371,17 +1371,17 @@ $.extend( $.validator, {
 
 		// http://jqueryvalidation.org/dateISO-method/
 		dateISO: function( value, element ) {
-			return this.optional( element ) || /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test( value );
+			return this.optional( element ) || /^/d{4}[///-](0?[1-9]|1[012])[///-](0?[1-9]|[12][0-9]|3[01])$/.test( value );
 		},
 
 		// http://jqueryvalidation.org/number-method/
 		number: function( value, element ) {
-			return this.optional( element ) || /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test( value );
+			return this.optional( element ) || /^(?:-?/d+|-?/d{1,3}(?:,/d{3})+)?(?:/./d+)?$/.test( value );
 		},
 
 		// http://jqueryvalidation.org/digits-method/
 		digits: function( value, element ) {
-			return this.optional( element ) || /^\d+$/.test( value );
+			return this.optional( element ) || /^/d+$/.test( value );
 		},
 
 		// http://jqueryvalidation.org/minlength-method/
@@ -1422,10 +1422,10 @@ $.extend( $.validator, {
 			var type = $( element ).attr( "type" ),
 				errorMessage = "Step attribute on input type " + type + " is not supported.",
 				supportedTypes = [ "text", "number", "range" ],
-				re = new RegExp( "\\b" + type + "\\b" ),
+				re = new RegExp( "//b" + type + "//b" ),
 				notSupported = type && !re.test( supportedTypes.join() ),
 				decimalPlaces = function( num ) {
-					var match = ( "" + num ).match( /(?:\.(\d+))?$/ );
+					var match = ( "" + num ).match( /(?:/.(/d+))?$/ );
 					if ( !match ) {
 						return 0;
 					}

@@ -454,7 +454,7 @@ function parseFieldSpecs(input) {
     var i;
     var token;
     if (typeof input === 'string') {
-        tokens = input.split(/\s*,\s*/);
+        tokens = input.split(//s*,/s*/);
     }
     else if (typeof input === 'function') {
         tokens = [input];
@@ -641,7 +641,7 @@ exports.isNativeDate = isNativeDate;
 // Returns a boolean about whether the given input is a time string, like "06:40:00" or "06:00"
 function isTimeString(str) {
     return typeof str === 'string' &&
-        /^\d+\:\d+(?:\:\d+\.?(?:\d{3})?)?$/.test(str);
+        /^/d+/:/d+(?:/:/d+/.?(?:/d{3})?)?$/.test(str);
 }
 exports.isTimeString = isTimeString;
 /* Logging and Debug
@@ -805,7 +805,7 @@ function htmlEscape(s) {
         .replace(/>/g, '&gt;')
         .replace(/'/g, '&#039;')
         .replace(/"/g, '&quot;')
-        .replace(/\n/g, '<br />');
+        .replace(//n/g, '<br />');
 }
 exports.htmlEscape = htmlEscape;
 function stripHtmlEntities(text) {
@@ -1137,7 +1137,7 @@ var EventSource = /** @class */ (function (_super) {
             this.className = rawProps.className;
         }
         else if (typeof rawProps.className === 'string') {
-            this.className = rawProps.className.split(/\s+/);
+            this.className = rawProps.className.split(//s+/);
         }
         return true;
     };
@@ -1254,8 +1254,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var moment = __webpack_require__(0);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var ambigDateOfMonthRegex = /^\s*\d{4}-\d\d$/;
-var ambigTimeOrZoneRegex = /^\s*\d{4}-(?:(\d\d-\d\d)|(W\d\d$)|(W\d\d-\d)|(\d\d\d))((T| )(\d\d(:\d\d(:\d\d(\.\d+)?)?)?)?)?$/;
+var ambigDateOfMonthRegex = /^/s*/d{4}-/d/d$/;
+var ambigTimeOrZoneRegex = /^/s*/d{4}-(?:(/d/d-/d/d)|(W/d/d$)|(W/d/d-/d)|(/d/d/d))((T| )(/d/d(:/d/d(:/d/d(/./d+)?)?)?)?)?$/;
 var newMomentProto = moment.fn; // where we will attach our new methods
 exports.newMomentProto = newMomentProto;
 var oldMomentProto = $.extend({}, newMomentProto); // copy of original moment methods
@@ -2531,7 +2531,7 @@ var momComputableOptions = {
     dayOfMonthFormat: function (momOptions, fcOptions) {
         var format = momOptions.longDateFormat('l'); // for the format like "M/D/YYYY"
         // strip the year off the edge, as well as other misc non-whitespace chars
-        format = format.replace(/^Y+[^\w\s]*|[^\w\s]*Y+$/g, '');
+        format = format.replace(/^Y+[^/w/s]*|[^/w/s]*Y+$/g, '');
         if (fcOptions.isRTL) {
             format += ' ddd'; // for RTL, add day-of-week to end
         }
@@ -2543,33 +2543,33 @@ var momComputableOptions = {
     // Produces format strings like "h:mma" -> "6:00pm"
     mediumTimeFormat: function (momOptions) {
         return momOptions.longDateFormat('LT')
-            .replace(/\s*a$/i, 'a'); // convert AM/PM/am/pm to lowercase. remove any spaces beforehand
+            .replace(//s*a$/i, 'a'); // convert AM/PM/am/pm to lowercase. remove any spaces beforehand
     },
     // Produces format strings like "h(:mm)a" -> "6pm" / "6:30pm"
     smallTimeFormat: function (momOptions) {
         return momOptions.longDateFormat('LT')
             .replace(':mm', '(:mm)')
-            .replace(/(\Wmm)$/, '($1)') // like above, but for foreign locales
-            .replace(/\s*a$/i, 'a'); // convert AM/PM/am/pm to lowercase. remove any spaces beforehand
+            .replace(/(/Wmm)$/, '($1)') // like above, but for foreign locales
+            .replace(//s*a$/i, 'a'); // convert AM/PM/am/pm to lowercase. remove any spaces beforehand
     },
     // Produces format strings like "h(:mm)t" -> "6p" / "6:30p"
     extraSmallTimeFormat: function (momOptions) {
         return momOptions.longDateFormat('LT')
             .replace(':mm', '(:mm)')
-            .replace(/(\Wmm)$/, '($1)') // like above, but for foreign locales
-            .replace(/\s*a$/i, 't'); // convert to AM/PM/am/pm to lowercase one-letter. remove any spaces beforehand
+            .replace(/(/Wmm)$/, '($1)') // like above, but for foreign locales
+            .replace(//s*a$/i, 't'); // convert to AM/PM/am/pm to lowercase one-letter. remove any spaces beforehand
     },
     // Produces format strings like "ha" / "H" -> "6pm" / "18"
     hourFormat: function (momOptions) {
         return momOptions.longDateFormat('LT')
             .replace(':mm', '')
-            .replace(/(\Wmm)$/, '') // like above, but for foreign locales
-            .replace(/\s*a$/i, 'a'); // convert AM/PM/am/pm to lowercase. remove any spaces beforehand
+            .replace(/(/Wmm)$/, '') // like above, but for foreign locales
+            .replace(//s*a$/i, 'a'); // convert AM/PM/am/pm to lowercase. remove any spaces beforehand
     },
     // Produces format strings like "h:mm" -> "6:30" (with no AM/PM)
     noMeridiemTimeFormat: function (momOptions) {
         return momOptions.longDateFormat('LT')
-            .replace(/\s*a$/i, ''); // remove trailing AM/PM
+            .replace(//s*a$/i, ''); // remove trailing AM/PM
     }
 };
 // options that should be computed off live calendar options (considers override options)
@@ -2673,7 +2673,7 @@ locale('en', options_1.englishDefaults);
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(4);
 exports.globalDefaults = {
-    titleRangeSeparator: ' \u2013 ',
+    titleRangeSeparator: ' /u2013 ',
     monthYearFormat: 'MMMM YYYY',
     defaultTimedEventDuration: '02:00:00',
     defaultAllDayEventDuration: { days: 1 },
@@ -2929,7 +2929,7 @@ var EventDef = /** @class */ (function () {
             this.className = rawProps.className;
         }
         if (typeof rawProps.className === 'string') {
-            this.className = rawProps.className.split(/\s+/);
+            this.className = rawProps.className.split(//s+/);
         }
         return true;
     };
@@ -4594,20 +4594,20 @@ function englishMoment(mom) {
 // ---------------------------------------------------------------------------------------------------------------------
 /*
 Inserted between chunks in the fake ("intermediate") formatting string.
-Important that it passes as whitespace (\s) because moment often identifies non-standalone months
-via a regexp with an \s.
+Important that it passes as whitespace (/s) because moment often identifies non-standalone months
+via a regexp with an /s.
 */
-var PART_SEPARATOR = '\u000b'; // vertical tab
+var PART_SEPARATOR = '/u000b'; // vertical tab
 /*
 Inserted as the first character of a literal-text chunk to indicate that the literal text is not actually literal text,
 but rather, a "special" token that has custom rendering (see specialTokens map).
 */
-var SPECIAL_TOKEN_MARKER = '\u001f'; // information separator 1
+var SPECIAL_TOKEN_MARKER = '/u001f'; // information separator 1
 /*
 Inserted at the beginning and end of a span of text that must have non-zero numeric characters.
 Handling of these markers is done in a post-processing step at the very end of text rendering.
 */
-var MAYBE_MARKER = '\u001e'; // information separator 2
+var MAYBE_MARKER = '/u001e'; // information separator 2
 var MAYBE_REGEXP = new RegExp(MAYBE_MARKER + '([^' + MAYBE_MARKER + ']*)' + MAYBE_MARKER, 'g'); // must be global
 /*
 Addition formatting tokens we want recognized
@@ -4744,8 +4744,8 @@ function chunkFormatString(formatStr) {
     var chunks = [];
     var match;
     // TODO: more descrimination
-    // \4 is a backreference to the first character of a multi-character set.
-    var chunker = /\[([^\]]*)\]|\(([^\)]*)\)|(LTS|LT|(\w)\4*o?)|([^\w\[\(]+)/g;
+    // /4 is a backreference to the first character of a multi-character set.
+    var chunker = //[([^/]]*)/]|/(([^/)]*)/)|(LTS|LT|(/w)/4*o?)|([^/w/[/(]+)/g;
     while ((match = chunker.exec(formatStr))) {
         if (match[1]) {
             chunks.push.apply(chunks, // append
@@ -9385,7 +9385,7 @@ var Calendar = /** @class */ (function () {
     Calendar.prototype.instantiateView = function (viewType) {
         var spec = this.viewSpecManager.getViewSpec(viewType);
         if (!spec) {
-            throw new Error("View type \"" + viewType + "\" is not valid");
+            throw new Error("View type /"" + viewType + "/" is not valid");
         }
         return new spec['class'](this, spec);
     };

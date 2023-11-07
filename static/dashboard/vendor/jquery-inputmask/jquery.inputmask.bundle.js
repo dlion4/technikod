@@ -145,7 +145,7 @@
                 }
                 return maskToken;
             }
-            for (var match, m, openingToken, currentOpeningToken, alternator, lastMatch, groupToken, tokenizer = /(?:[?*+]|\{[0-9\+\*]+(?:,[0-9\+\*]*)?\})|[^.?*+^${[]()|\\]+|./g, escaped = !1, currentToken = new MaskToken(), openenings = [], maskTokens = []; match = tokenizer.exec(mask); ) if (m = match[0], 
+            for (var match, m, openingToken, currentOpeningToken, alternator, lastMatch, groupToken, tokenizer = /(?:[?*+]|/{[0-9/+/*]+(?:,[0-9/+/*]*)?/})|[^.?*+^${[]()|//]+|./g, escaped = !1, currentToken = new MaskToken(), openenings = [], maskTokens = []; match = tokenizer.exec(mask); ) if (m = match[0], 
             escaped) defaultCase(); else switch (m.charAt(0)) {
               case opts.escapeChar:
                 escaped = !0;
@@ -1269,7 +1269,7 @@
                 end: ")"
             },
             alternatormarker: "|",
-            escapeChar: "\\",
+            escapeChar: "//",
             mask: null,
             oncomplete: $.noop,
             onincomplete: $.noop,
@@ -1316,12 +1316,12 @@
                     definitionSymbol: "*"
                 },
                 a: {
-                    validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+                    validator: "[A-Za-z/u0410-/u044f/u0401/u0451/xc0-/xff/xb5]",
                     cardinality: 1,
                     definitionSymbol: "*"
                 },
                 "*": {
-                    validator: "[0-9A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+                    validator: "[0-9A-Za-z/u0410-/u044f/u0401/u0451/xc0-/xff/xb5]",
                     cardinality: 1
                 }
             },
@@ -1416,8 +1416,8 @@
             el.inputmask && el.inputmask.remove();
         });
     }, Inputmask.escapeRegex = function(str) {
-        var specials = [ "/", ".", "*", "+", "?", "|", "(", ")", "[", "]", "{", "}", "\\", "$", "^" ];
-        return str.replace(new RegExp("(\\" + specials.join("|\\") + ")", "gim"), "\\$1");
+        var specials = [ "/", ".", "*", "+", "?", "|", "(", ")", "[", "]", "{", "}", "//", "$", "^" ];
+        return str.replace(new RegExp("(//" + specials.join("|//") + ")", "gim"), "//$1");
     }, Inputmask.keyCode = {
         ALT: 18,
         BACKSPACE: 8,
@@ -1542,7 +1542,7 @@
             } ]
         },
         y: {
-            validator: "(19|20)\\d{2}",
+            validator: "(19|20)//d{2}",
             cardinality: 4,
             prevalidator: [ {
                 validator: "[12]",
@@ -1551,7 +1551,7 @@
                 validator: "(19|20)",
                 cardinality: 2
             }, {
-                validator: "(19|20)\\d",
+                validator: "(19|20)//d",
                 cardinality: 3
             } ]
         }
@@ -1923,13 +1923,13 @@
             autoUnmask: !1
         },
         datetime12: {
-            mask: "1/2/y h:s t\\m",
+            mask: "1/2/y h:s t//m",
             placeholder: "dd/mm/yyyy hh:mm xm",
             alias: "datetime",
             hourFormat: "12"
         },
         "mm/dd/yyyy hh:mm xm": {
-            mask: "1/2/y h:s t\\m",
+            mask: "1/2/y h:s t//m",
             placeholder: "mm/dd/yyyy hh:mm xm",
             alias: "datetime12",
             regex: {
@@ -1955,13 +1955,13 @@
             }
         },
         "hh:mm t": {
-            mask: "h:s t\\m",
+            mask: "h:s t//m",
             placeholder: "hh:mm xm",
             alias: "datetime",
             hourFormat: "12"
         },
         "h:s t": {
-            mask: "h:s t\\m",
+            mask: "h:s t//m",
             placeholder: "hh:mm xm",
             alias: "datetime",
             hourFormat: "12"
@@ -2015,12 +2015,12 @@
 }(jQuery, Inputmask), function($, Inputmask) {
     return Inputmask.extendDefinitions({
         A: {
-            validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+            validator: "[A-Za-z/u0410-/u044f/u0401/u0451/xc0-/xff/xb5]",
             cardinality: 1,
             casing: "upper"
         },
         "&": {
-            validator: "[0-9A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+            validator: "[0-9A-Za-z/u0410-/u044f/u0401/u0451/xc0-/xff/xb5]",
             cardinality: 1,
             casing: "upper"
         },
@@ -2037,7 +2037,7 @@
                     cardinality: 1
                 }
             },
-            mask: "(\\http://)|(\\http\\s://)|(ftp://)|(ftp\\s://)i{+}",
+            mask: "(//http://)|(//http//s://)|(ftp://)|(ftp//s://)i{+}",
             insertMode: !1,
             autoUnmask: !1
         },
@@ -2086,7 +2086,7 @@
             mask: "V{13}9{4}",
             definitions: {
                 V: {
-                    validator: "[A-HJ-NPR-Za-hj-npr-z\\d]",
+                    validator: "[A-HJ-NPR-Za-hj-npr-z//d]",
                     cardinality: 1,
                     casing: "upper"
                 }
@@ -2100,7 +2100,7 @@
         numeric: {
             mask: function(opts) {
                 function autoEscape(txt) {
-                    for (var escapedTxt = "", i = 0; i < txt.length; i++) escapedTxt += opts.definitions[txt.charAt(i)] || opts.optionalmarker.start === txt.charAt(i) || opts.optionalmarker.end === txt.charAt(i) || opts.quantifiermarker.start === txt.charAt(i) || opts.quantifiermarker.end === txt.charAt(i) || opts.groupmarker.start === txt.charAt(i) || opts.groupmarker.end === txt.charAt(i) || opts.alternatormarker === txt.charAt(i) ? "\\" + txt.charAt(i) : txt.charAt(i);
+                    for (var escapedTxt = "", i = 0; i < txt.length; i++) escapedTxt += opts.definitions[txt.charAt(i)] || opts.optionalmarker.start === txt.charAt(i) || opts.optionalmarker.end === txt.charAt(i) || opts.quantifiermarker.start === txt.charAt(i) || opts.quantifiermarker.end === txt.charAt(i) || opts.groupmarker.start === txt.charAt(i) || opts.groupmarker.end === txt.charAt(i) || opts.alternatormarker === txt.charAt(i) ? "//" + txt.charAt(i) : txt.charAt(i);
                     return escapedTxt;
                 }
                 if (0 !== opts.repeat && isNaN(opts.integerDigits) && (opts.integerDigits = opts.repeat), 
@@ -2167,7 +2167,7 @@
                     var escapedGroupSeparator = Inputmask.escapeRegex(opts.groupSeparator);
                     needsRefresh = 0 === bufVal.indexOf(opts.groupSeparator), bufVal = bufVal.replace(new RegExp(escapedGroupSeparator, "g"), "");
                     var radixSplit = bufVal.split(opts.radixPoint);
-                    if (bufVal = "" === opts.radixPoint ? bufVal : radixSplit[0], bufVal !== opts.prefix + "?0" && bufVal.length >= opts.groupSize + opts.prefix.length) for (var reg = new RegExp("([-+]?[\\d?]+)([\\d?]{" + opts.groupSize + "})"); reg.test(bufVal) && "" !== opts.groupSeparator; ) bufVal = bufVal.replace(reg, "$1" + opts.groupSeparator + "$2"), 
+                    if (bufVal = "" === opts.radixPoint ? bufVal : radixSplit[0], bufVal !== opts.prefix + "?0" && bufVal.length >= opts.groupSize + opts.prefix.length) for (var reg = new RegExp("([-+]?[//d?]+)([//d?]{" + opts.groupSize + "})"); reg.test(bufVal) && "" !== opts.groupSeparator; ) bufVal = bufVal.replace(reg, "$1" + opts.groupSeparator + "$2"), 
                     bufVal = bufVal.replace(opts.groupSeparator + opts.groupSeparator, opts.groupSeparator);
                     "" !== opts.radixPoint && radixSplit.length > 1 && (bufVal += opts.radixPoint + radixSplit[1]);
                 }
@@ -2218,10 +2218,10 @@
             },
             regex: {
                 integerPart: function(opts) {
-                    return new RegExp("[" + Inputmask.escapeRegex(opts.negationSymbol.front) + "+]?\\d+");
+                    return new RegExp("[" + Inputmask.escapeRegex(opts.negationSymbol.front) + "+]?//d+");
                 },
                 integerNPart: function(opts) {
-                    return new RegExp("[\\d" + Inputmask.escapeRegex(opts.groupSeparator) + Inputmask.escapeRegex(opts.placeholder.charAt(0)) + "]+");
+                    return new RegExp("[//d" + Inputmask.escapeRegex(opts.groupSeparator) + Inputmask.escapeRegex(opts.placeholder.charAt(0)) + "]+");
                 }
             },
             signHandler: function(chrs, maskset, pos, strict, opts) {
@@ -2400,14 +2400,14 @@
             },
             onBeforeMask: function(initialValue, opts) {
                 if ("" !== opts.radixPoint && isFinite(initialValue)) initialValue = initialValue.toString().replace(".", opts.radixPoint); else {
-                    var kommaMatches = initialValue.match(/,/g), dotMatches = initialValue.match(/\./g);
-                    dotMatches && kommaMatches ? dotMatches.length > kommaMatches.length ? (initialValue = initialValue.replace(/\./g, ""), 
+                    var kommaMatches = initialValue.match(/,/g), dotMatches = initialValue.match(//./g);
+                    dotMatches && kommaMatches ? dotMatches.length > kommaMatches.length ? (initialValue = initialValue.replace(//./g, ""), 
                     initialValue = initialValue.replace(",", opts.radixPoint)) : kommaMatches.length > dotMatches.length ? (initialValue = initialValue.replace(/,/g, ""), 
-                    initialValue = initialValue.replace(".", opts.radixPoint)) : initialValue = initialValue.indexOf(".") < initialValue.indexOf(",") ? initialValue.replace(/\./g, "") : initialValue = initialValue.replace(/,/g, "") : initialValue = initialValue.replace(new RegExp(Inputmask.escapeRegex(opts.groupSeparator), "g"), "");
+                    initialValue = initialValue.replace(".", opts.radixPoint)) : initialValue = initialValue.indexOf(".") < initialValue.indexOf(",") ? initialValue.replace(//./g, "") : initialValue = initialValue.replace(/,/g, "") : initialValue = initialValue.replace(new RegExp(Inputmask.escapeRegex(opts.groupSeparator), "g"), "");
                 }
                 if (0 === opts.digits && (-1 !== initialValue.indexOf(".") ? initialValue = initialValue.substring(0, initialValue.indexOf(".")) : -1 !== initialValue.indexOf(",") && (initialValue = initialValue.substring(0, initialValue.indexOf(",")))), 
                 "" !== opts.radixPoint && isFinite(opts.digits) && -1 !== initialValue.indexOf(opts.radixPoint)) {
-                    var valueParts = initialValue.split(opts.radixPoint), decPart = valueParts[1].match(new RegExp("\\d*"))[0];
+                    var valueParts = initialValue.split(opts.radixPoint), decPart = valueParts[1].match(new RegExp("//d*"))[0];
                     if (parseInt(opts.digits) < decPart.toString().length) {
                         var digitsFactor = Math.pow(10, parseInt(opts.digits));
                         initialValue = initialValue.replace(Inputmask.escapeRegex(opts.radixPoint), "."), 
@@ -2494,7 +2494,7 @@
             nojumps: !0,
             nojumpsThreshold: 1,
             onBeforeMask: function(value, opts) {
-                var processedValue = value.replace(/^0{1,2}/, "").replace(/[\s]/g, "");
+                var processedValue = value.replace(/^0{1,2}/, "").replace(/[/s]/g, "");
                 return (processedValue.indexOf(opts.countrycode) > 1 || -1 === processedValue.indexOf(opts.countrycode)) && (processedValue = "+" + opts.countrycode + processedValue), 
                 processedValue;
             }
@@ -2514,7 +2514,7 @@
             repeat: "*",
             regex: null,
             regexTokens: null,
-            tokenizer: /\[\^?]?(?:[^\\\]]+|\\[\S\s]?)*]?|\\(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9][0-9]*|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|c[A-Za-z]|[\S\s]?)|\((?:\?[:=!]?)?|(?:[?*+]|\{[0-9]+(?:,[0-9]*)?\})\??|[^.?*+^${[()|\\]+|./g,
+            tokenizer: //[/^?]?(?:[^///]]+|//[/S/s]?)*]?|//(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9][0-9]*|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|c[A-Za-z]|[/S/s]?)|/((?:/?[:=!]?)?|(?:[?*+]|/{[0-9]+(?:,[0-9]*)?/})/??|[^.?*+^${[()|//]+|./g,
             quantifierFilter: /[0-9]+[^,]/,
             isComplete: function(buffer, opts) {
                 return new RegExp(opts.regex).test(buffer.join(""));
@@ -2586,8 +2586,8 @@
                                         for (var j = 0; openGroupCount > j; j++) testExp += ")";
                                         var exp = new RegExp("^(" + testExp + ")$");
                                         isvalid = exp.test(bufferStr);
-                                    } else for (var l = 0, tl = matchToken.length; tl > l; l++) if ("\\" !== matchToken.charAt(l)) {
-                                        testExp = regexPart, testExp += matchToken.substr(0, l + 1), testExp = testExp.replace(/\|$/, "");
+                                    } else for (var l = 0, tl = matchToken.length; tl > l; l++) if ("//" !== matchToken.charAt(l)) {
+                                        testExp = regexPart, testExp += matchToken.substr(0, l + 1), testExp = testExp.replace(//|$/, "");
                                         for (var j = 0; openGroupCount > j; j++) testExp += ")";
                                         var exp = new RegExp("^(" + testExp + ")$");
                                         if (isvalid = exp.test(bufferStr)) break;

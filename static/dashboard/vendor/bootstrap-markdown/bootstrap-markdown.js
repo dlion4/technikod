@@ -151,7 +151,7 @@
               .addClass("btn-default")
               .addClass(btnClass)
             if (
-              btnClass.match(/btn\-(primary|success|info|warning|danger|link)/)
+              btnClass.match(/btn/-(primary|success|info|warning|danger|link)/)
             ) {
               buttonContainer.removeClass("btn-default")
             }
@@ -189,8 +189,8 @@
       // Set size and resizable Properties
       var hasRows = typeof this.$textarea.attr("rows") !== "undefined",
         maxRows =
-          this.$textarea.val().split("\n").length > 5
-            ? this.$textarea.val().split("\n").length
+          this.$textarea.val().split("/n").length > 5
+            ? this.$textarea.val().split("/n").length
             : "5",
         rowsVal = hasRows ? this.$textarea.attr("rows") : maxRows
 
@@ -1136,7 +1136,7 @@
                   // Give extra word
                   chunk = e.__localize("heading text")
                 } else {
-                  chunk = selected.text + "\n"
+                  chunk = selected.text + "/n"
                 }
 
                 // transform selection and set the cursor into chunked text
@@ -1153,9 +1153,9 @@
                 } else if (
                   selected.start > 0 &&
                   ((prevChar = content.substr(selected.start - 1, 1)),
-                  !!prevChar && prevChar != "\n")
+                  !!prevChar && prevChar != "/n")
                 ) {
-                  e.replaceSelection("\n\n### " + chunk)
+                  e.replaceSelection("/n/n### " + chunk)
                   cursor = selected.start + 6
                 } else {
                   // Empty string before element
@@ -1307,7 +1307,7 @@
                   // Set the cursor
                   cursor = selected.start + 2
                 } else {
-                  if (selected.text.indexOf("\n") < 0) {
+                  if (selected.text.indexOf("/n") < 0) {
                     chunk = selected.text
 
                     e.replaceSelection("- " + chunk)
@@ -1317,14 +1317,14 @@
                   } else {
                     var list = []
 
-                    list = selected.text.split("\n")
+                    list = selected.text.split("/n")
                     chunk = list[0]
 
                     $.each(list, function (k, v) {
                       list[k] = "- " + v
                     })
 
-                    e.replaceSelection("\n\n" + list.join("\n"))
+                    e.replaceSelection("/n/n" + list.join("/n"))
 
                     // Set the cursor
                     cursor = selected.start + 4
@@ -1359,7 +1359,7 @@
                   // Set the cursor
                   cursor = selected.start + 3
                 } else {
-                  if (selected.text.indexOf("\n") < 0) {
+                  if (selected.text.indexOf("/n") < 0) {
                     chunk = selected.text
 
                     e.replaceSelection("1. " + chunk)
@@ -1369,14 +1369,14 @@
                   } else {
                     var list = []
 
-                    list = selected.text.split("\n")
+                    list = selected.text.split("/n")
                     chunk = list[0]
 
                     $.each(list, function (k, v) {
                       list[k] = "1. " + v
                     })
 
-                    e.replaceSelection("\n\n" + list.join("\n"))
+                    e.replaceSelection("/n/n" + list.join("/n"))
 
                     // Set the cursor
                     cursor = selected.start + 5
@@ -1412,8 +1412,8 @@
 
                 // transform selection and set the cursor into chunked text
                 if (
-                  content.substr(selected.start - 4, 4) === "```\n" &&
-                  content.substr(selected.end, 4) === "\n```"
+                  content.substr(selected.start - 4, 4) === "```/n" &&
+                  content.substr(selected.end, 4) === "/n```"
                 ) {
                   e.setSelection(selected.start - 4, selected.end + 4)
                   e.replaceSelection(chunk)
@@ -1425,8 +1425,8 @@
                   e.setSelection(selected.start - 1, selected.end + 1)
                   e.replaceSelection(chunk)
                   cursor = selected.start - 1
-                } else if (content.indexOf("\n") > -1) {
-                  e.replaceSelection("```\n" + chunk + "\n```")
+                } else if (content.indexOf("/n") > -1) {
+                  e.replaceSelection("```/n" + chunk + "/n```")
                   cursor = selected.start + 4
                 } else {
                   e.replaceSelection("`" + chunk + "`")
@@ -1463,7 +1463,7 @@
                   // Set the cursor
                   cursor = selected.start + 2
                 } else {
-                  if (selected.text.indexOf("\n") < 0) {
+                  if (selected.text.indexOf("/n") < 0) {
                     chunk = selected.text
 
                     e.replaceSelection("> " + chunk)
@@ -1473,14 +1473,14 @@
                   } else {
                     var list = []
 
-                    list = selected.text.split("\n")
+                    list = selected.text.split("/n")
                     chunk = list[0]
 
                     $.each(list, function (k, v) {
                       list[k] = "> " + v
                     })
 
-                    e.replaceSelection("\n\n" + list.join("\n"))
+                    e.replaceSelection("/n/n" + list.join("/n"))
 
                     // Set the cursor
                     cursor = selected.start + 4

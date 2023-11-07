@@ -169,7 +169,7 @@ function initNewzfox() {
     });
     $(".custom-scroll-link").on("click", function () {
         var a = 50;
-        if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") || location.hostname == this.hostname) {
+        if (location.pathname.replace(/^///, "") == this.pathname.replace(/^///, "") || location.hostname == this.hostname) {
             var b = $(this.hash);
             b = b.length ? b : $("[name=" + this.hash.slice(1) + "]");
             if (b.length) {

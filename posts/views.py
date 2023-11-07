@@ -54,6 +54,9 @@ class HomeView(generic.TemplateView):
             Post.objects.is_popular(view_limit=500).all().order_by("?")
         )
         return context
+    
+        context['is_premium'] = Post.objects.filter(is_premium=True).all().order_by("?")[:5]
+        return context
 
     def get(self, request, *args: Any, **kwargs: Any):
 

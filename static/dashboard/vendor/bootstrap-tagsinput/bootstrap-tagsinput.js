@@ -81,7 +81,7 @@
         throw("Can't add objects when itemValue option is not set");
 
       // Ignore strings only containg whitespace
-      if (item.toString().match(/^\s*$/))
+      if (item.toString().match(/^/s*$/))
         return;
 
       // If SELECT but not multiple, remove current tag

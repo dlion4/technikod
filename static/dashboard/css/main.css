@@ -193,490 +193,490 @@
   -webkit-font-smoothing: antialiased;
 }
 .icon-user-female:before {
-  content: "\e000";
+  content: "/e000";
 }
 .icon-user-follow:before {
-  content: "\e002";
+  content: "/e002";
 }
 .icon-user-following:before {
-  content: "\e003";
+  content: "/e003";
 }
 .icon-user-unfollow:before {
-  content: "\e004";
+  content: "/e004";
 }
 .icon-trophy:before {
-  content: "\e006";
+  content: "/e006";
 }
 .icon-screen-smartphone:before {
-  content: "\e010";
+  content: "/e010";
 }
 .icon-screen-desktop:before {
-  content: "\e011";
+  content: "/e011";
 }
 .icon-plane:before {
-  content: "\e012";
+  content: "/e012";
 }
 .icon-notebook:before {
-  content: "\e013";
+  content: "/e013";
 }
 .icon-moustache:before {
-  content: "\e014";
+  content: "/e014";
 }
 .icon-mouse:before {
-  content: "\e015";
+  content: "/e015";
 }
 .icon-magnet:before {
-  content: "\e016";
+  content: "/e016";
 }
 .icon-energy:before {
-  content: "\e020";
+  content: "/e020";
 }
 .icon-emoticon-smile:before {
-  content: "\e021";
+  content: "/e021";
 }
 .icon-disc:before {
-  content: "\e022";
+  content: "/e022";
 }
 .icon-cursor-move:before {
-  content: "\e023";
+  content: "/e023";
 }
 .icon-crop:before {
-  content: "\e024";
+  content: "/e024";
 }
 .icon-credit-card:before {
-  content: "\e025";
+  content: "/e025";
 }
 .icon-chemistry:before {
-  content: "\e026";
+  content: "/e026";
 }
 .icon-user:before {
-  content: "\e005";
+  content: "/e005";
 }
 .icon-speedometer:before {
-  content: "\e007";
+  content: "/e007";
 }
 .icon-social-youtube:before {
-  content: "\e008";
+  content: "/e008";
 }
 .icon-social-twitter:before {
-  content: "\e009";
+  content: "/e009";
 }
 .icon-social-tumblr:before {
-  content: "\e00a";
+  content: "/e00a";
 }
 .icon-social-facebook:before {
-  content: "\e00b";
+  content: "/e00b";
 }
 .icon-social-dropbox:before {
-  content: "\e00c";
+  content: "/e00c";
 }
 .icon-social-dribbble:before {
-  content: "\e00d";
+  content: "/e00d";
 }
 .icon-shield:before {
-  content: "\e00e";
+  content: "/e00e";
 }
 .icon-screen-tablet:before {
-  content: "\e00f";
+  content: "/e00f";
 }
 .icon-magic-wand:before {
-  content: "\e017";
+  content: "/e017";
 }
 .icon-hourglass:before {
-  content: "\e018";
+  content: "/e018";
 }
 .icon-graduation:before {
-  content: "\e019";
+  content: "/e019";
 }
 .icon-ghost:before {
-  content: "\e01a";
+  content: "/e01a";
 }
 .icon-game-controller:before {
-  content: "\e01b";
+  content: "/e01b";
 }
 .icon-fire:before {
-  content: "\e01c";
+  content: "/e01c";
 }
 .icon-eyeglasses:before {
-  content: "\e01d";
+  content: "/e01d";
 }
 .icon-envelope-open:before {
-  content: "\e01e";
+  content: "/e01e";
 }
 .icon-envelope-letter:before {
-  content: "\e01f";
+  content: "/e01f";
 }
 .icon-bell:before {
-  content: "\e027";
+  content: "/e027";
 }
 .icon-badge:before {
-  content: "\e028";
+  content: "/e028";
 }
 .icon-anchor:before {
-  content: "\e029";
+  content: "/e029";
 }
 .icon-wallet:before {
-  content: "\e02a";
+  content: "/e02a";
 }
 .icon-vector:before {
-  content: "\e02b";
+  content: "/e02b";
 }
 .icon-speech:before {
-  content: "\e02c";
+  content: "/e02c";
 }
 .icon-puzzle:before {
-  content: "\e02d";
+  content: "/e02d";
 }
 .icon-printer:before {
-  content: "\e02e";
+  content: "/e02e";
 }
 .icon-present:before {
-  content: "\e02f";
+  content: "/e02f";
 }
 .icon-playlist:before {
-  content: "\e030";
+  content: "/e030";
 }
 .icon-pin:before {
-  content: "\e031";
+  content: "/e031";
 }
 .icon-picture:before {
-  content: "\e032";
+  content: "/e032";
 }
 .icon-map:before {
-  content: "\e033";
+  content: "/e033";
 }
 .icon-layers:before {
-  content: "\e034";
+  content: "/e034";
 }
 .icon-handbag:before {
-  content: "\e035";
+  content: "/e035";
 }
 .icon-globe-alt:before {
-  content: "\e036";
+  content: "/e036";
 }
 .icon-globe:before {
-  content: "\e037";
+  content: "/e037";
 }
 .icon-frame:before {
-  content: "\e038";
+  content: "/e038";
 }
 .icon-folder-alt:before {
-  content: "\e039";
+  content: "/e039";
 }
 .icon-film:before {
-  content: "\e03a";
+  content: "/e03a";
 }
 .icon-feed:before {
-  content: "\e03b";
+  content: "/e03b";
 }
 .icon-earphones-alt:before {
-  content: "\e03c";
+  content: "/e03c";
 }
 .icon-earphones:before {
-  content: "\e03d";
+  content: "/e03d";
 }
 .icon-drop:before {
-  content: "\e03e";
+  content: "/e03e";
 }
 .icon-drawer:before {
-  content: "\e03f";
+  content: "/e03f";
 }
 .icon-docs:before {
-  content: "\e040";
+  content: "/e040";
 }
 .icon-directions:before {
-  content: "\e041";
+  content: "/e041";
 }
 .icon-direction:before {
-  content: "\e042";
+  content: "/e042";
 }
 .icon-diamond:before {
-  content: "\e043";
+  content: "/e043";
 }
 .icon-cup:before {
-  content: "\e044";
+  content: "/e044";
 }
 .icon-compass:before {
-  content: "\e045";
+  content: "/e045";
 }
 .icon-call-out:before {
-  content: "\e046";
+  content: "/e046";
 }
 .icon-call-in:before {
-  content: "\e047";
+  content: "/e047";
 }
 .icon-call-end:before {
-  content: "\e048";
+  content: "/e048";
 }
 .icon-calculator:before {
-  content: "\e049";
+  content: "/e049";
 }
 .icon-bubbles:before {
-  content: "\e04a";
+  content: "/e04a";
 }
 .icon-briefcase:before {
-  content: "\e04b";
+  content: "/e04b";
 }
 .icon-book-open:before {
-  content: "\e04c";
+  content: "/e04c";
 }
 .icon-basket-loaded:before {
-  content: "\e04d";
+  content: "/e04d";
 }
 .icon-basket:before {
-  content: "\e04e";
+  content: "/e04e";
 }
 .icon-bag:before {
-  content: "\e04f";
+  content: "/e04f";
 }
 .icon-action-undo:before {
-  content: "\e050";
+  content: "/e050";
 }
 .icon-action-redo:before {
-  content: "\e051";
+  content: "/e051";
 }
 .icon-wrench:before {
-  content: "\e052";
+  content: "/e052";
 }
 .icon-umbrella:before {
-  content: "\e053";
+  content: "/e053";
 }
 .icon-trash:before {
-  content: "\e054";
+  content: "/e054";
 }
 .icon-tag:before {
-  content: "\e055";
+  content: "/e055";
 }
 .icon-support:before {
-  content: "\e056";
+  content: "/e056";
 }
 .icon-size-fullscreen:before {
-  content: "\e057";
+  content: "/e057";
 }
 .icon-size-actual:before {
-  content: "\e058";
+  content: "/e058";
 }
 .icon-shuffle:before {
-  content: "\e059";
+  content: "/e059";
 }
 .icon-share-alt:before {
-  content: "\e05a";
+  content: "/e05a";
 }
 .icon-share:before {
-  content: "\e05b";
+  content: "/e05b";
 }
 .icon-rocket:before {
-  content: "\e05c";
+  content: "/e05c";
 }
 .icon-question:before {
-  content: "\e05d";
+  content: "/e05d";
 }
 .icon-pie-chart:before {
-  content: "\e05e";
+  content: "/e05e";
 }
 .icon-pencil:before {
-  content: "\e05f";
+  content: "/e05f";
 }
 .icon-note:before {
-  content: "\e060";
+  content: "/e060";
 }
 .icon-music-tone-alt:before {
-  content: "\e061";
+  content: "/e061";
 }
 .icon-music-tone:before {
-  content: "\e062";
+  content: "/e062";
 }
 .icon-microphone:before {
-  content: "\e063";
+  content: "/e063";
 }
 .icon-loop:before {
-  content: "\e064";
+  content: "/e064";
 }
 .icon-logout:before {
-  content: "\e065";
+  content: "/e065";
 }
 .icon-login:before {
-  content: "\e066";
+  content: "/e066";
 }
 .icon-list:before {
-  content: "\e067";
+  content: "/e067";
 }
 .icon-like:before {
-  content: "\e068";
+  content: "/e068";
 }
 .icon-home:before {
-  content: "\e069";
+  content: "/e069";
 }
 .icon-grid:before {
-  content: "\e06a";
+  content: "/e06a";
 }
 .icon-graph:before {
-  content: "\e06b";
+  content: "/e06b";
 }
 .icon-equalizer:before {
-  content: "\e06c";
+  content: "/e06c";
 }
 .icon-dislike:before {
-  content: "\e06d";
+  content: "/e06d";
 }
 .icon-cursor:before {
-  content: "\e06e";
+  content: "/e06e";
 }
 .icon-control-start:before {
-  content: "\e06f";
+  content: "/e06f";
 }
 .icon-control-rewind:before {
-  content: "\e070";
+  content: "/e070";
 }
 .icon-control-play:before {
-  content: "\e071";
+  content: "/e071";
 }
 .icon-control-pause:before {
-  content: "\e072";
+  content: "/e072";
 }
 .icon-control-forward:before {
-  content: "\e073";
+  content: "/e073";
 }
 .icon-control-end:before {
-  content: "\e074";
+  content: "/e074";
 }
 .icon-calendar:before {
-  content: "\e075";
+  content: "/e075";
 }
 .icon-bulb:before {
-  content: "\e076";
+  content: "/e076";
 }
 .icon-bar-chart:before {
-  content: "\e077";
+  content: "/e077";
 }
 .icon-arrow-up:before {
-  content: "\e078";
+  content: "/e078";
 }
 .icon-arrow-right:before {
-  content: "\e079";
+  content: "/e079";
 }
 .icon-arrow-left:before {
-  content: "\e07a";
+  content: "/e07a";
 }
 .icon-arrow-down:before {
-  content: "\e07b";
+  content: "/e07b";
 }
 .icon-ban:before {
-  content: "\e07c";
+  content: "/e07c";
 }
 .icon-bubble:before {
-  content: "\e07d";
+  content: "/e07d";
 }
 .icon-camcorder:before {
-  content: "\e07e";
+  content: "/e07e";
 }
 .icon-camera:before {
-  content: "\e07f";
+  content: "/e07f";
 }
 .icon-check:before {
-  content: "\e080";
+  content: "/e080";
 }
 .icon-clock:before {
-  content: "\e081";
+  content: "/e081";
 }
 .icon-close:before {
-  content: "\e082";
+  content: "/e082";
 }
 .icon-cloud-download:before {
-  content: "\e083";
+  content: "/e083";
 }
 .icon-cloud-upload:before {
-  content: "\e084";
+  content: "/e084";
 }
 .icon-doc:before {
-  content: "\e085";
+  content: "/e085";
 }
 .icon-envelope:before {
-  content: "\e086";
+  content: "/e086";
 }
 .icon-eye:before {
-  content: "\e087";
+  content: "/e087";
 }
 .icon-flag:before {
-  content: "\e088";
+  content: "/e088";
 }
 .icon-folder:before {
-  content: "\e089";
+  content: "/e089";
 }
 .icon-heart:before {
-  content: "\e08a";
+  content: "/e08a";
 }
 .icon-info:before {
-  content: "\e08b";
+  content: "/e08b";
 }
 .icon-key:before {
-  content: "\e08c";
+  content: "/e08c";
 }
 .icon-link:before {
-  content: "\e08d";
+  content: "/e08d";
 }
 .icon-lock:before {
-  content: "\e08e";
+  content: "/e08e";
 }
 .icon-lock-open:before {
-  content: "\e08f";
+  content: "/e08f";
 }
 .icon-magnifier:before {
-  content: "\e090";
+  content: "/e090";
 }
 .icon-magnifier-add:before {
-  content: "\e091";
+  content: "/e091";
 }
 .icon-magnifier-remove:before {
-  content: "\e092";
+  content: "/e092";
 }
 .icon-paper-clip:before {
-  content: "\e093";
+  content: "/e093";
 }
 .icon-paper-plane:before {
-  content: "\e094";
+  content: "/e094";
 }
 .icon-plus:before {
-  content: "\e095";
+  content: "/e095";
 }
 .icon-pointer:before {
-  content: "\e096";
+  content: "/e096";
 }
 .icon-power:before {
-  content: "\e097";
+  content: "/e097";
 }
 .icon-refresh:before {
-  content: "\e098";
+  content: "/e098";
 }
 .icon-reload:before {
-  content: "\e099";
+  content: "/e099";
 }
 .icon-settings:before {
-  content: "\e09a";
+  content: "/e09a";
 }
 .icon-star:before {
-  content: "\e09b";
+  content: "/e09b";
 }
 .icon-symbol-female:before {
-  content: "\e09c";
+  content: "/e09c";
 }
 .icon-symbol-male:before {
-  content: "\e09d";
+  content: "/e09d";
 }
 .icon-target:before {
-  content: "\e09e";
+  content: "/e09e";
 }
 .icon-volume-1:before {
-  content: "\e09f";
+  content: "/e09f";
 }
 .icon-volume-2:before {
-  content: "\e0a0";
+  content: "/e0a0";
 }
 .icon-volume-off:before {
-  content: "\e0a1";
+  content: "/e0a1";
 }
 .icon-users:before {
-  content: "\e001";
+  content: "/e001";
 }
 @font-face {
   font-family: "weathericons";
@@ -700,454 +700,454 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .wi-day-cloudy-gusts:before {
-  content: "\f000";
+  content: "/f000";
 }
 .wi-day-cloudy-windy:before {
-  content: "\f001";
+  content: "/f001";
 }
 .wi-day-cloudy:before {
-  content: "\f002";
+  content: "/f002";
 }
 .wi-day-fog:before {
-  content: "\f003";
+  content: "/f003";
 }
 .wi-day-hail:before {
-  content: "\f004";
+  content: "/f004";
 }
 .wi-day-lightning:before {
-  content: "\f005";
+  content: "/f005";
 }
 .wi-day-rain-mix:before {
-  content: "\f006";
+  content: "/f006";
 }
 .wi-day-rain-wind:before {
-  content: "\f007";
+  content: "/f007";
 }
 .wi-day-rain:before {
-  content: "\f008";
+  content: "/f008";
 }
 .wi-day-showers:before {
-  content: "\f009";
+  content: "/f009";
 }
 .wi-day-snow:before {
-  content: "\f00a";
+  content: "/f00a";
 }
 .wi-day-sprinkle:before {
-  content: "\f00b";
+  content: "/f00b";
 }
 .wi-day-sunny-overcast:before {
-  content: "\f00c";
+  content: "/f00c";
 }
 .wi-day-sunny:before {
-  content: "\f00d";
+  content: "/f00d";
 }
 .wi-day-storm-showers:before {
-  content: "\f00e";
+  content: "/f00e";
 }
 .wi-day-thunderstorm:before {
-  content: "\f010";
+  content: "/f010";
 }
 .wi-cloudy-gusts:before {
-  content: "\f011";
+  content: "/f011";
 }
 .wi-cloudy-windy:before {
-  content: "\f012";
+  content: "/f012";
 }
 .wi-cloudy:before {
-  content: "\f013";
+  content: "/f013";
 }
 .wi-fog:before {
-  content: "\f014";
+  content: "/f014";
 }
 .wi-hail:before {
-  content: "\f015";
+  content: "/f015";
 }
 .wi-lightning:before {
-  content: "\f016";
+  content: "/f016";
 }
 .wi-rain-mix:before {
-  content: "\f017";
+  content: "/f017";
 }
 .wi-rain-wind:before {
-  content: "\f018";
+  content: "/f018";
 }
 .wi-rain:before {
-  content: "\f019";
+  content: "/f019";
 }
 .wi-showers:before {
-  content: "\f01a";
+  content: "/f01a";
 }
 .wi-snow:before {
-  content: "\f01b";
+  content: "/f01b";
 }
 .wi-sprinkle:before {
-  content: "\f01c";
+  content: "/f01c";
 }
 .wi-storm-showers:before {
-  content: "\f01d";
+  content: "/f01d";
 }
 .wi-thunderstorm:before {
-  content: "\f01e";
+  content: "/f01e";
 }
 .wi-windy:before {
-  content: "\f021";
+  content: "/f021";
 }
 .wi-night-alt-cloudy-gusts:before {
-  content: "\f022";
+  content: "/f022";
 }
 .wi-night-alt-cloudy-windy:before {
-  content: "\f023";
+  content: "/f023";
 }
 .wi-night-alt-hail:before {
-  content: "\f024";
+  content: "/f024";
 }
 .wi-night-alt-lightning:before {
-  content: "\f025";
+  content: "/f025";
 }
 .wi-night-alt-rain-mix:before {
-  content: "\f026";
+  content: "/f026";
 }
 .wi-night-alt-rain-wind:before {
-  content: "\f027";
+  content: "/f027";
 }
 .wi-night-alt-rain:before {
-  content: "\f028";
+  content: "/f028";
 }
 .wi-night-alt-showers:before {
-  content: "\f029";
+  content: "/f029";
 }
 .wi-night-alt-snow:before {
-  content: "\f02a";
+  content: "/f02a";
 }
 .wi-night-alt-sprinkle:before {
-  content: "\f02b";
+  content: "/f02b";
 }
 .wi-night-alt-storm-showers:before {
-  content: "\f02c";
+  content: "/f02c";
 }
 .wi-night-alt-thunderstorm:before {
-  content: "\f02d";
+  content: "/f02d";
 }
 .wi-night-clear:before {
-  content: "\f02e";
+  content: "/f02e";
 }
 .wi-night-cloudy-gusts:before {
-  content: "\f02f";
+  content: "/f02f";
 }
 .wi-night-cloudy-windy:before {
-  content: "\f030";
+  content: "/f030";
 }
 .wi-night-cloudy:before {
-  content: "\f031";
+  content: "/f031";
 }
 .wi-night-hail:before {
-  content: "\f032";
+  content: "/f032";
 }
 .wi-night-lightning:before {
-  content: "\f033";
+  content: "/f033";
 }
 .wi-night-rain-mix:before {
-  content: "\f034";
+  content: "/f034";
 }
 .wi-night-rain-wind:before {
-  content: "\f035";
+  content: "/f035";
 }
 .wi-night-rain:before {
-  content: "\f036";
+  content: "/f036";
 }
 .wi-night-showers:before {
-  content: "\f037";
+  content: "/f037";
 }
 .wi-night-snow:before {
-  content: "\f038";
+  content: "/f038";
 }
 .wi-night-sprinkle:before {
-  content: "\f039";
+  content: "/f039";
 }
 .wi-night-storm-showers:before {
-  content: "\f03a";
+  content: "/f03a";
 }
 .wi-night-thunderstorm:before {
-  content: "\f03b";
+  content: "/f03b";
 }
 .wi-celsius:before {
-  content: "\f03c";
+  content: "/f03c";
 }
 .wi-cloud-down:before {
-  content: "\f03d";
+  content: "/f03d";
 }
 .wi-cloud-refresh:before {
-  content: "\f03e";
+  content: "/f03e";
 }
 .wi-cloud-up:before {
-  content: "\f040";
+  content: "/f040";
 }
 .wi-cloud:before {
-  content: "\f041";
+  content: "/f041";
 }
 .wi-degrees:before {
-  content: "\f042";
+  content: "/f042";
 }
 .wi-down-left:before {
-  content: "\f043";
+  content: "/f043";
 }
 .wi-down:before {
-  content: "\f044";
+  content: "/f044";
 }
 .wi-fahrenheit:before {
-  content: "\f045";
+  content: "/f045";
 }
 .wi-horizon-alt:before {
-  content: "\f046";
+  content: "/f046";
 }
 .wi-horizon:before {
-  content: "\f047";
+  content: "/f047";
 }
 .wi-left:before {
-  content: "\f048";
+  content: "/f048";
 }
 .wi-lightning:before {
-  content: "\f016";
+  content: "/f016";
 }
 .wi-night-fog:before {
-  content: "\f04a";
+  content: "/f04a";
 }
 .wi-refresh-alt:before {
-  content: "\f04b";
+  content: "/f04b";
 }
 .wi-refresh:before {
-  content: "\f04c";
+  content: "/f04c";
 }
 .wi-right:before {
-  content: "\f04d";
+  content: "/f04d";
 }
 .wi-sprinkles:before {
-  content: "\f04e";
+  content: "/f04e";
 }
 .wi-strong-wind:before {
-  content: "\f050";
+  content: "/f050";
 }
 .wi-sunrise:before {
-  content: "\f051";
+  content: "/f051";
 }
 .wi-sunset:before {
-  content: "\f052";
+  content: "/f052";
 }
 .wi-thermometer-exterior:before {
-  content: "\f053";
+  content: "/f053";
 }
 .wi-thermometer-internal:before {
-  content: "\f054";
+  content: "/f054";
 }
 .wi-thermometer:before {
-  content: "\f055";
+  content: "/f055";
 }
 .wi-tornado:before {
-  content: "\f056";
+  content: "/f056";
 }
 .wi-up-right:before {
-  content: "\f057";
+  content: "/f057";
 }
 .wi-up:before {
-  content: "\f058";
+  content: "/f058";
 }
 .wi-wind-west:before {
-  content: "\f059";
+  content: "/f059";
 }
 .wi-wind-south-west:before {
-  content: "\f05a";
+  content: "/f05a";
 }
 .wi-wind-south-east:before {
-  content: "\f05b";
+  content: "/f05b";
 }
 .wi-wind-south:before {
-  content: "\f05c";
+  content: "/f05c";
 }
 .wi-wind-north-west:before {
-  content: "\f05d";
+  content: "/f05d";
 }
 .wi-wind-north-east:before {
-  content: "\f05e";
+  content: "/f05e";
 }
 .wi-wind-north:before {
-  content: "\f060";
+  content: "/f060";
 }
 .wi-wind-east:before {
-  content: "\f061";
+  content: "/f061";
 }
 .wi-smoke:before {
-  content: "\f062";
+  content: "/f062";
 }
 .wi-dust:before {
-  content: "\f063";
+  content: "/f063";
 }
 .wi-snow-wind:before {
-  content: "\f064";
+  content: "/f064";
 }
 .wi-day-snow-wind:before {
-  content: "\f065";
+  content: "/f065";
 }
 .wi-night-snow-wind:before {
-  content: "\f066";
+  content: "/f066";
 }
 .wi-night-alt-snow-wind:before {
-  content: "\f067";
+  content: "/f067";
 }
 .wi-day-sleet-storm:before {
-  content: "\f068";
+  content: "/f068";
 }
 .wi-night-sleet-storm:before {
-  content: "\f069";
+  content: "/f069";
 }
 .wi-night-alt-sleet-storm:before {
-  content: "\f06a";
+  content: "/f06a";
 }
 .wi-day-snow-thunderstorm:before {
-  content: "\f06b";
+  content: "/f06b";
 }
 .wi-night-snow-thunderstorm:before {
-  content: "\f06c";
+  content: "/f06c";
 }
 .wi-night-alt-snow-thunderstorm:before {
-  content: "\f06d";
+  content: "/f06d";
 }
 .wi-solar-eclipse:before {
-  content: "\f06e";
+  content: "/f06e";
 }
 .wi-lunar-eclipse:before {
-  content: "\f070";
+  content: "/f070";
 }
 .wi-meteor:before {
-  content: "\f071";
+  content: "/f071";
 }
 .wi-hot:before {
-  content: "\f072";
+  content: "/f072";
 }
 .wi-hurricane:before {
-  content: "\f073";
+  content: "/f073";
 }
 .wi-smog:before {
-  content: "\f074";
+  content: "/f074";
 }
 .wi-alien:before {
-  content: "\f075";
+  content: "/f075";
 }
 .wi-snowflake-cold:before {
-  content: "\f076";
+  content: "/f076";
 }
 .wi-stars:before {
-  content: "\f077";
+  content: "/f077";
 }
 .wi-night-partly-cloudy:before {
-  content: "\f083";
+  content: "/f083";
 }
 .wi-umbrella:before {
-  content: "\f084";
+  content: "/f084";
 }
 .wi-day-windy:before {
-  content: "\f085";
+  content: "/f085";
 }
 .wi-night-alt-cloudy:before {
-  content: "\f086";
+  content: "/f086";
 }
 .wi-up-left:before {
-  content: "\f087";
+  content: "/f087";
 }
 .wi-down-right:before {
-  content: "\f088";
+  content: "/f088";
 }
 .wi-time-12:before {
-  content: "\f089";
+  content: "/f089";
 }
 .wi-time-1:before {
-  content: "\f08a";
+  content: "/f08a";
 }
 .wi-time-2:before {
-  content: "\f08b";
+  content: "/f08b";
 }
 .wi-time-3:before {
-  content: "\f08c";
+  content: "/f08c";
 }
 .wi-time-4:before {
-  content: "\f08d";
+  content: "/f08d";
 }
 .wi-time-5:before {
-  content: "\f08e";
+  content: "/f08e";
 }
 .wi-time-6:before {
-  content: "\f08f";
+  content: "/f08f";
 }
 .wi-time-7:before {
-  content: "\f090";
+  content: "/f090";
 }
 .wi-time-8:before {
-  content: "\f091";
+  content: "/f091";
 }
 .wi-time-9:before {
-  content: "\f092";
+  content: "/f092";
 }
 .wi-time-10:before {
-  content: "\f093";
+  content: "/f093";
 }
 .wi-time-11:before {
-  content: "\f094";
+  content: "/f094";
 }
 .wi-day-sleet:before {
-  content: "\f0b2";
+  content: "/f0b2";
 }
 .wi-night-sleet:before {
-  content: "\f0b3";
+  content: "/f0b3";
 }
 .wi-night-alt-sleet:before {
-  content: "\f0b4";
+  content: "/f0b4";
 }
 .wi-sleet:before {
-  content: "\f0b5";
+  content: "/f0b5";
 }
 .wi-day-haze:before {
-  content: "\f0b6";
+  content: "/f0b6";
 }
 .wi-beafort-0:before {
-  content: "\f0b7";
+  content: "/f0b7";
 }
 .wi-beafort-1:before {
-  content: "\f0b8";
+  content: "/f0b8";
 }
 .wi-beafort-2:before {
-  content: "\f0b9";
+  content: "/f0b9";
 }
 .wi-beafort-3:before {
-  content: "\f0ba";
+  content: "/f0ba";
 }
 .wi-beafort-4:before {
-  content: "\f0bb";
+  content: "/f0bb";
 }
 .wi-beafort-5:before {
-  content: "\f0bc";
+  content: "/f0bc";
 }
 .wi-beafort-6:before {
-  content: "\f0bd";
+  content: "/f0bd";
 }
 .wi-beafort-7:before {
-  content: "\f0be";
+  content: "/f0be";
 }
 .wi-beafort-8:before {
-  content: "\f0bf";
+  content: "/f0bf";
 }
 .wi-beafort-9:before {
-  content: "\f0c0";
+  content: "/f0c0";
 }
 .wi-beafort-10:before {
-  content: "\f0c1";
+  content: "/f0c1";
 }
 .wi-beafort-11:before {
-  content: "\f0c2";
+  content: "/f0c2";
 }
 .wi-beafort-12:before {
-  content: "\f0c3";
+  content: "/f0c3";
 }
 .wi-wind-default:before {
-  content: "\f0b1";
+  content: "/f0b1";
 }
 .wi-wind-default._0-deg {
   -webkit-transform: rotate(0deg);
@@ -1318,88 +1318,88 @@
   transform: rotate(345deg);
 }
 .wi-moon-new:before {
-  content: "\f095";
+  content: "/f095";
 }
 .wi-moon-waxing-cresent-1:before {
-  content: "\f096";
+  content: "/f096";
 }
 .wi-moon-waxing-cresent-2:before {
-  content: "\f097";
+  content: "/f097";
 }
 .wi-moon-waxing-cresent-3:before {
-  content: "\f098";
+  content: "/f098";
 }
 .wi-moon-waxing-cresent-4:before {
-  content: "\f099";
+  content: "/f099";
 }
 .wi-moon-waxing-cresent-5:before {
-  content: "\f09a";
+  content: "/f09a";
 }
 .wi-moon-waxing-cresent-6:before {
-  content: "\f09b";
+  content: "/f09b";
 }
 .wi-moon-first-quarter:before {
-  content: "\f09c";
+  content: "/f09c";
 }
 .wi-moon-waxing-gibbous-1:before {
-  content: "\f09d";
+  content: "/f09d";
 }
 .wi-moon-waxing-gibbous-2:before {
-  content: "\f09e";
+  content: "/f09e";
 }
 .wi-moon-waxing-gibbous-3:before {
-  content: "\f09f";
+  content: "/f09f";
 }
 .wi-moon-waxing-gibbous-4:before {
-  content: "\f0a0";
+  content: "/f0a0";
 }
 .wi-moon-waxing-gibbous-5:before {
-  content: "\f0a1";
+  content: "/f0a1";
 }
 .wi-moon-waxing-gibbous-6:before {
-  content: "\f0a2";
+  content: "/f0a2";
 }
 .wi-moon-full:before {
-  content: "\f0a3";
+  content: "/f0a3";
 }
 .wi-moon-waning-gibbous-1:before {
-  content: "\f0a4";
+  content: "/f0a4";
 }
 .wi-moon-waning-gibbous-2:before {
-  content: "\f0a5";
+  content: "/f0a5";
 }
 .wi-moon-waning-gibbous-3:before {
-  content: "\f0a6";
+  content: "/f0a6";
 }
 .wi-moon-waning-gibbous-4:before {
-  content: "\f0a7";
+  content: "/f0a7";
 }
 .wi-moon-waning-gibbous-5:before {
-  content: "\f0a8";
+  content: "/f0a8";
 }
 .wi-moon-waning-gibbous-6:before {
-  content: "\f0a9";
+  content: "/f0a9";
 }
 .wi-moon-3rd-quarter:before {
-  content: "\f0aa";
+  content: "/f0aa";
 }
 .wi-moon-waning-crescent-1:before {
-  content: "\f0ab";
+  content: "/f0ab";
 }
 .wi-moon-waning-crescent-2:before {
-  content: "\f0ac";
+  content: "/f0ac";
 }
 .wi-moon-waning-crescent-3:before {
-  content: "\f0ad";
+  content: "/f0ad";
 }
 .wi-moon-waning-crescent-4:before {
-  content: "\f0ae";
+  content: "/f0ae";
 }
 .wi-moon-waning-crescent-5:before {
-  content: "\f0af";
+  content: "/f0af";
 }
 .wi-moon-waning-crescent-6:before {
-  content: "\f0b0";
+  content: "/f0b0";
 }
 .waitMe_container:not(body) {
   transform: translateZ(0);
@@ -2399,28 +2399,28 @@ ul.choose-skin li div,
   line-height: 1.42857;
 }
 .metismenu .glyphicon.arrow:before {
-  content: "\e079";
+  content: "/e079";
 }
 .metismenu .active > a > .glyphicon.arrow:before {
-  content: "\e114";
+  content: "/e114";
 }
 .metismenu .fa.arrow:before {
-  content: "\f104";
+  content: "/f104";
 }
 .metismenu .active > a > .fa.arrow:before {
-  content: "\f107";
+  content: "/f107";
 }
 .metismenu .ion.arrow:before {
-  content: "\f3d2";
+  content: "/f3d2";
 }
 .metismenu .active > a > .ion.arrow:before {
-  content: "\f3d0";
+  content: "/f3d0";
 }
 .metismenu .plus-times {
   float: right;
 }
 .metismenu .fa.plus-times:before {
-  content: "\f067";
+  content: "/f067";
 }
 .metismenu .active > a > .fa.plus-times {
   transform: rotate(45deg);
@@ -2429,10 +2429,10 @@ ul.choose-skin li div,
   float: right;
 }
 .metismenu .fa.plus-minus:before {
-  content: "\f067";
+  content: "/f067";
 }
 .metismenu .active > a > .fa.plus-minus:before {
-  content: "\f068";
+  content: "/f068";
 }
 .metismenu .collapse {
   display: none;
@@ -2660,7 +2660,7 @@ html.fullscreen-bg #wrapper {
   border-radius: 0 !important;
 }
 .card.fullscreen .icon-size-fullscreen::before {
-  content: "\e058";
+  content: "/e058";
 }
 .card:hover {
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
@@ -2688,7 +2688,7 @@ html.fullscreen-bg #wrapper {
 }
 .card .header .header-dropdown li a.dropdown-toggle:after {
   border: none;
-  content: "\f141";
+  content: "/f141";
   font-family: "FontAwesome";
   vertical-align: text-top;
   width: 11px;
@@ -3318,7 +3318,7 @@ ul.choose-skin li.active div::after {
   font-size: 12px;
   top: 15px;
   left: 15px;
-  content: "\f00c";
+  content: "/f00c";
   font-family: "FontAwesome";
 }
 label {
@@ -3380,7 +3380,7 @@ label {
 }
 .fancy-checkbox input[type="checkbox"]:checked + span:before {
   font-family: FontAwesome;
-  content: "\f00c";
+  content: "/f00c";
   font-size: 10px;
   color: #fff;
   text-align: center;
@@ -3536,7 +3536,7 @@ label {
   > a
   label.checkbox:before {
   font-family: FontAwesome;
-  content: "\f00c";
+  content: "/f00c";
   font-size: 12px;
   color: #99a1a7;
   text-align: center;
@@ -3600,7 +3600,7 @@ label {
   > a
   label.radio:before {
   font-family: FontAwesome;
-  content: "\f111";
+  content: "/f111";
   color: #99a1a7;
   font-size: 8px;
   text-align: center;
@@ -4016,7 +4016,7 @@ select.form-control:not([size]):not([multiple]) {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  content: "\f0da";
+  content: "/f0da";
   font-family: "FontAwesome";
 }
 .accordion2 .accordion-panel {
@@ -4024,7 +4024,7 @@ select.form-control:not([size]):not([multiple]) {
   display: none;
 }
 .accordion2 .accordion-item.is-active .accordion-thumb::before {
-  content: "\f13a";
+  content: "/f13a";
 }
 .carousel.vert .carousel-item-next.carousel-item-left,
 .carousel.vert .carousel-item-prev.carousel-item-right {

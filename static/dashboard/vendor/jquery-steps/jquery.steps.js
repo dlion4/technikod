@@ -51,7 +51,7 @@ if (!String.prototype.format)
         var formattedString = this;
         for (var i = 0; i < args.length; i++)
         {
-            var pattern = new RegExp("\\{" + i + "\\}", "gm");
+            var pattern = new RegExp("//{" + i + "//}", "gm");
             formattedString = formattedString.replace(pattern, args[i]);
         }
         return formattedString;
@@ -184,7 +184,7 @@ function analyzeData(wizard, options, state)
             content = stepContents.eq(index),
             modeData = content.data("mode"),
             mode = (modeData == null) ? contentMode.html : getValidEnumValue(contentMode,
-                (/^\s*$/.test(modeData) || isNaN(modeData)) ? modeData : parseInt(modeData, 0)),
+                (/^/s*$/.test(modeData) || isNaN(modeData)) ? modeData : parseInt(modeData, 0)),
             contentUrl = (mode === contentMode.html || content.data("url") === undefined) ?
                 "" : content.data("url"),
             contentLoaded = (mode !== contentMode.html && content.data("loaded") === "1"),
@@ -251,7 +251,7 @@ function destroy(wizard, options)
     // Empty panels if the mode is set to 'async' or 'iframe'
     wizard.find(".content > [data-mode='async'],.content > [data-mode='iframe']").empty();
 
-    var wizardSubstitute = $("<{0} class=\"{1}\"></{0}>".format(wizard.get(0).tagName, wizard.attr("class")));
+    var wizardSubstitute = $("<{0} class=/"{1}/"></{0}>".format(wizard.get(0).tagName, wizard.attr("class")));
 
     var wizardId = wizard._id();
     if (wizardId != null && wizardId !== "")
@@ -710,7 +710,7 @@ function loadAsyncContent(wizard, options, state)
             {
                 case contentMode.iframe:
                     wizard.find(".content > .body").eq(state.currentIndex).empty()
-                        .html("<iframe src=\"" + currentStep.contentUrl + "\" frameborder=\"0\" scrolling=\"no\" />")
+                        .html("<iframe src=/"" + currentStep.contentUrl + "/" frameborder=/"0/" scrolling=/"no/" />")
                         .data("loaded", "1");
                     break;
 
@@ -858,7 +858,7 @@ function refreshPagination(wizard, options, state)
 function refreshStepNavigation(wizard, options, state, oldIndex)
 {
     var currentOrNewStepAnchor = getStepAnchor(wizard, state.currentIndex),
-        currentInfo = $("<span class=\"current-info audible\">" + options.labels.current + " </span>"),
+        currentInfo = $("<span class=/"current-info audible/">" + options.labels.current + " </span>"),
         stepTitles = wizard.find(".content > .title");
 
     if (oldIndex != null)
@@ -993,11 +993,11 @@ function removeStepFromCache(wizard, index)
 function render(wizard, options, state)
 {
     // Create a content wrapper and copy HTML from the intial wizard structure
-    var wrapperTemplate = "<{0} class=\"{1}\">{2}</{0}>",
+    var wrapperTemplate = "<{0} class=/"{1}/">{2}</{0}>",
         orientation = getValidEnumValue(stepsOrientation, options.stepsOrientation),
         verticalCssClass = (orientation === stepsOrientation.vertical) ? " vertical" : "",
         contentWrapper = $(wrapperTemplate.format(options.contentContainerTag, "content " + options.clearFixCssClass, wizard.html())),
-        stepsWrapper = $(wrapperTemplate.format(options.stepsContainerTag, "steps " + options.clearFixCssClass, "<ul role=\"tablist\"></ul>")),
+        stepsWrapper = $(wrapperTemplate.format(options.stepsContainerTag, "steps " + options.clearFixCssClass, "<ul role=/"tablist/"></ul>")),
         stepTitles = contentWrapper.children(options.headerTag),
         stepContents = contentWrapper.children(options.bodyTag);
 
@@ -1054,8 +1054,8 @@ function renderPagination(wizard, options, state)
 {
     if (options.enablePagination)
     {
-        var pagination = "<{0} class=\"actions {1}\"><ul role=\"menu\" aria-label=\"{2}\">{3}</ul></{0}>",
-            buttonTemplate = "<li><a href=\"#{0}\" role=\"menuitem\">{1}</a></li>",
+        var pagination = "<{0} class=/"actions {1}/"><ul role=/"menu/" aria-label=/"{2}/">{3}</ul></{0}>",
+            buttonTemplate = "<li><a href=/"#{0}/" role=/"menuitem/">{1}</a></li>",
             buttons = "";
 
         if (!options.forceMoveForward)
@@ -1136,8 +1136,8 @@ function renderTitle(wizard, options, state, header, index)
             index: index + 1,
             title: header.html()
         }),
-        stepItem = $("<li role=\"tab\"><a id=\"" + uniqueStepId + "\" href=\"#" + uniqueHeaderId + 
-            "\" aria-controls=\"" + uniqueBodyId + "\">" + title + "</a></li>");
+        stepItem = $("<li role=/"tab/"><a id=/"" + uniqueStepId + "/" href=/"#" + uniqueHeaderId + 
+            "/" aria-controls=/"" + uniqueBodyId + "/">" + title + "</a></li>");
         
     stepItem._enableAria(options.enableAllSteps || state.currentIndex > index);
 
@@ -1706,20 +1706,20 @@ var defaults = $.fn.steps.defaults = {
      *
      * @property titleTemplate
      * @type String
-     * @default "<span class=\"number\">#index#.</span> #title#"
+     * @default "<span class=/"number/">#index#.</span> #title#"
      * @for defaults
      **/
-    titleTemplate: "<span class=\"number\">#index#.</span> #title#",
+    titleTemplate: "<span class=/"number/">#index#.</span> #title#",
 
     /**
      * The loading template which will be used to create the loading animation.
      *
      * @property loadingTemplate
      * @type String
-     * @default "<span class=\"spinner\"></span> #text#"
+     * @default "<span class=/"spinner/"></span> #text#"
      * @for defaults
      **/
-    loadingTemplate: "<span class=\"spinner\"></span> #text#",
+    loadingTemplate: "<span class=/"spinner/"></span> #text#",
 
     /*
      * Behaviour
