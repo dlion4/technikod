@@ -3,5 +3,5 @@ venv/
 .env
 env/
 datatransfer.json
-static/admin-lte
+static/admin-lte/
 
