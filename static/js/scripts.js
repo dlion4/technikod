@@ -1,5 +1,5 @@
 // All functions  ------------------
-function initNewzfox() {
+function initGmag() {
     $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">');
     "use strict";
 	//   date------------------
@@ -169,7 +169,7 @@ function initNewzfox() {
     });
     $(".custom-scroll-link").on("click", function () {
         var a = 50;
-        if (location.pathname.replace(/^///, "") == this.pathname.replace(/^///, "") || location.hostname == this.hostname) {
+        if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") || location.hostname == this.hostname) {
             var b = $(this.hash);
             b = b.length ? b : $("[name=" + this.hash.slice(1) + "]");
             if (b.length) {
@@ -207,8 +207,19 @@ function initNewzfox() {
         $("#message").slideUp(1500);
     });
     //   mailchimp------------------
-    
-    
+    $("#subscribe").ajaxChimp({
+        language: "eng",
+        url: "https://gmail.us1.list-manage.com/subscribe/post?u=1fe818378d5c129b210719d80&amp;id=a2792f681b"
+    });
+    $.ajaxChimp.translations.eng = {
+        submit: "Submitting...",
+        0: '<i class="fal fa-check"></i> We will be in touch soon!',
+        1: '<i class="fal fa-exclamation-circle"></i> You must enter a valid e-mail address.',
+        2: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.',
+        3: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.',
+        4: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.',
+        5: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.'
+    };
     $(".to-top").on("click", function (a) {
         a.preventDefault();
         $("html, body").animate({
@@ -263,8 +274,43 @@ function initNewzfox() {
         else hideCart();
     });
     // Share   ------------------
-    
-    
+    $(".share-container").share({
+        networks: ['facebook', 'pinterest', 'twitter', 'linkedin', 'tumblr']
+    });
+    var swra = $(".share-wrapper"),
+        clsh = $(".close-share-btn"),
+        ssbtn = $(".showshare");
+    function showShare() {
+        ssbtn.addClass("uncl-share");
+        swra.removeClass("isShare").addClass("share-wrapper_vis");
+        hideSearch();
+        hideCart();
+    }
+    function hideShare() {
+        ssbtn.removeClass("uncl-share");
+        swra.addClass("isShare").removeClass("share-wrapper_vis");
+    }
+    clsh.on("click", function () {
+        hideShare();
+    });
+    ssbtn.on("click", function () {
+        if (swra.hasClass("isShare")) showShare();
+        else hideShare();
+    });
+    $(".show-reg-form").on("click", function () {
+        showModal();
+    });
+    function showModal() {
+        $(".main-register-container").fadeIn(1);
+        $(".main-register-wrap").addClass("vis_mr");
+    }
+    function hideModal() {
+        $(".main-register-container").fadeOut(1);
+        $(".main-register-wrap").removeClass("vis_mr");
+    }
+    $(".close-reg-form").on("click", function () {
+        hideModal();
+    });
     // duplicate -----------------
     $.fn.duplicate = function (a, b) {
         var c = [];
@@ -470,7 +516,46 @@ function initNewzfox() {
     }
 
     // video -----------------
-    
+    var mianVidLink = $('.video-links-wrap .video-item'),
+        mianVidLinkAct = $('.video-links-wrap .video-item.video-item_active'),
+        videoHolder = $(".vh-main"),
+        videoHolderTitle = $(".video-holder-title"),
+        stisDataUrlPopupAct = mianVidLinkAct.data("video-link"),
+        stisDataUrlAct = mianVidLinkAct.data("url"),
+        stisDataUrlbgAct = mianVidLinkAct.find('img').attr("src"),
+        stisDataUrlCatAct = mianVidLinkAct.find('.post-category-marker').text(),
+        stisDataUrlCatUrlAct = mianVidLinkAct.find('.post-category-marker').attr("href"),
+        stisTitleAct = mianVidLinkAct.find('.video-item-title h4').text(),
+        stisTitleDateAct = mianVidLinkAct.find('.video-date strong').text();
+    videoHolder.attr("href", stisDataUrlPopupAct);
+    videoHolder.find(".bg").css("background-image", "url(" + stisDataUrlbgAct + ")");
+    videoHolderTitle.find(".video-holder-title_item a").attr("href", stisDataUrlAct);
+    videoHolderTitle.find(".video-holder-title_item a").text(stisTitleAct);
+    videoHolderTitle.find(".video-date strong").text(stisTitleDateAct);
+    videoHolderTitle.find(".post-category-marker").text(stisDataUrlCatAct);
+    videoHolderTitle.find(".post-category-marker").attr("href", stisDataUrlCatUrlAct);
+    mianVidLink.on("click", function () {
+        var that = $(this),
+            stisDataUrlPopup = that.data("video-link"),
+            stisDataUrl = that.data("url"),
+            stisDataUrlbg = that.find('img').attr("src"),
+            stisDataUrlCat = that.find('.post-category-marker').text(),
+            stisDataUrlCatUrl = that.find('.post-category-marker').attr("href"),
+            stisTitle = that.find('.video-item-title h4').text(),
+            stisTitleDate = that.find('.video-date strong').text();
+        $(".vh-preloader ").fadeIn(400).delay(100).fadeOut(400);
+        setTimeout(function () {
+            videoHolder.attr("href", stisDataUrlPopup);
+            videoHolder.find(".bg").css("background-image", "url(" + stisDataUrlbg + ")");
+            videoHolderTitle.find(".video-holder-title_item a").attr("href", stisDataUrl);
+            videoHolderTitle.find(".video-holder-title_item a").text(stisTitle);
+            videoHolderTitle.find(".video-date strong").text(stisTitleDate);
+            videoHolderTitle.find(".post-category-marker").text(stisDataUrlCat);
+            videoHolderTitle.find(".post-category-marker").attr("href", stisDataUrlCatUrl);
+        }, 500);
+        mianVidLink.removeClass("video-item_active");
+        that.addClass("video-item_active");
+    });
     // Mob Menu------------------
     $(".nav-button-wrap").on("click", function () {
         $(".main-menu").toggleClass("vismobmenu");
@@ -509,8 +594,41 @@ function initNewzfox() {
         $('#font_chage').find("p").css("font-size", $(this).val() + "px");
     });
     // ajax news -----------------
- 
-    
+    $(".ajax-nav li a").click(function () {
+        $("#ajax-content").animate({
+            opacity: "0"
+        }, 500);
+        $(".ajax-nav li a").removeClass('current_page');
+        $(this).addClass('current_page');
+        $(".ajax-loader").fadeIn(100);
+        setTimeout(function () {
+            $("#ajax-content").empty();
+        }, 500);
+        $.ajax({
+            url: this.href,
+            success: function (html) {
+                setTimeout(function () {
+                    $("#ajax-content").animate({
+                        opacity: "1"
+                    }, 500);
+                    $("#ajax-content").empty().append(html);
+                    initbg();
+                    $(".ajax-loader").fadeOut(100);
+                }, 500);
+            }
+        });
+        return false;
+    });
+    if ($("#ajax-content").length > 0) {
+		$("#ajax-content").empty();
+		$.ajax({
+			url: 'ajax/category1.html',
+			success: function (html) {
+				$("#ajax-content").empty().append(html);
+				initbg();
+			}
+		});
+    }
     // scrolltofixed -----------------
     $(".fix-bar").scrollToFixed({
         minWidth: 1064,
@@ -569,5 +687,5 @@ document.addEventListener('gesturestart', function (e) {
 });
 // Init all functions------------------
 $(document).ready(function () {
-    initNewzfox();
+    initGmag();
 });

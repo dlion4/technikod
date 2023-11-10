@@ -20,54 +20,55 @@
     <!-- VENDOR CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/font-awesome/css/font-awesome.min.css"
+      href="{% static 'dashboard/vendor/bootstrap/css/bootstrap.min.css' %}"
     />
 
     <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/charts-c3/plugin.css"
+    />
+    <!--
+      <link
+      rel="stylesheet"
+      href="{% static 'dashboard/vendor/font-awesome/css/font-awesome.min.css' %}"
+    />
+
+    -->
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/vendor/charts-c3/plugin.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"
+      href="{% static 'dashboard/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/chartist/css/chartist.min.css"
+      href="{% static 'dashboard/vendor/chartist/css/chartist.min.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css"
+      href="{% static 'dashboard/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/toastr/toastr.min.css"
+      href="{% static 'dashboard/vendor/toastr/toastr.min.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"
+      href="{% static 'dashboard/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/summernote/dist/summernote.css"
+      href="{% static 'dashboard/vendor/summernote/dist/summernote.css' %}"
     />
     <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'dashboard/css/main.css' %}" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/css/main.css"
+      href="{% static 'dashboard/css/color_skins.css' %}"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/css/color_skins.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/css/blog.css"
-    />
+    <link rel="stylesheet" href="{% static 'dashboard/css/blog.css' %}" />
 
     {#
     <script
@@ -92,6 +93,7 @@
 
   <body class="theme-orange">
     <!-- Page Loader -->
+    {% comment %}
     <div class="page-loader-wrapper">
       <div class="loader">
         <div class="m-t-30">
@@ -105,6 +107,7 @@
         <p>Please wait...</p>
       </div>
     </div>
+    {% endcomment %}
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
 
@@ -125,8 +128,12 @@
 
         <!-- main body content -->
         <div class="container-fluid">
-          {% block content %} {% block messages %} {% endblock messages %} {%
-          endblock content %}
+          {% block content %}
+          <!---->
+          {% block messages %} {% endblock messages %}
+          <!---->
+
+          {% endblock content %}
         </div>
 
         <!-- /main body content -->
@@ -134,19 +141,19 @@
     </div>
 
     <!-- Javascript -->
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/libscripts.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/vendorscripts.bundle.js"></script>
+    <script src="{% static 'dashboard/bundles/libscripts.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/bundles/vendorscripts.bundle.js' %}"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/c3.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/chartist.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/toastr/toastr.js"></script>
+    <script src="{% static 'dashboard/bundles/c3.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/bundles/chartist.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/toastr/toastr.js' %}"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/mainscripts.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/js/index.js"></script>
+    <script src="{% static 'dashboard/bundles/mainscripts.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/js/index.js' %}"></script>
     <!-- Jquery Knob-->
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/knob.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/summernote/dist/summernote.js"></script>
+    <script src="{% static 'dashboard/bundles/knob.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/summernote/dist/summernote.js' %}"></script>
 
     <script>
       $(function () {

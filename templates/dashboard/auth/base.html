@@ -9,8 +9,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <meta name="description" content="HexaBit Bootstrap 4x Admin Template" />
-    <meta name="author" content="WrapTheme, www.thememakker.com" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <link
       rel="icon"
@@ -20,21 +20,18 @@
     <!-- VENDOR CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/bootstrap/css/bootstrap.min.css"
+      href="{% static 'dashboard/vendor/bootstrap/css/bootstrap.min.css' %}"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/vendor/font-awesome/css/font-awesome.min.css"
+      href="{% static 'dashboard/vendor/font-awesome/css/font-awesome.min.css' %}"
     />
 
     <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'dashboard/css/main.css' %}" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/css/main.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/css/color_skins.css"
+      href="{% static 'dashboard/css/color_skins.css' %}"
     />
   </head>
 
@@ -133,9 +130,8 @@
     </div>
     <!-- END WRAPPER -->
 
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/libscripts.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/vendorscripts.bundle.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/dashboard/bundles/mainscripts.bundle.js"></script>
+    <script src="{% static 'dashboard/bundles/libscripts.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/bundles/vendorscripts.bundle.js' %}"></script>
+    <script src="{% static 'dashboard/bundles/mainscripts.bundle.js' %}"></script>
   </body>
 </html>

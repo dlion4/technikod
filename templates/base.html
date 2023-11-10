@@ -4,7 +4,7 @@
   <head>
     <!--=============== basic  ===============-->
     <meta charset="UTF-8" />
-    <title>{% block title %}Lionnic | {% endblock title %}</title>
+    <title>{% block title %} Lionnic | {% endblock title %}</title>
     <meta name="robots" content="index, follow" />
 
     <meta name="description" content="" />
@@ -20,20 +20,22 @@
     <link
       type="text/css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/css/plugins.css"
+      href="{% static 'css/plugins.css' %}"
     />
     <link
       type="text/css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/css/style.css"
+      href="{% static 'css/style.css' %}"
     />
     <link
       type="text/css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dlion4/lionnic-nov/static/css/color.css"
+      href="{% static 'css/color.css' %}"
     />
     <!--=============== favicons ===============-->
     <link rel="shortcut icon" href="{% static 'images/lion2.png' %}" />
+
+    <!--=============== ADS SETTINGS ===============-->
   </head>
   <body>
     <!-- main start  -->

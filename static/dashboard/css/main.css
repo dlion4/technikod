@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-@font-face {
-  font-family: "simple-Line-Icons";
-  src: url("../fonts/simple-Line-Icons.eot");
-  src: url("../fonts/simple-Line-Icons.eot") format("embedded-opentype"),
-    url("../fonts/simple-Line-Icons.woff") format("woff"),
-    url("../fonts/simple-Line-Icons.ttf") format("truetype"),
-    url("../fonts/simple-Line-Icons.svg#Simple-Line-Icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 [data-icon]:before {
   font-family: "simple-Line-Icons";
   content: attr(data-icon);

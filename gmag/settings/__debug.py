@@ -13,10 +13,10 @@ LOCAL_APPS = [
 FRAMEWORK_APPS = [
     "ckeditor",
     "ckeditor_uploader",
-    "cloudinary_storage",
-    "cloudinary",
     "corsheaders",
     'django_social_share',
+
+    'storages',
 ]
 
 
@@ -56,13 +56,6 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "newsment@info.co.ke"
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://lionnic.com",
-    # Add other allowed origins here
-]
-
-# Allow all headers and methods for simplicity. Adjust this according to your needs.
-# CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -71,21 +64,19 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
-# CORS_ALLOW_HEADERS = [
-#     'accept',
-#     'accept-encoding',
-#     'authorization',
-#     'content-type',
-#     'dnt',
-#     'origin',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with',
-# ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://lionnic.com",
+    "https://lionnic.com",
+    # Add other allowed origins here
+]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://lionnic.com",
     "https://lionnic.com",
-
 ]
+
+
+
+# aws setting configurationnnnnnn
+

@@ -14,8 +14,10 @@ from .functions.forms import SubscriptionForm
 from .forms import PostRegularForm
 from django.db.models import Sum
 from .mixins import ProfileDashboardMixins
+
+
 def post_writer_fields(request, field):
-    return Post.objects.filter(writer=request).aggregate(total_views=Sum(field))
+    return Post.objects.filter(writer=request.user.user_profile).aggregate(total_views=Sum(field))
 
 
 
@@ -31,10 +33,10 @@ class CustomAuthorizerCheck(object):
     def get(self, *args, **kwargs):
         if not self.request.user.is_authenticated:
             return redirect("dashboard:auth:login")
-        return super(CustomAuthorizerCheck, self).get(*args, **kwargs)
+        return super().get(*args, **kwargs)
 
 
-class DashboardHomeView(CustomAuthorizerCheck, generic.TemplateView):
+class DashboardHomeView(generic.TemplateView, CustomAuthorizerCheck):
     template_name = "dashboard/index.html"
     posts = Post
 
@@ -127,7 +129,7 @@ class DashboardListPostView(CustomAuthorizerCheck, Paginator, generic.TemplateVi
             view_limit=100
         ).order_by("-updatedAt")[:2]
         context["subscription_form"] = self.subscription_form()
-        context['total_views'] = post_writer_fields(request=self.request.user_profile, field="views")['total_views']
+        context['total_views'] = post_writer_fields(request=self.request.user.user_profile, field="views")['total_views']
 
         return context
 

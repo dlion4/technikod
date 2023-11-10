@@ -153,9 +153,8 @@ def upload_comment(request, pk, slug, **kwargs):
             instance.post = post
             instance.save()
             form.save()
-            return JsonResponse({"message": "Your Comment Was posted successfully"})
-        return JsonResponse({"message": "Something went wrong"})
-
+            return redirect(post)
+        return redirect(post)
 
 
 class LionnicFilterSearchView(Paginator, generic.TemplateView):
