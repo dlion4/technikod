@@ -11,7 +11,6 @@ django-js-asset==2.1.0
 django-social-share==2.3.0
 idna==3.4
 Pillow==10.0.0
-psycopg2==2.9.9
 python-dotenv==1.0.0
 requests==2.31.0
 six==1.16.0
