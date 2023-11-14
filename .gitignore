@@ -4,4 +4,6 @@ venv/
 env/
 datatransfer.json
 static/admin-lte/
-
+static/css/*copy
+db.sqlite3
+.idea

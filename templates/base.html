@@ -34,6 +34,7 @@
       rel="stylesheet"
       href="{% static 'css/color.css' %}"
     />
+    <link type="text/css" rel="stylesheet" href="{% static 'stylenew.css' %}" />
     <!--=============== favicons ===============-->
     <link rel="shortcut icon" href="{% static 'images/lion2.png' %}" />
 
@@ -155,7 +156,9 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
+    {% comment %}
     <script src="{% static 'js/contextmenu.js' %}"></script>
+    {% endcomment %}
 
     <script>
       const isNoticeSeen = window.localStorage["noticeSeen"] === "true";

@@ -21,6 +21,7 @@
 	++ responsive ++
 */
 /*-------------Import fonts ---------------------------------------*/
+@import url('css2');
 /*-------------General Style---------------------------------------*/
 html{
 	overflow-x:hidden !important;

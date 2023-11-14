@@ -383,6 +383,10 @@
 </div>
 
 <div class="col-md-4">
+  <img src="#" style="object-fit: contain" alt="ads Here" />
+</div>
+
+<div class="col-md-4">
   <!-- sidebar   -->
   <div class="sidebar-content fl-wrap">
     <!-- box-widget -->
@@ -392,8 +396,8 @@
         <div class="content-tabs-wrap tabs-act tabs-widget fl-wrap">
           <div class="content-tabs fl-wrap">
             <ul class="tabs-menu fl-wrap no-list-style">
-              <li class="current"><a href="#tab-popular"> Popular News </a></li>
-              <li><a href="#tab-resent">Recent News</a></li>
+              <li class="current"><a href="#tab-popular"> Popular</a></li>
+              <li><a href="#tab-resent">Latest</a></li>
             </ul>
           </div>
           <!--tabs -->
@@ -464,6 +468,7 @@
                         >
                       </h4>
                       <ul class="pwic_opt">
+                        <li><span>By {{post.writer.username}}</span></li>
                         <li>
                           <span
                             ><i class="far fa-clock"></i
@@ -580,13 +585,15 @@
                         >
                       </h4>
                       <span class="video-date"
-                        ><i class="far fa-clock"></i>{{post.createdAt|date:"d M
-                        Y"}}</span
+                        ><i class="far fa-clock"></i>
+                        <!---->
+                        {{post.createdAt|date:"d M Y"}}</span
                       >
                       <ul class="post-opt">
                         <li>
                           <i class="far fa-comments-alt"></i> {{post.comments}}
                         </li>
+                        <li><span>By {{post.writer.username}}</span></li>
                         <li><i class="fal fa-eye"></i> {{post.views}}</li>
                       </ul>
                     </div>

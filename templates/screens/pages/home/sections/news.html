@@ -52,7 +52,10 @@
   </div>
 </div>
 <div class="ajax-wrapper fl-wrap">
-  <div class="ajax-loader"><img src="images/loading.gif" alt="" /></div>
+  <div class="ajax-loader">
+    <img src="{% static 'images/loading.gif' %}" alt="" />
+  </div>
+  {% comment %}
   <div id="ajax-content" class="fl-wrap">
     {% if is_premium %}
     <div class="ajax-inner fl-wrap">
@@ -106,13 +109,10 @@
     </div>
     {% endif %}
   </div>
+  {% endcomment %}
 </div>
 <div class="content-banner-wrap cbw_mar">
-  <img
-    src="#"
-    class="respimg"
-    alt="Advertisment"
-  />
+  <img src="#" class="respimg" alt="Advertisment" />
 </div>
 <div class="clearfix"></div>
 

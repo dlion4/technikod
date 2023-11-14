@@ -1,5 +1,7 @@
 from typing import Any
 from django.contrib import admin
+from django.core.handlers.wsgi import WSGIRequest
+from django.template.response import TemplateResponse
 from .models import (
     Subscription,
 )
@@ -30,7 +32,9 @@ class SubscriptionAdmin(admin.ModelAdmin):
 class DashboardAdminSite(admin.AdminSite):
     site_header = "Dashboard Admin"
     site_title = "Dasboard Admin Portal"
-    index_title = "Welcome to Newsfox"
+    index_title = "Welcome to Lionnic"
+
+   
 
 # give it a name
 dashboard_admin_site = DashboardAdminSite(name='DashboardAdmin')
@@ -46,7 +50,8 @@ class PostAdmin(admin.ModelAdmin):
     # this is for secrity purposes but van be modified later as needed
     
     def get_queryset(self, request):
-        return self.model.objects.filter(writer=request.user.user_profile).all()
+        return self.model.objects.all()
+        # return self.model.objects.filter(writer=request.user.user_profile).all()
     # ensure thath during the savin gof the model, the writer can save without having to 
     # select the writer whihc is the case in default django behavior
 
