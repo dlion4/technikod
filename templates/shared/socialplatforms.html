@@ -1,5 +1,5 @@
 <div class="share-container">
-  {% comment %}
+  <!---->
   <a
     href="https://www.facebook.com/sharer/sharer.php?u={{protocol}}://{{site_domain}}{{post.get_absolute_url}}&media=&description="
     target="_blank"
@@ -43,21 +43,8 @@
     class="pop share-icon"
     ><i class="fab fa-twitter"></i>
   </a>
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  {% endcomment %} {% comment %}
+  -->
+  <!--
   <a
     href="https://www.facebook.com/sharer.php?u={{protocol}}://{{site_domain}}{{post.get_absolute_url}}{{post.title}}"
     target="_blank"
@@ -65,7 +52,7 @@
   >
     <i class="fab fa-facebook-f"></i>
   </a>
-  {% endcomment %} {% comment %}
+  
   <a
     href="https://twitter.com/intent/tweet?text={{post.title}}&url={{protocol}}://{{site_domain}}{{post.get_absolute_url}}&media={{post.image.url}}&description={{post.summary}}"
     target="_blank"
@@ -73,7 +60,7 @@
   >
     <i class="fab fa-twitter"></i>
   </a>
-  {% endcomment %}
+-->
 
   <a
     href="https://api.whatsapp.com/send?text={{post.title}}%0A{{protocol}}://{{site_domain}}{{post.get_absolute_url}}%0A{{post.image.url}}"
@@ -83,14 +70,13 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  {% comment %}
+  <!--
   <a
     href="https://www.linkedin.com/shareArticle?mini=true&title={{post.title}}&url={{protocol}}://{{site_domain}}{{post.get_absolute_url}}"
     target="_blank"
     class="pop share-icon"
   >
-    <i class="fab fa-linkedin"></i> {% endcomment %}
- 
+    <i class="fab fa-linkedin"></i> -->
 
   <a
     href="https://www.quora.com/profile/?url={{post.title}}%0A{{protocol}}://{{site_domain}}{{post.get_absolute_url}}%0A{{post.image.url}}"
@@ -115,8 +101,6 @@
   >
     <i class="fab fa-telegram"></i>
   </a>
-
-  {% comment %} linked include {% endcomment %}
 
   <script>
     function shareToLinkedIn() {

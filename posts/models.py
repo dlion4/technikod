@@ -40,7 +40,7 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name="topic_posts",
     )
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=180)
     is_editors_choice = models.BooleanField(default=False)
     is_premium = models.BooleanField(default=False)
     slug = models.SlugField(max_length=100, blank=True, null=True)

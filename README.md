@@ -52,3 +52,4 @@ root /home/kwasa/myprojectdir/blogmag;
     }
 
 }
+
