@@ -20,8 +20,9 @@
   <div class="container">
     <div class="hero-section_title hs_single-post">
       <a class="post-category-marker color-bg" href="">{{post.category}}</a>
-      <span class="post-date"
-        ><i class="far fa-clock"></i> {{post.createdAt|date:"d M Y"}}</span
+      <span class="post-date">
+        ><i class="fa-solid fa-clock fa-spin fa-lg" style="color: #5a0b7f"></i>
+        {{post.createdAt|date:"d M Y"}}</span
       >
       <div class="clearfix"></div>
       <h2>{{post.title}}</h2>
@@ -38,8 +39,15 @@
         </a>
       </div>
       <ul class="post-opt">
-        <li><i class="far fa-comments-alt"></i> {{post.comments}}</li>
-        <li><i class="fal fa-eye"></i> {{post.views}}</li>
+        <li>
+          <!-- https://feathericons.dev/?search=eye&iconset=feather -->
+          <i class="fa-solid fa-message fa-fade" style="color: #0c376e"></i>
+          {{post.comments}}
+        </li>
+        <li>
+          <i class="fa-solid fa-eye fa-beat" style="color: #78075a"></i>
+          {{post.views}}
+        </li>
       </ul>
     </div>
     <div class="clearfix"></div>

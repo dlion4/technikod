@@ -50,16 +50,30 @@
                       >{{post.title|truncatewords:"30"}}</a
                     >
                   </h4>
-                  <span class="video-date"
-                    ><i class="far fa-clock"></i>
+                  <span class="video-date">
+                    ><i
+                      class="fa-solid fa-clock fa-spin fa-lg"
+                      style="color: #5a0b7f"
+                    ></i>
                     <!---->
                     {{post.createdAt|date:"d M Y"}}</span
                   >
                   <ul class="post-opt">
                     <li>
-                      <i class="far fa-comments-alt"></i> {{post.comments}}
+                      <!-- https://feathericons.dev/?search=eye&iconset=feather -->
+                      <i
+                        class="fa-solid fa-message fa-fade"
+                        style="color: #0c376e"
+                      ></i>
+                      {{post.comments}}
                     </li>
-                    <li><i class="fal fa-eye"></i> {{post.views}}</li>
+                    <li>
+                      <i
+                        class="fa-solid fa-eye fa-beat"
+                        style="color: #78075a"
+                      ></i>
+                      {{post.views}}
+                    </li>
                   </ul>
                 </div>
               </div>

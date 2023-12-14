@@ -34,7 +34,8 @@
                           </div>
                         </a>
                         <span class="post-media_title"
-                          >&copy; This image is subjected to copyright</span
+                          >Lionnist &copy; This image is subjected to
+                          copyright</span
                         >
                       </div>
                       <div class="list-post-content">
@@ -43,8 +44,11 @@
                             >{{post.title|title|truncatewords:"20"}}</a
                           >
                         </h3>
-                        <span class="post-date"
-                          ><i class="far fa-clock"></i>
+                        <span class="post-date">
+                          ><i
+                            class="fa-solid fa-clock fa-spin fa-lg"
+                            style="color: #5a0b7f"
+                          ></i>
                           <!---->
                           {{post.createdAt|date:"d M Y"}}</span
                         >
@@ -92,16 +96,28 @@
                               >
                             </h4>
                             <span class="video-date"
-                              ><i class="far fa-clock"></i
+                              ><i
+                                class="fa-solid fa-clock fa-spin fa-xl"
+                                style="color: #5a0b7f"
+                              ></i
                               ><!---->
                               {{post.createdAt|date:"d M Y"}}</span
                             >
                             <ul class="post-opt">
                               <li>
-                                <i class="far fa-comments-alt"></i>
+                                <i
+                                  class="fa-solid fa-message fa-fade"
+                                  style="color: #0c376e"
+                                ></i>
                                 {{post.comments}}
                               </li>
-                              <li><i class="fal fa-eye"></i> {{post.views}}</li>
+                              <li>
+                                <i
+                                  class="fa-solid fa-eye fa-beat"
+                                  style="color: #78075a"
+                                ></i>
+                                {{post.views}}
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -159,19 +175,28 @@
                               <li><span>By {{post.writer.username}}</span></li>
                               <li>
                                 <span
-                                  ><i class="far fa-clock"></i
+                                  ><i
+                                    class="fa-solid fa-clock fa-spin fa-xl"
+                                    style="color: #5a0b7f"
+                                  ></i
                                   >{{post.createdAt|date:"d M Y"}}</span
                                 >
                               </li>
                               <li>
                                 <span
-                                  ><i class="far fa-comments-alt"></i
+                                  ><i
+                                    class="fa-solid fa-message fa-fade"
+                                    style="color: #0c376e"
+                                  ></i
                                   >{{post.comments}}</span
                                 >
                               </li>
                               <li>
                                 <span
-                                  ><i class="fal fa-eye"></i
+                                  ><i
+                                    class="fa-solid fa-eye fa-beat"
+                                    style="color: #78075a"
+                                  ></i
                                   >{{post.views}}</span
                                 >
                               </li>
@@ -207,19 +232,28 @@
                             <ul class="pwic_opt">
                               <li>
                                 <span
-                                  ><i class="far fa-clock"></i
+                                  ><i
+                                    class="fa-solid fa-clock fa-spin fa-xl"
+                                    style="color: #5a0b7f"
+                                  ></i
                                   >{{post.createdAt|date:"d M Y"}}</span
                                 >
                               </li>
                               <li>
                                 <span
-                                  ><i class="far fa-comments-alt"></i
+                                  ><i
+                                    class="fa-solid fa-message fa-fade"
+                                    style="color: #0c376e"
+                                  ></i
                                   >{{post.comments}}</span
                                 >
                               </li>
                               <li>
                                 <span
-                                  ><i class="fal fa-eye"></i
+                                  ><i
+                                    class="fa-solid fa-eye fa-beat"
+                                    style="color: #78075a"
+                                  ></i
                                   >{{post.views}}</span
                                 >
                               </li>
@@ -293,22 +327,7 @@
           </div>
 
           <!--ads addsteraaaa-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "6021f72930d2dd52aadaaa394744f78a",
-                format: "iframe",
-                height: 600,
-                width: 160,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/6021f72930d2dd52aadaaa394744f78a/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!-- box-widget  end -->
           <!-- box-widget -->
           {% if lim_tags %}
@@ -353,17 +372,30 @@
                                 >{{post.title|truncatewords:"20"}}</a
                               >
                             </h4>
-                            <span class="video-date"
-                              ><i class="far fa-clock"></i>
+                            <span class="video-date">
+                              ><i
+                                class="fa-solid fa-clock fa-spin fa-lg"
+                                style="color: #5a0b7f"
+                              ></i>
                               <!---->
                               {{post.createdAt|date:"d M Y"}}</span
                             >
                             <ul class="post-opt">
                               <li>
-                                <i class="far fa-comments-alt"></i>
+                                <i
+                                  data-feather="message-circle"
+                                  class="small-icon"
+                                ></i>
+
                                 {{post.comments}}
                               </li>
-                              <li><i class="fal fa-eye"></i> {{post.views}}</li>
+                              <li>
+                                <i
+                                  class="fa-solid fa-eye fa-beat"
+                                  style="color: #78075a"
+                                ></i>
+                                {{post.views}}
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -379,535 +411,25 @@
           </div>
           {% endif %}
           <!-- box-widget  end -->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "c8af44ee273b1cceb1545d3af3826c73",
-                format: "iframe",
-                height: 200,
-                width: 468,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/c8af44ee273b1cceb1545d3af3826c73/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
 
           <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
 
           <!--xxxxxxxxxxxxxxx-->
 
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
-          <!--xxxxxxxxxxx-->
-          <div class="box-widget fl-wrap">
-            <script type="text/javascript">
-              atOptions = {
-                key: "93f70612aa380c0ceebcd6c3311132fa",
-                format: "iframe",
-                height: 250,
-                width: 300,
-                params: {},
-              };
-              document.write(
-                "<scr" +
-                  'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-                  "ipt>"
-              );
-            </script>
-          </div>
+
           <!--xxxxxxxxxxx-->
         </div>
         <!-- sidebar  end -->

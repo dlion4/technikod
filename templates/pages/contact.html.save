@@ -64,7 +64,7 @@
             <div class="col-md-8">
                 <div class="pad-con fl-wrap">
                     <div class="pr-subtitle prs_big">Drop us a line</div>
-                    <p>We value your voice in shaping the news conversation. Your insights, feedback, inquries, subscriptions and story ideas matter to us. Don't hesitate to use our Contact Us page – it's the bridge connecting you to our dedicated team. Together, we can make our news articles even more informative and relevant. Reach out today, and let's collaborate in bringing the news that truly matters to the forefront.</p>
+                    <p>Your voice shapes our market coverage. Share your insights, feedback, and questions through our Contact Us page. Your input drives our analysis, fuels our investigations, and ultimately informs the stories that move markets.</p>
                     <div id="contact-form" style="margin-top: 20px;">
                         <div id="message"></div>
                         <form method="POST" class="custom-form" action="{% url 'contact' %}" name="contactform" id="contactform">

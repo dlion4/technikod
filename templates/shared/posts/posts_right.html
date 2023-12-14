@@ -22,7 +22,7 @@
               class="search-submit2"
               id="submit_btn12"
             >
-              <i class="far fa-search"></i>
+              <i data-feather="search"></i>
             </button>
           </form>
         </div>
@@ -148,18 +148,22 @@
                       <ul class="pwic_opt">
                         <li>
                           <span
-                            ><i class="far fa-clock"></i
-                            >{{post.createdAt|date:"d M Y"}}</span
+                            ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f;"></i>
+                            <!---->
+                            {{post.createdAt|date:"d M Y"}}</span
                           >
                         </li>
                         <li>
                           <span
-                            ><i class="far fa-comments-alt"></i
+                            ><i
+                              class="fa-solid fa-message fa-fade"
+                              style="color: #0c376e"
+                            ></i
                             >{{post.comments}}</span
                           >
                         </li>
                         <li>
-                          <span><i class="fal fa-eye"></i>{{post.views}}</span>
+                          <span><i class="fa-solid fa-eye fa-beat" style="color: #78075a;"></i>{{post.views}}</span>
                         </li>
                       </ul>
                     </div>
@@ -193,18 +197,17 @@
                       <ul class="pwic_opt">
                         <li>
                           <span
-                            ><i class="far fa-clock"></i
-                            >{{post.createdAt|date:"d M Y"}}</span
+                            ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f;"></i>{{post.createdAt|date:"d M Y"}}</span
                           >
                         </li>
                         <li>
                           <span
-                            ><i class="far fa-comments-alt"></i
+                            ><i class="fa-solid fa-message fa-fade fa-xl" style="color: #0c376e;"></i></i
                             >{{post.comments}}</span
                           >
                         </li>
                         <li>
-                          <span><i class="fal fa-eye"></i>{{post.views}}</span>
+                          <span><i class="fa-solid fa-eye fa-beat" style="color: #78075a;"></i>{{post.views}}</span>
                         </li>
                       </ul>
                     </div>

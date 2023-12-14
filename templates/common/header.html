@@ -20,20 +20,6 @@
 <header class="main-header">
   <div id="headeAds">
     <!--addssssteraa-->
-    <script type="text/javascript">
-      atOptions = {
-        key: "f955362d96b94cf047986dcba77e9647",
-        format: "iframe",
-        height: 90,
-        width: 728,
-        params: {},
-      };
-      document.write(
-        "<scr" +
-          'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/f955362d96b94cf047986dcba77e9647/invoke.js"></scr' +
-          "ipt>"
-      );
-    </script>
   </div>
   <!-- top bar -->
   <div class="top-bar fl-wrap">
@@ -44,7 +30,7 @@
         <span class="date_year"></span>
       </div>
       <div class="header_news-ticker-wrap">
-        <div class="hnt_title">Hot News :</div>
+        <div class="hnt_title">Hot Point :</div>
         <div class="header_news-ticker fl-wrap">
           <ul>
             <li>
@@ -118,8 +104,17 @@
       /></a>
       <!-- logo holder end -->
       <div class="search_btn htact show_search-btn">
-        <i class="far fa-search"></i> <span class="header-tooltip">Search</span>
+        <i data-feather="search"></i>
+        <span class="header-tooltip">Search</span>
       </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+      <script>
+        feather.replace();
+      </script>
+
+      <!--xxxxxxxxx-->
+
       {% if request.user.is_authenticated %}
       <a href="{% url 'dashboard:home' %}" class="srf_btn htact show-reg-form">
         <i class="fal fa-user"></i>
@@ -130,10 +125,15 @@
         href="{% url 'dashboard:auth:login' %}"
         class="srf_btn htact show-reg-form"
       >
-        <i class="fal fa-user"></i> <span class="header-tooltip">Sign In</span>
+        <i data-feather="user"></i> <span class="header-tooltip">Sign In</span>
       </a>
 
       {% endif %}
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+      <script>
+        feather.replace();
+      </script>
       <!-- header-search-wrap -->
       <div class="header-search-wrap novis_sarch">
         <div class="widget-inner">
@@ -154,7 +154,7 @@
               class="search-submit"
               id="submit_btn"
             >
-              <i class="fa fa-search transition"></i>
+              <i class="fa fa-search transition">Search</i>
             </button>
           </form>
         </div>
@@ -199,7 +199,8 @@
                     >Contact Us</a
                   >
                 </li>
-                <li
+                <!--
+                  <li
                   id="menu-item-421"
                   class="menu-item menu-item-type-post_type menu-item-object-page"
                 >
@@ -231,6 +232,7 @@
                     >Premium</a
                   >
                 </li>
+                -->
                 <li
                   id="menu-item-362"
                   class="menu-item menu-item-type-taxonomy menu-item-object-category"

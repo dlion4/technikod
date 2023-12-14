@@ -68,7 +68,7 @@
 .multi-pag .swiper-pagination-bullet.swiper-pagination-bullet-active,
 .hc-cont,
 .hero-carousel-pag .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #ff6000;
+  background: #1c9025;
 }
 .n_contr,
 .nav-holder nav li a i,
@@ -142,11 +142,11 @@
 .sect_dec:after,
 .hsc-list_item-content .post-date i,
 .breadcrumbs-header_url span:before {
-  color: #0087ff;
+  color: #d32d04;
 }
 .border-decor:before,
 footer,
 nav li ul,
 blockquote {
-  border-color: #0087ff;
+  border-color: rgb(20, 137, 233);
 }

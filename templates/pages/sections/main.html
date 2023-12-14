@@ -28,11 +28,23 @@
         >
       </div>
       <span class="post-date"
-        ><i class="far fa-clock"></i> {{post.updatedAt|date:"d M Y"}}</span
+        ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f"></i>
+        {{post.updatedAt|date:"d M Y"}}</span
       >
       <ul class="post-opt">
-        <li><i class="far fa-comments-alt"></i> {{post.comments}}</li>
-        <li><i class="fal fa-eye"></i> {{post.views}}</li>
+        <li>
+          <!-- https://feathericons.dev/?search=eye&iconset=feather -->
+          <i
+            class="fa-solid fa-message fa-fade fa-xl"
+            style="color: #0c376e"
+          ></i>
+
+          {{post.comments}}
+        </li>
+        <li>
+          <i class="fa-solid fa-eye fa-beat" style="color: #78075a"></i>
+          {{post.views}}
+        </li>
       </ul>
     </div>
     <!-- single-post-header end   -->
@@ -118,12 +130,15 @@
             class="rage-slider"
             data-step="1"
             data-min="12"
-            data-max="15"
+            data-max="35"
             value="12"
           />
         </div>
         <div class="show-more-snopt smact">
-          <i class="fal fa-ellipsis-v"></i>
+          <i
+            class="fa-sharp fa-solid fa-sliders fa-bounce"
+            style="color: #610868"
+          ></i>
         </div>
         <div class="show-more-snopt-tooltip">
           <a href="#comments" class="custom-scroll-link">
@@ -131,12 +146,6 @@
           >
           <a href="#"> <i class="fas fa-exclamation-triangle"></i> Report </a>
         </div>
-        <a
-          class="print-btn"
-          href="javascript:window.print()"
-          data-microtip-position="bottom"
-          ><span>Print</span><i class="fal fa-print"></i
-        ></a>
       </div>
       <div class="clearfix"></div>
       <div class="single-post-content_text" id="font_chage">
@@ -265,13 +274,16 @@
                   </div>
                 </a>
                 <span class="post-media_title"
-                  >&copy; This image is subjected to copyright</span
+                  >Lionnist &copy; This image is subjected to copyright</span
                 >
               </div>
               <div class="list-post-content">
                 <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
                 <span class="post-date"
-                  ><i class="far fa-clock"></i>
+                  ><i
+                    class="fa-solid fa-clock fa-spin fa-xl"
+                    style="color: #5a0b7f"
+                  ></i>
                   <!---->
                   {{post.createdAt|date:"d M Y"}}</span
                 >
@@ -320,7 +332,11 @@
             >
             {% endif %}
             <div class="comment-meta">
-              <i class="far fa-clock"></i> {{comment.postedAt|date:"F d, Y"}}
+              <i
+                class="fa-solid fa-clock fa-spin fa-xl"
+                style="color: #5a0b7f"
+              ></i>
+              {{comment.postedAt|date:"F d, Y"}}
             </div>
             <div class="comment-body_dec"></div>
           </div>
@@ -346,7 +362,11 @@
             <p>{{comment.get_comment_reply.reply }}</p>
             <!-- <a class="comment-reply-link" href="#"><i class="fas fa-reply"></i> Reply</a> -->
             <div class="comment-meta">
-              <i class="far fa-clock"></i> {{comment.postedAt|date:"F d, Y"}}
+              <i
+                class="fa-solid fa-clock fa-spin fa-xl"
+                style="color: #5a0b7f"
+              ></i>
+              {{comment.postedAt|date:"F d, Y"}}
             </div>
             <div class="comment-body_dec"></div>
           </div>
@@ -405,22 +425,7 @@
 <div class="col-md-4">
   <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
   <!--adssss monetaggg-->
-  <div class="sidebar-content fl-wrap">
-    <script type="text/javascript">
-      atOptions = {
-        key: "93f70612aa380c0ceebcd6c3311132fa",
-        format: "iframe",
-        height: 250,
-        width: 300,
-        params: {},
-      };
-      document.write(
-        "<scr" +
-          'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-          "ipt>"
-      );
-    </script>
-  </div>
+
   <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzzz-->
   <!-- sidebar   -->
   <div class="sidebar-content fl-wrap">
@@ -460,18 +465,30 @@
                         <li><span>By {{post.writer.username}}</span></li>
                         <li>
                           <span
-                            ><i class="far fa-clock"></i
+                            ><i
+                              class="fa-solid fa-clock fa-spin fa-xl"
+                              style="color: #5a0b7f"
+                            ></i
                             >{{post.createdAt|date:"d M Y"}}</span
                           >
                         </li>
                         <li>
-                          <span
-                            ><i class="far fa-comments-alt"></i
-                            >{{post.comments}}</span
+                          <span>
+                            <i
+                              class="fa-solid fa-message fa-fade fa-xl"
+                              style="color: #0c376e"
+                            ></i>
+                            {{post.comments}}</span
                           >
                         </li>
                         <li>
-                          <span><i class="fal fa-eye"></i>{{post.views}}</span>
+                          <span
+                            ><i
+                              class="fa-solid fa-eye fa-beat"
+                              style="color: #78075a"
+                            ></i
+                            >{{post.views}}</span
+                          >
                         </li>
                       </ul>
                     </div>
@@ -506,18 +523,30 @@
                         <li><span>By {{post.writer.username}}</span></li>
                         <li>
                           <span
-                            ><i class="far fa-clock"></i
+                            ><i
+                              class="fa-solid fa-clock fa-spin fa-xl"
+                              style="color: #5a0b7f"
+                            ></i
                             >{{post.createdAt|date:"d M Y"}}</span
                           >
                         </li>
                         <li>
                           <span
-                            ><i class="far fa-comments-alt"></i
+                            ><i
+                              class="fa-solid fa-message fa-fade fa-xl"
+                              style="color: #0c376e"
+                            ></i
                             >{{post.comments}}</span
                           >
                         </li>
                         <li>
-                          <span><i class="fal fa-eye"></i>{{post.views}}</span>
+                          <span
+                            ><i
+                              class="fa-solid fa-eye fa-beat"
+                              style="color: #78075a"
+                            ></i
+                            >{{post.views}}</span
+                          >
                         </li>
                       </ul>
                     </div>
@@ -546,22 +575,6 @@
 
     <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
     <!--ads monetag-->
-    <div class="box-widget fl-wrap">
-      <script type="text/javascript">
-        atOptions = {
-          key: "2c338da8faf87f7295d92c3e117b1301",
-          format: "iframe",
-          height: 300,
-          width: 160,
-          params: {},
-        };
-        document.write(
-          "<scr" +
-            'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/2c338da8faf87f7295d92c3e117b1301/invoke.js"></scr' +
-            "ipt>"
-        );
-      </script>
-    </div>
 
     <!-- box-widget -->
     <div class="box-widget fl-wrap">
@@ -596,23 +609,6 @@
       </div>
     </div>
     <!-- box-widget  end -->
-    <!--ads addsteraaaa-->
-    <div class="box-widget fl-wrap">
-      <script type="text/javascript">
-        atOptions = {
-          key: "6021f72930d2dd52aadaaa394744f78a",
-          format: "iframe",
-          height: 600,
-          width: 160,
-          params: {},
-        };
-        document.write(
-          "<scr" +
-            'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/6021f72930d2dd52aadaaa394744f78a/invoke.js"></scr' +
-            "ipt>"
-        );
-      </script>
-    </div>
 
     <!-- box-widget -->
     {% if lim_tags %}
@@ -628,24 +624,6 @@
     </div>
     {% endif %}
     <!-- box-widget  end -->
-
-    <!--ads monetag-->
-    <div class="box-widget fl-wrap">
-      <script type="text/javascript">
-        atOptions = {
-          key: "6021f72930d2dd52aadaaa394744f78a",
-          format: "iframe",
-          height: 600,
-          width: 160,
-          params: {},
-        };
-        document.write(
-          "<scr" +
-            'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/6021f72930d2dd52aadaaa394744f78a/invoke.js"></scr' +
-            "ipt>"
-        );
-      </script>
-    </div>
 
     <!-- box-widget -->
     {% if editors_choice %}
@@ -677,16 +655,29 @@
                         >
                       </h4>
                       <span class="video-date"
-                        ><i class="far fa-clock"></i>
+                        ><i
+                          class="fa-solid fa-clock fa-spin fa-xl"
+                          style="color: #5a0b7f"
+                        ></i>
                         <!---->
                         {{post.createdAt|date:"d M Y"}}</span
                       >
                       <ul class="post-opt">
                         <li>
-                          <i class="far fa-comments-alt"></i> {{post.comments}}
+                          <i
+                            data-feather="message-circle"
+                            class="small-icon"
+                          ></i>
+                          {{post.comments}}
                         </li>
                         <li><span>By {{post.writer.username}}</span></li>
-                        <li><i class="fal fa-eye"></i> {{post.views}}</li>
+                        <li>
+                          <i
+                            class="fa-solid fa-eye fa-beat"
+                            style="color: #78075a"
+                          ></i>
+                          {{post.views}}
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -704,64 +695,17 @@
     <!-- box-widget  end -->
 
     <!--ads monetagg-->
-    <div class="box-widget fl-wrap">
-      <script type="text/javascript">
-        atOptions = {
-          key: "6021f72930d2dd52aadaaa394744f78a",
-          format: "iframe",
-          height: 600,
-          width: 160,
-          params: {},
-        };
-        document.write(
-          "<scr" +
-            'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/6021f72930d2dd52aadaaa394744f78a/invoke.js"></scr' +
-            "ipt>"
-        );
-      </script>
-    </div>
   </div>
 
   <br />
   <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-  <!--ads addsteraaaa-->
-  <div class="box-widget fl-wrap">
-    <script type="text/javascript">
-      atOptions = {
-        key: "6021f72930d2dd52aadaaa394744f78a",
-        format: "iframe",
-        height: 600,
-        width: 160,
-        params: {},
-      };
-      document.write(
-        "<scr" +
-          'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/6021f72930d2dd52aadaaa394744f78a/invoke.js"></scr' +
-          "ipt>"
-      );
-    </script>
-  </div>
+
   <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzz-->
 
   <br />
   <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
   <!--ads monetagg-->
-  <div class="box-widget fl-wrap">
-    <script type="text/javascript">
-      atOptions = {
-        key: "93f70612aa380c0ceebcd6c3311132fa",
-        format: "iframe",
-        height: 250,
-        width: 300,
-        params: {},
-      };
-      document.write(
-        "<scr" +
-          'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/93f70612aa380c0ceebcd6c3311132fa/invoke.js"></scr' +
-          "ipt>"
-      );
-    </script>
-  </div>
+
   <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzz-->
   <!-- sidebar  end -->
 </div>
