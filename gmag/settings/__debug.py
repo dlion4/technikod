@@ -66,14 +66,14 @@ CORS_ALLOW_METHODS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://lionnic.com",
-    "https://lionnic.com",
+    "http://lionnist.com",
+    "https://lionnist.com",
     # Add other allowed origins here
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://lionnic.com",
-    "https://lionnic.com",
+    "http://lionnist.com",
+    "https://lionnist.com",
 ]
 
 

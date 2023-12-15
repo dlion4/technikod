@@ -21,10 +21,10 @@ urlpatterns = [
         views.TermsCondition.as_view(),
         name="terms-and-condition",
     ),
-    path('lionnic-admin-login/', admin.site.urls),
+    path('lionnist-admin-login/', admin.site.urls),
     path("subscribe/", views.SubscriptionView.as_view(), name="subscribe-view"),
     # path("admin/", admin.site.urls),
-    path("lionnic-dashboard-admin/", dashboard_admin_site.urls),
+    path("lionnist-dashboard-admin/", dashboard_admin_site.urls),
     path("", include("posts.urls", namespace="posts")),
     path("category/", include("category.urls", namespace="category")),
     path("accounts/", include("accounts.urls", namespace="accounts")),
@@ -43,6 +43,6 @@ handler404 = "handlers.views.handler404"
 handler500 = "handlers.views.handler500"
 
 
-admin.site.site_header = "lionnic Margazone"
-admin.site.site_title = "lionnic Margazone Admin Site"
-admin.site.index_title = "lionnic Margazone Admin Site"
+admin.site.site_header = "Lionnist Margazone"
+admin.site.site_title = "Lionnist Margazone Admin Site"
+admin.site.index_title = "Lionnist Margazone Admin Site"

@@ -112,8 +112,8 @@ class Social(models.Model):
     profile = models.ForeignKey(
         Profile, on_delete=models.CASCADE, related_name="profile_social"
     )
-    name = models.CharField(max_length=100, default="lionnic")
-    social = models.URLField(max_length=255, default="https://www.lionnic.com/")
+    name = models.CharField(max_length=100, default="lionnist")
+    social = models.URLField(max_length=255, default="https://www.lionnist.com/")
     
     def __str__(self):
         return self.name

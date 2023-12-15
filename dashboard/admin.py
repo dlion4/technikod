@@ -32,7 +32,7 @@ class SubscriptionAdmin(admin.ModelAdmin):
 class DashboardAdminSite(admin.AdminSite):
     site_header = "Dashboard Admin"
     site_title = "Dasboard Admin Portal"
-    index_title = "Welcome to Lionnic"
+    index_title = "Welcome to Lionnist"
 
    
 

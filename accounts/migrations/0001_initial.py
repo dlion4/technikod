@@ -128,10 +128,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("name", models.CharField(default="lionnic", max_length=100)),
+                ("name", models.CharField(default="lionnist", max_length=100)),
                 (
                     "social",
-                    models.URLField(default="https://www.lionnic.com/", max_length=255),
+                    models.URLField(default="https://www.lionnist.com/", max_length=255),
                 ),
                 (
                     "profile",

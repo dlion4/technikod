@@ -46,10 +46,15 @@ server_name ip_address lionnic.com;
 location /static/ {
 root /home/kwasa/myprojectdir/blogmag;
 }
-    
+
     location / {
     proxy_pass http://ip_address:8100;
     }
 
 }
 
+# DATABASE_NAME=lionnic
+
+# DATABASE_USER=lionnic_user
+
+# DATABASE_PASSWORD=lionxlionx
