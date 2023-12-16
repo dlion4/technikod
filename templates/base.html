@@ -178,9 +178,8 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
-    {% comment %}
+
     <script src="{% static 'js/contextmenu.js' %}"></script>
-    {% endcomment %}
 
     <script>
       setTimeout(function () {
@@ -214,6 +213,18 @@
     <script>
       feather.replace();
     </script>
+
+    <!--page reload-->
+    <script>
+      function reloadPagePeriodically() {
+        setTimeout(function () {
+          location.reload();
+        }, 5 * 60 * 1000); // 5 minutes
+      }
+      reloadPagePeriodically();
+    </script>
+
+    <!---->
     <!---->
   </body>
 </html>
