@@ -1,4 +1,4 @@
-from .__debug import *
+from .base import *
 
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
@@ -22,13 +22,6 @@ if USE_S3:
     DEFAULT_FILE_STORAGE = 'gmag.settings.mediaStorage.PublicMediaStorage'
 
 
-else:
-    STATIC_URL = 'static/'
-    STATIC_ROOT = BASE_DIR / "staticfiles/"
 
-    MEDIA_URL = 'media/'
-    MEDIA_ROOT = BASE_DIR / "media"
 
-    
-STATICFILES_DIRS = [BASE_DIR/ 'static']
 

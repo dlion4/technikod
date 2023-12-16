@@ -33,6 +33,7 @@ urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": site_sitemaps}),
     path("robots.txt", TemplateView.as_view(
         template_name="robots.txt", content_type='text/plain')),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

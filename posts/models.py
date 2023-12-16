@@ -4,9 +4,8 @@ from ckeditor.fields import RichTextField
 from accounts.models import Profile
 from django.utils import timezone
 from django.utils.text import slugify
-import datetime
 from category.models import Category, SubCategory, Topic, Tag
-
+from tinymce  import models as tinymce_models
 
 class PostQueryset(models.QuerySet):
     def is_popular(self, views_limit):
@@ -45,7 +44,7 @@ class Post(models.Model):
     is_premium = models.BooleanField(default=False)
     slug = models.SlugField(max_length=100, blank=True, null=True)
     tags = models.ManyToManyField(Tag, related_name="post_tags", blank=True)
-    content = RichTextField(config_name="default")
+    content = tinymce_models.HTMLField()
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
     summary = models.TextField(

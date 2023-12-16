@@ -1,6 +1,7 @@
 from category.models import Category, SubCategory, Topic, Tag
 from posts.models import Post
 from django.contrib.sites.shortcuts import get_current_site
+from tokens.models import TinyMceApiKey
 
 
 def get_categories(request):
@@ -28,4 +29,6 @@ def sites_context_data(request):
         site_social_twitter="https://www.twitter.com/",
         site_social_youtube="https://www.youtube.com/",
         site_social_instagram="https://www.Instagram.com/",
+        # tinymce key
+        tinymce_apikey=TinyMceApiKey.objects.filter(is_active=True).latest()
     )

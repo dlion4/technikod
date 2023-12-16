@@ -1,5 +1,18 @@
 from .base import *
-from .ckeditor_conf import CKEDITOR_CONFIGS
+
+
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles/"
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / "media"
+
+
+STATICFILES_DIRS = [BASE_DIR/ 'static']
+
+
+
+# from .ckeditor_conf import CKEDITOR_CONFIGS
 
 LOCAL_APPS = [
     "accounts",
@@ -8,15 +21,15 @@ LOCAL_APPS = [
     "pages",
     "writer",
     "dashboard",
-    "subscriptions"
+    "subscriptions",
+    "tokens",
 ]
 FRAMEWORK_APPS = [
-    "ckeditor",
-    "ckeditor_uploader",
     "corsheaders",
     'django_social_share',
 
     'storages',
+    "tinymce",
 ]
 
 
@@ -37,13 +50,11 @@ SITE_CONTEXT_PROCESSORS = [
 TEMPLATES[0]['OPTIONS']['context_processors'] += SITE_CONTEXT_PROCESSORS
 
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
+# CKEDITOR_UPLOAD_PATH = "uploads/"
 INSTALLED_APPS += LOCAL_APPS
 INSTALLED_APPS += FRAMEWORK_APPS
 
 
-# ckeditor conf
-CKEDITOR_CONFIGS = CKEDITOR_CONFIGS
 
 
 # HELP
@@ -80,3 +91,27 @@ CSRF_TRUSTED_ORIGINS = [
 
 # aws setting configurationnnnnnn
 
+
+from .awss3 import *
+
+
+TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js'
+TINYMCE_COMPRESSOR = False
+
+TINYMCE_DEFAULT_CONFIG = {
+    "height": "320px",
+    "width": "960px",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": [
+        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+        'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+        'media', 'table', 'emoticons', 'template', 'help'
+        ],
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+    "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
+    "a11ycheck ltr rtl | showcomments addcomment code",
+    "custom_undo_redo_levels": 10,
+    "language": "es_ES",  # To force a specific language instead of the Django current language.
+}

@@ -26,7 +26,7 @@ class PostImageInline(admin.StackedInline):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    form = PostAdminForm
+    # form = PostAdminForm
     list_display = [
         "writer",
         "topic",
