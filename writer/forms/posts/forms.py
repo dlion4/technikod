@@ -1,6 +1,6 @@
 from django import forms
 from posts.models import Post
-from ckeditor.widgets import CKEditorWidget
+from tinymce.widgets import TinyMCE
 from category.models import Topic, Tag
 
 
@@ -17,6 +17,6 @@ class PostForm(forms.ModelForm):
             "image",
             "bg_image",
         ]
-        widgets = {
-            "content": CKEditorWidget(config_name="default"),
+        widgets={
+            "content": TinyMCE(attrs={"class": "form-control content"}),
         }

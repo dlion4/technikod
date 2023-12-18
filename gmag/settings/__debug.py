@@ -12,8 +12,6 @@ STATICFILES_DIRS = [BASE_DIR/ 'static']
 
 
 
-# from .ckeditor_conf import CKEDITOR_CONFIGS
-
 LOCAL_APPS = [
     "accounts",
     "category",
@@ -50,7 +48,6 @@ SITE_CONTEXT_PROCESSORS = [
 TEMPLATES[0]['OPTIONS']['context_processors'] += SITE_CONTEXT_PROCESSORS
 
 
-# CKEDITOR_UPLOAD_PATH = "uploads/"
 INSTALLED_APPS += LOCAL_APPS
 INSTALLED_APPS += FRAMEWORK_APPS
 

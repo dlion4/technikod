@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from ckeditor.fields import RichTextField
 from accounts.models import Profile
 from django.utils import timezone
 from django.utils.text import slugify

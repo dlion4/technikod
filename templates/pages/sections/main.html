@@ -27,8 +27,10 @@
           ></a
         >
       </div>
-      <span class="post-date"
-        ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f"></i>
+      <span class="post-date">
+        <!---->
+
+        <i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f"></i>
         {{post.updatedAt|date:"d M Y"}}</span
       >
       <ul class="post-opt">
@@ -630,71 +632,8 @@
 
     <!-- box-widget -->
     {% if editors_choice %}
-    <div class="box-widget fl-wrap">
-      <div class="box-widget-content">
-        <div class="single-grid-slider slider_widget">
-          <div class="slider_widget_title">Editor's Choice</div>
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              {% for post in editors_choice %}
-              <!-- swiper-slide-->
-              <div class="swiper-slide">
-                <div class="grid-post-item fl-wrap">
-                  <div class="grid-post-media gpm_sing">
-                    <div class="bg-wrap">
-                      <div
-                        class="bg"
-                        data-bg="{% if post.bg_image %}{{post.bg_image.url}}{% else %}{{post.image.url}}{% endif %}"
-                      ></div>
-                      <div class="overlay"></div>
-                    </div>
-                    <div class="grid-post-media_title">
-                      <a class="post-category-marker" href="category.html"
-                        >{{post.category}}</a
-                      >
-                      <h4>
-                        <a href="{{post.get_absolute_url}}"
-                          >{{post.title|truncatewords:"20"}}</a
-                        >
-                      </h4>
-                      <span class="video-date"
-                        ><i
-                          class="fa-solid fa-clock fa-spin fa-xl"
-                          style="color: #5a0b7f"
-                        ></i>
-                        <!---->
-                        {{post.createdAt|date:"d M Y"}}</span
-                      >
-                      <ul class="post-opt">
-                        <li>
-                          <i
-                            data-feather="message-circle"
-                            class="small-icon"
-                          ></i>
-                          {{post.comments}}
-                        </li>
-                        <li><span>By {{post.writer.username}}</span></li>
-                        <li>
-                          <i
-                            class="fa-solid fa-eye fa-beat"
-                            style="color: #78075a"
-                          ></i>
-                          {{post.views}}
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- swiper-slide end-->
-              {% endfor %}
-            </div>
-            <div class="sgs-pagination sgs_hor"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
+    <!---->
+    {% include "screens/pages/home/editors-choice.html" %} {% endif %}
     <!-- box-widget  end -->
 
     <!--ads monetagg-->

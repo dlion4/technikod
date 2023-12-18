@@ -1,6 +1,6 @@
 from django import forms
+from tinymce.widgets import TinyMCE
 from posts.models import Post
-from ckeditor.widgets import CKEditorWidget
 from accounts.models import Profile
 
 
@@ -44,7 +44,7 @@ class PostRegularForm(forms.ModelForm):
                     "placeholder": "",
                 }
             ),
-            "content": CKEditorWidget(attrs={"class": "form-control content"}),
+            "content": TinyMCE(attrs={"class": "form-control content"}),
         }
 
 
