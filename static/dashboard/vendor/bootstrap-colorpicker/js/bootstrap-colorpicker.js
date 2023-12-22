@@ -206,7 +206,7 @@
         return 0;
       }
       if (val.toLowerCase !== undefined) {
-        if (val.match(/^/./)) {
+        if (val.match(/^\./)) {
           val = "0" + val;
         }
         return Math.ceil(parseFloat(val) * 100) / 100;
@@ -218,7 +218,7 @@
         return false;
       }
       strVal = strVal.toLowerCase().trim();
-      return (strVal === 'transparent') || (strVal.match(/#?00000000/)) || (strVal.match(/(rgba|hsla)/(0,0,0,0?/.?0/)/));
+      return (strVal === 'transparent') || (strVal.match(/#?00000000/)) || (strVal.match(/(rgba|hsla)\(0,0,0,0?\.?0\)/));
     },
     rgbaIsTransparent: function(rgba) {
       return ((rgba.r === 0) && (rgba.g === 0) && (rgba.b === 0) && (rgba.a === 0));
@@ -456,7 +456,7 @@
     // from John Resig color plugin
     // https://github.com/jquery/jquery-color/
     stringParsers: [{
-      re: /rgb/(/s*(/d{1,3})/s*,/s*(/d{1,3})/s*,/s*(/d{1,3})/s*?/)/,
+      re: /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*?\)/,
       format: 'rgb',
       parse: function(execResult) {
         return [
@@ -467,7 +467,7 @@
         ];
       }
     }, {
-      re: /rgb/(/s*(/d*(?:/./d+)?)/%/s*,/s*(/d*(?:/./d+)?)/%/s*,/s*(/d*(?:/./d+)?)/%/s*?/)/,
+      re: /rgb\(\s*(\d*(?:\.\d+)?)\%\s*,\s*(\d*(?:\.\d+)?)\%\s*,\s*(\d*(?:\.\d+)?)\%\s*?\)/,
       format: 'rgb',
       parse: function(execResult) {
         return [
@@ -478,7 +478,7 @@
         ];
       }
     }, {
-      re: /rgba/(/s*(/d{1,3})/s*,/s*(/d{1,3})/s*,/s*(/d{1,3})/s*(?:,/s*(/d*(?:/./d+)?)/s*)?/)/,
+      re: /rgba\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*(\d*(?:\.\d+)?)\s*)?\)/,
       format: 'rgba',
       parse: function(execResult) {
         return [
@@ -489,7 +489,7 @@
         ];
       }
     }, {
-      re: /rgba/(/s*(/d*(?:/./d+)?)/%/s*,/s*(/d*(?:/./d+)?)/%/s*,/s*(/d*(?:/./d+)?)/%/s*(?:,/s*(/d*(?:/./d+)?)/s*)?/)/,
+      re: /rgba\(\s*(\d*(?:\.\d+)?)\%\s*,\s*(\d*(?:\.\d+)?)\%\s*,\s*(\d*(?:\.\d+)?)\%\s*(?:,\s*(\d*(?:\.\d+)?)\s*)?\)/,
       format: 'rgba',
       parse: function(execResult) {
         return [
@@ -500,7 +500,7 @@
         ];
       }
     }, {
-      re: /hsl/(/s*(/d*(?:/./d+)?)/s*,/s*(/d*(?:/./d+)?)/%/s*,/s*(/d*(?:/./d+)?)/%/s*?/)/,
+      re: /hsl\(\s*(\d*(?:\.\d+)?)\s*,\s*(\d*(?:\.\d+)?)\%\s*,\s*(\d*(?:\.\d+)?)\%\s*?\)/,
       format: 'hsl',
       parse: function(execResult) {
         return [
@@ -511,7 +511,7 @@
         ];
       }
     }, {
-      re: /hsla/(/s*(/d*(?:/./d+)?)/s*,/s*(/d*(?:/./d+)?)/%/s*,/s*(/d*(?:/./d+)?)/%/s*(?:,/s*(/d*(?:/./d+)?)/s*)?/)/,
+      re: /hsla\(\s*(\d*(?:\.\d+)?)\s*,\s*(\d*(?:\.\d+)?)\%\s*,\s*(\d*(?:\.\d+)?)\%\s*(?:,\s*(\d*(?:\.\d+)?)\s*)?\)/,
       format: 'hsla',
       parse: function(execResult) {
         return [
