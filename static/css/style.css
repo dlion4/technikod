@@ -1166,7 +1166,7 @@ section {
 .section-title h2 {
   text-align: left;
   font-size: 25px;
-  font-weight: 900;
+  font-weight: 700;
   color: #3c3fde;
 }
 .section-title {
@@ -1178,7 +1178,7 @@ section {
 .section-title h3 {
   text-align: left;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   color: #3c3fde;
   padding-bottom: 20px;
   position: relative;
@@ -1286,7 +1286,7 @@ section {
   margin-right: 6px;
 }
 .post-date i {
-  font-weight: 800;
+  font-weight: 700;
 }
 .hs_single-post .post-opt li {
   margin-left: 15px;
@@ -1793,7 +1793,7 @@ section {
   margin-bottom: 10px;
   padding-left: 20px;
   position: relative;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
 }
 .footer-list li:before {
@@ -2022,7 +2022,7 @@ section {
 }
 .main-register .tabs-menu li a i {
   margin-right: 10px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .soc-log {
   padding: 5px 0;
