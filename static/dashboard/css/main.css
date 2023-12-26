@@ -4828,7 +4828,7 @@ select.form-control:not([size]):not([multiple]) {
   color: #2ebd59 !important;
 }
 .squarespace-color {
-  color: #b30505 !important;
+  color: #fa5005 !important;
 }
 .stackoverflow-color {
   color: #fe7a15 !important;
@@ -5342,7 +5342,7 @@ select.form-control:not([size]):not([multiple]) {
   background-color: #29a84f !important;
 }
 .squarespace-bg {
-  background-color: #b30505 !important;
+  background-color: #fa5005 !important;
 }
 .squarespace-bg:hover,
 .squarespace-bg:focus {
@@ -6876,7 +6876,7 @@ ul.choose-skin li div,
 .media .media-body .media-heading {
   font-size: 16px;
   font-weight: 700;
-  color: #b30505;
+  color: #fa5005;
 }
 .wizard .content {
   min-height: 245px;

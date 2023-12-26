@@ -33,7 +33,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 12px;
-  color: #b30505;
+  color: #fa5005;
   background: #fff;
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -189,7 +189,7 @@ blockquote:before {
   -webkit-transform: translate3d(0, 0, 0);
 }
 .top-bar {
-  background: #b30505;
+  background: #fa5005;
   height: 70px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
@@ -272,7 +272,7 @@ blockquote:before {
   position: absolute;
   top: 0;
   height: 100%;
-  background: #b30505;
+  background: #fa5005;
   left: 130px;
   right: 50px;
 }
@@ -366,7 +366,7 @@ blockquote:before {
   right: -1px;
   bottom: 0;
   top: 100%;
-  background: #b30505;
+  background: #fa5005;
   z-index: 1;
   transition: all 0.3s ease-in-out;
 }
@@ -386,7 +386,7 @@ blockquote:before {
   width: 140px;
   height: 50px;
   line-height: 50px;
-  background: #b30505;
+  background: #fa5005;
   font-weight: 600;
   color: #fff;
   transition: all 0.3s ease-in-out;
@@ -441,7 +441,7 @@ blockquote:before {
 .header-btn {
   float: right;
   position: relative;
-  color: #b30505;
+  color: #fa5005;
   font-size: 11px;
   font-weight: 700;
   width: 180px;
@@ -480,7 +480,7 @@ blockquote:before {
   right: 0;
   width: 350px;
   padding: 20px 15px;
-  background: #b30505;
+  background: #fa5005;
   border-top: none;
   box-shadow: 0 13px 20px rgb(58 87 135 / 5%);
   transition: all 0.3s ease-in-out;
@@ -553,7 +553,7 @@ blockquote:before {
 .header-cart_title {
   font-size: 14px;
   font-weight: 600;
-  color: #b30505;
+  color: #fa5005;
   padding: 0 0 20px 0;
   text-align: left;
   margin-bottom: 10px;
@@ -573,7 +573,7 @@ blockquote:before {
   background: #f7f7f7;
 }
 .header-cart_wrap_total_item {
-  color: #b30505;
+  color: #fa5005;
   font-size: 13px;
   font-weight: 600;
 }
@@ -591,7 +591,7 @@ blockquote:before {
   font-weight: 600;
   position: relative;
   top: 2px;
-  color: #b30505;
+  color: #fa5005;
 }
 .box-widget-content .widget-posts li {
   position: relative;
@@ -664,7 +664,7 @@ blockquote:before {
   float: left;
   padding: 14px 0;
   color: #fff;
-  background: #b30505;
+  background: #fa5005;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 10px;
@@ -706,7 +706,7 @@ blockquote:before {
   left: 0;
   z-index: 1;
   padding: 10px 0;
-  background: #b30505;
+  background: #fa5005;
   transition: all 0.2s ease-in-out;
 }
 .nav-holder nav li:hover > ul {
@@ -735,7 +735,7 @@ blockquote:before {
 .nav-holder nav li a {
   float: left;
   padding: 5px 11px;
-  color: #b30505;
+  color: #fa5005;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1166,7 +1166,7 @@ section {
   text-align: left;
   font-size: 24px;
   font-weight: 700;
-  color: #b30505;
+  color: #fa5005;
 }
 .section-title {
   margin-bottom: 40px;
@@ -1178,7 +1178,7 @@ section {
   text-align: left;
   font-size: 16px;
   font-weight: 700;
-  color: #b30505;
+  color: #fa5005;
   padding-bottom: 20px;
   position: relative;
   top: 15px;
@@ -1516,7 +1516,7 @@ section {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 4px;
-  background: #b30505;
+  background: #fa5005;
   color: #fff;
   margin-left: 10px;
   font-weight: 600;
@@ -1566,7 +1566,7 @@ section {
   top: 50%;
   margin: -15px 20px 0 0;
   color: #fff;
-  background: #b30505;
+  background: #fa5005;
   width: auto;
   height: 30px;
   line-height: 30px;
@@ -1591,7 +1591,7 @@ section {
   float: left;
   z-index: 10;
   position: relative;
-  background: #b30505;
+  background: #fa5005;
   overflow: hidden;
   border-radius: 4px;
 }
@@ -1623,7 +1623,7 @@ section {
   height: 50px;
   line-height: 50px;
   padding: 0 40px;
-  background: #b30505;
+  background: #fa5005;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -1706,7 +1706,7 @@ section {
   border-radius: 4px;
 }
 .custom-form .btn:hover {
-  background: #b30505;
+  background: #fa5005;
 }
 .custom-form textarea:focus,
 .custom-form input[type="text"]:focus,
@@ -2008,7 +2008,7 @@ section {
   line-height: 50px;
   float: left;
   width: 100%;
-  background: #b30505;
+  background: #fa5005;
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 600;
@@ -2043,7 +2043,7 @@ section {
   font-weight: 600;
   position: relative;
   text-align: center;
-  background: #b30505;
+  background: #fa5005;
 }
 .soc-log a i {
   font-size: 12px;
@@ -2332,7 +2332,7 @@ section {
   margin-bottom: 15px;
 }
 .grid-post-item .post-category-marker:hover {
-  background: #b30505;
+  background: #fa5005;
 }
 .gs-controls {
   position: absolute;
@@ -2547,7 +2547,7 @@ section {
   font-size: 10px;
 }
 .list-post-content .post-category-marker:hover {
-  background: #b30505;
+  background: #fa5005;
 }
 .single-post-header {
   padding: 0 0 30px;
@@ -2988,7 +2988,7 @@ section {
 .comment-reply-link {
   float: right;
   padding: 8px 20px;
-  background: #b30505;
+  background: #fa5005;
   font-weight: 500;
   font-size: 11px;
   margin-top: 10px;
@@ -3269,7 +3269,7 @@ section {
   padding: 12px 40px;
   color: #fff;
   border-radius: 2px;
-  background: #b30505;
+  background: #fa5005;
   font-weight: 600;
   font-size: 10px;
   text-transform: uppercase;
@@ -3286,7 +3286,7 @@ section {
   height: 50px;
   line-height: 50px;
   padding: 0 90px;
-  background: #b30505;
+  background: #fa5005;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -3334,7 +3334,7 @@ section {
 .categories_nav-inner a:hover,
 .categories_nav-inner a.back {
   color: #fff;
-  background: #b30505;
+  background: #fa5005;
   border-color: transparent;
 }
 .categories_nav-inner a i {
@@ -3381,7 +3381,7 @@ section {
   text-align: left;
   font-size: 18px;
   font-weight: 700;
-  color: #b30505;
+  color: #fa5005;
   padding-bottom: 15px;
   margin-bottom: 30px;
   border-bottom: 1px solid #ddd;
@@ -3404,7 +3404,7 @@ section {
   border-radius: 2px;
   margin: 0 5px 5px 0;
   font-weight: 600;
-  background: #b30505;
+  background: #fa5005;
 }
 .slider_widget_title {
   position: absolute;
@@ -3651,7 +3651,7 @@ section {
   width: 50%;
 }
 .tabs-widget .tabs-menu li a {
-  background: #b30505;
+  background: #fa5005;
   box-sizing: border-box;
   display: block;
   padding: 15px 0;
@@ -3842,7 +3842,7 @@ section {
   padding-bottom: 8px;
   margin-bottom: 15px;
   position: relative;
-  color: #b30505;
+  color: #fa5005;
 }
 .cat-wid-list li:last-child {
   margin-bottom: 0;
@@ -4130,7 +4130,7 @@ section {
 }
 .video-holder-title {
   padding: 15px 20px;
-  background: #b30505;
+  background: #fa5005;
   z-index: 20;
 }
 .video-holder-title_item {
@@ -4259,7 +4259,7 @@ section {
   margin-top: 40px;
 }
 .video_carousel-container {
-  background: #b30505;
+  background: #fa5005;
   padding: 20px 40px 30px;
 }
 .video_carousel_title h4 {
@@ -4435,7 +4435,7 @@ section {
   cursor: pointer;
 }
 .error-wrap form .search-submit:hover {
-  background: #b30505;
+  background: #fa5005;
 }
 .error-wrap a.btn {
   display: inline-table;
@@ -4510,7 +4510,7 @@ section {
   background: #333;
 }
 .contact-social li a:hover {
-  background: #b30505;
+  background: #fa5005;
 }
 /*------ shop-------------------------------------------------*/
 .det-box h3 {
@@ -4549,7 +4549,7 @@ section {
   right: 0;
   bottom: 0;
   top: 0;
-  background: #b30505;
+  background: #fa5005;
   opacity: 0;
   z-index: 2;
   transition: all 0.3s ease-in-out;
@@ -4626,7 +4626,7 @@ section {
   top: 30px;
   z-index: 10;
   padding: 8px 16px;
-  color: #b30505;
+  color: #fa5005;
   border-radius: 2px;
   font-size: 11px;
   font-weight: 600;
@@ -4683,7 +4683,7 @@ section {
   line-height: 60px;
   border-bottom: 1px solid #eee;
   text-align: left;
-  color: #b30505;
+  color: #fa5005;
   font-weight: 600;
   font-size: 11px;
   text-transform: uppercase;
@@ -4705,10 +4705,10 @@ section {
   font-size: 10px;
   font-weight: 600;
   cursor: pointer;
-  background: #b30505;
+  background: #fa5005;
 }
 .hero-search-submit:hover {
-  color: #b30505;
+  color: #fa5005;
 }
 .hero-search-submit i {
   margin-right: 10px;
@@ -4747,7 +4747,7 @@ section {
   font-weight: 600;
 }
 .shop-rage-wrap .srw_btn:hover {
-  background: #b30505;
+  background: #fa5005;
 }
 .radio-group input[type="radio"] {
   position: absolute;
@@ -4764,7 +4764,7 @@ section {
   font-size: 11px;
 }
 .radio-group input[type="radio"]:checked + label {
-  color: #b30505;
+  color: #fa5005;
 }
 .radio-group label + input[type="radio"] + label {
   border-left: 1px solid #e1e1e1;
@@ -4823,7 +4823,7 @@ section {
   font-size: 10px;
   font-weight: 600;
   cursor: pointer;
-  background: #b30505;
+  background: #fa5005;
   color: #fff;
   border-radius: 4px;
   text-transform: uppercase;
@@ -5026,7 +5026,7 @@ section {
   font-size: 10px;
 }
 .pr-remove:hover i {
-  color: #b30505;
+  color: #fa5005;
 }
 .product-name {
   font-weight: 500;
@@ -5059,7 +5059,7 @@ section {
   font-size: 10px;
   font-weight: 600;
   border-radius: 4px;
-  background: #b30505;
+  background: #fa5005;
   -webkit-appearance: none;
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease-in-out;
@@ -5115,7 +5115,7 @@ h4.cart-title span {
 }
 .cart-totals {
   padding: 66px 50px;
-  background: #b30505;
+  background: #fa5005;
 }
 .cart-totals:after {
   font-family: Font Awesome\5 Pro;
@@ -5235,7 +5235,7 @@ h4.cart-title span {
   text-align: left;
   font-size: 16px;
   font-weight: 600;
-  color: #b30505;
+  color: #fa5005;
   margin: 30px 0 20px;
   position: relative;
 }
@@ -5344,7 +5344,7 @@ h4.cart-title span {
     width: 300px;
     z-index: 50;
     padding: 15px 10px;
-    background: #b30505;
+    background: #fa5005;
     visibility: hidden;
     opacity: 0;
     -webkit-transition: all 0.4s ease-in-out;

@@ -15,7 +15,7 @@ svg {
   display: none;
   border: solid 1px #cdcdcd;
   border-radius: 3px;
-  background: #b30505;
+  background: #fa5005;
   color: white;
   font-family: sans-serif, Verdana;
   font-size: smaller;
@@ -28,7 +28,7 @@ svg {
   position: absolute;
   left: 10px;
   border-radius: 3px;
-  background: #b30505;
+  background: #fa5005;
   padding: 3px;
   color: white;
   cursor: pointer;
