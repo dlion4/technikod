@@ -4,7 +4,7 @@
   <div class="container">
     <div class="section-title sect_dec">
       <h2>Best In Categories</h2>
-      <h4>Don't miss daily news</h4>
+      <h4>Don't miss daily updates</h4>
     </div>
     <div class="row">
       <div class="col-md-5">
@@ -35,7 +35,7 @@
                 </a>
               </h3>
               <span class="post-date"
-                ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f;"></i>
+                ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #fa5005;"></i>
                 <!---->
                 {{best_post.createdAt|date:"d M Y"}}</span
               >
@@ -43,10 +43,10 @@
               <ul class="post-opt">
                 <li>
                   <!-- https://feathericons.dev/?search=eye&iconset=feather -->
-                  <i class="fa-solid fa-message fa-fade fa-xl" style="color: #0c376e;"></i>
+                  <i class="fa-solid fa-message fa-fade fa-xl" style="color: #2ab391;"></i>
                   {{best_post.comments}}
                 </li>
-                <li><i class="fa-solid fa-eye fa-beat" style="color: #78075a;"></i> {{best_post.views}}</li>
+                <li><i class="fa-solid fa-eye fa-beat" style="color: #3c3fde;"></i> {{best_post.views}}</li>
               </ul>
               <div class="author-link">
                 <a href="{{ best_post.writer.get_absolute_url }}">
@@ -62,7 +62,7 @@
           <!--list-post end-->
         </div>
         <a href="{% url 'posts:posts' %}" class="dark-btn fl-wrap">
-          Read all News
+          Read all posts
         </a>
         {% endif %}
       </div>
@@ -110,7 +110,7 @@
                     >
                   </h3>
                   <span class="post-date"
-                    ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f;"></i>
+                    ><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #fa5005;"></i>
                     <!---->
                     {{post.createdAt|date:"d M Y"}}</span
                   >
@@ -118,13 +118,13 @@
                   <ul class="post-opt">
                     <li>
                       <!-- https://feathericons.dev/?search=eye&iconset=feather -->
-                      <i class="fa-solid fa-message fa-fade fa-xl" style="color: #0c376e;"></i>
+                      <i class="fa-solid fa-message fa-fade fa-xl" style="color: #2ab391;"></i>
                         <circle cx="12" cy="12" r="3" />
                       </svg>
 
                       {{post.comments}}
                     </li>
-                    <li><i class="fa-solid fa-eye fa-beat" style="color: #78075a;"></i> {{post.views}}</li>
+                    <li><i class="fa-solid fa-eye fa-beat" style="color: #3c3fde;"></i> {{post.views}}</li>
                   </ul>
                   <div class="author-link">
                     <a href="{{ post.writer.get_absolute_url }}">

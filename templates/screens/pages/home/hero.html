@@ -19,7 +19,7 @@
                 <div class="author-link">
                   <a href="{{slide.writer.get_public_profile_url}}"
                     ><img
-                      src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/newsfoxn.png' %}{% endif %}"
+                      src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/techlogo.png' %}{% endif %}"
                       alt="profile image"
                     />
                     <span>By {{slide.writer.username|title}}</span></a
@@ -37,7 +37,7 @@
                   <span class="video-date">
                     <i
                       class="fa-solid fa-clock fa-spin fa-lg"
-                      style="color: #5a0b7f"
+                      style="color: #fa5005"
                     ></i>
                     <!---->
                     {{slide.createdAt|date:"d M Y"}}</span
@@ -47,14 +47,14 @@
                     <li>
                       <i
                         class="fa-solid fa-message fa-fade"
-                        style="color: #0c376e"
+                        style="color: #2ab391"
                       ></i>
                       {{slide.comments}}
                     </li>
                     <li>
                       <i
                         class="fa-solid fa-eye fa-beat"
-                        style="color: #78075a"
+                        style="color: #3c3fde"
                       ></i>
                       {{slide.views}}
                     </li>
@@ -80,7 +80,7 @@
                 <div class="author-link">
                   <a href="{{slide.writer.get_public_profile_url}}"
                     ><img
-                      src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/newsfoxn.png' %}{% endif %}"
+                      src="{% if slide.writer.avatar %}{{slide.writer.avatar.url}}{% else %}{% static 'images/techlogo.png' %}{% endif %}"
                       alt="profile image"
                     />
                     <span>By {{slide.writer.username|title}}</span></a
@@ -98,7 +98,7 @@
                   <span class="video-date">
                     ><i
                       class="fa-solid fa-clock fa-spin fa-lg"
-                      style="color: #5a0b7f"
+                      style="color: #fa5005"
                     ></i>
                     <!---->
                     {{slide.createdAt|date:"d M Y"}}</span
@@ -108,7 +108,7 @@
                     <li>
                       <i
                         class="fa-solid fa-message fa-fade"
-                        style="color: #0c376e"
+                        style="color: #2ab391"
                       ></i>
 
                       {{slide.comments}}
@@ -116,7 +116,7 @@
                     <li>
                       <i
                         class="fa-solid fa-eye fa-beat"
-                        style="color: #78075a"
+                        style="color: #3c3fde"
                       ></i>
                       {{slide.views}}
                     </li>

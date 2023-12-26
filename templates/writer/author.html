@@ -27,7 +27,7 @@
                     <div class="mousey">
                         <div class="scroller"></div>
                     </div>
-                    <span>Scroll Down To Discover</span>
+                    <span>Continue Reading...</span>
                 </div>
             </div>
         </section>
@@ -118,7 +118,7 @@
                                                         <a class="post-category-marker purp-bg" href="">{{post.topic.sub_category.name}}</a>
                                                         <div class="grid-post-content">
                                                             <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
-                                                            <span class="post-date"><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #5a0b7f;"></i> {{post.createdAt|date:"d M Y"}}</span>
+                                                            <span class="post-date"><i class="fa-solid fa-clock fa-spin fa-xl" style="color: #fa5005;"></i> {{post.createdAt|date:"d M Y"}}</span>
                                                             <p>{{post.summary|truncatewords:"100"}}</p>
                                                         </div>
                                                         <div class="grid-post-footer">
@@ -127,9 +127,9 @@
 
 
 
-<i class="fa-solid fa-message fa-fade fa-xl" style="color: #0c376e;"></i>
+<i class="fa-solid fa-message fa-fade fa-xl" style="color: #2ab391;"></i>
  {{post.get_comments.count}}</li>
-                                                                <li><i class="fa-solid fa-eye fa-beat fa-xl" style="color: #78075a;"></i>  {{post.views|intword}}</li>
+                                                                <li><i class="fa-solid fa-eye fa-beat fa-xl" style="color: #3c3fde;"></i>  {{post.views|intword}}</li>
                                                             </ul>
                                                         </div>
                                                     </div>

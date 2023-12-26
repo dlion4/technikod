@@ -8,8 +8,8 @@
           {% include "screens/pages/home/sections/news.html" %}
 
           <div class="section-title sect_dec">
-            <h2>Top Stories</h2>
-            <h4>Don't miss daily news</h4>
+            <h2>Trendy Feeds</h2>
+            <h4>Don't miss daily updates</h4>
           </div>
           <div class="grid-post-wrap">
             {% if top_story %}
@@ -47,7 +47,7 @@
                         <span class="post-date">
                           ><i
                             class="fa-solid fa-clock fa-spin fa-lg"
-                            style="color: #5a0b7f"
+                            style="color: #fa5005"
                           ></i>
                           <!---->
                           {{post.createdAt|date:"d M Y"}}</span
@@ -98,7 +98,7 @@
                             <span class="video-date"
                               ><i
                                 class="fa-solid fa-clock fa-spin fa-xl"
-                                style="color: #5a0b7f"
+                                style="color: #fa5005"
                               ></i>
                               <!---->
                               {{post.createdAt|date:"d M Y"}}</span
@@ -107,14 +107,14 @@
                               <li>
                                 <i
                                   class="fa-solid fa-message fa-fade"
-                                  style="color: #0c376e"
+                                  style="color: #2ab391"
                                 ></i>
                                 {{post.comments}}
                               </li>
                               <li>
                                 <i
                                   class="fa-solid fa-eye fa-beat"
-                                  style="color: #78075a"
+                                  style="color: #3c3fde"
                                 ></i>
                                 {{post.views}}
                               </li>
@@ -145,9 +145,9 @@
                 <div class="content-tabs fl-wrap">
                   <ul class="tabs-menu fl-wrap no-list-style">
                     <li class="current">
-                      <a href="#tab-popular"> Popular News </a>
+                      <a href="#tab-popular"> Popular Updates </a>
                     </li>
-                    <li><a href="#tab-resent">Recent News</a></li>
+                    <li><a href="#tab-resent">Recent Updates</a></li>
                   </ul>
                 </div>
                 <!--tabs -->
@@ -177,7 +177,7 @@
                                 <span
                                   ><i
                                     class="fa-solid fa-clock fa-spin fa-xl"
-                                    style="color: #5a0b7f"
+                                    style="color: #fa5005"
                                   ></i
                                   >{{post.createdAt|date:"d M Y"}}</span
                                 >
@@ -186,7 +186,7 @@
                                 <span
                                   ><i
                                     class="fa-solid fa-message fa-fade"
-                                    style="color: #0c376e"
+                                    style="color: #2ab391"
                                   ></i
                                   >{{post.comments}}</span
                                 >
@@ -195,7 +195,7 @@
                                 <span
                                   ><i
                                     class="fa-solid fa-eye fa-beat"
-                                    style="color: #78075a"
+                                    style="color: #3c3fde"
                                   ></i
                                   >{{post.views}}</span
                                 >
@@ -234,7 +234,7 @@
                                 <span
                                   ><i
                                     class="fa-solid fa-clock fa-spin fa-xl"
-                                    style="color: #5a0b7f"
+                                    style="color: #fa5005"
                                   ></i
                                   >{{post.createdAt|date:"d M Y"}}</span
                                 >
@@ -243,7 +243,7 @@
                                 <span
                                   ><i
                                     class="fa-solid fa-message fa-fade"
-                                    style="color: #0c376e"
+                                    style="color: #2ab391"
                                   ></i
                                   >{{post.comments}}</span
                                 >
@@ -252,7 +252,7 @@
                                 <span
                                   ><i
                                     class="fa-solid fa-eye fa-beat"
-                                    style="color: #78075a"
+                                    style="color: #3c3fde"
                                   ></i
                                   >{{post.views}}</span
                                 >
