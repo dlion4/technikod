@@ -13,7 +13,7 @@
          <!--section   -->
          <section class="hero-section">
             <div class="bg-wrap hero-section_bg">
-                <div class="bg" data-bg="{% static 'images/bg/11.jpg' %}"></div>
+                <div class="bg" data-bg="{% static 'images/bg/software.jpg' %}"></div>
             </div>
             <div class="container">
                 <div class="hero-section_title">
@@ -41,7 +41,7 @@
                                     <div class="left_fix-bar fl-wrap">
                                         <div class="profile-card-wrap fl-wrap">
                                             <div class="profile-card_media fl-wrap">
-                                                <img src="{% if profile.avatar %}{{profile.avatar.url}}{% else %}{% static 'images/avatar/2.jpg' %}{% endif %}" alt="{{profile}}">
+                                                <img src="{% if profile.avatar %}{{profile.avatar.url}}{% else %}{% static 'images/avatar/bossbaby.jpg' %}{% endif %}" alt="{{profile}}">
                                                 <div class="profile-card_media_content">
                                                     <h4>{{profile.username}}</h4>
                                                     <h5>{{profile.user.date_joined|timesince}} of Membership</h5>

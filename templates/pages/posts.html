@@ -9,7 +9,7 @@
 <!--section   -->
 <section class="hero-section">
   <div class="bg-wrap hero-section_bg">
-    <div class="bg" data-bg="{% static 'images/bg/newspa.jpg' %}"></div>
+    <div class="bg" data-bg="{% static 'images/bg/turntable.jpg' %}"></div>
   </div>
   <div class="container">
     <div class="hero-section_title">
@@ -33,9 +33,11 @@
 <section>
   <div class="container">
     <div class="row">
-      {% include "shared/posts/category_side.html" %} {% include
-      "shared/posts/posts_middle.html" %} {% include
-      "shared/posts/posts_right.html" %}
+      {% include "shared/posts/category_side.html" %}
+      <!---->
+      {% include "shared/posts/posts_middle.html" %}
+      <!---->
+      {% include "shared/posts/posts_right.html" %}
     </div>
     <div class="limit-box fl-wrap"></div>
   </div>

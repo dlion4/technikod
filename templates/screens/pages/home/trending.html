@@ -8,7 +8,7 @@
     <div class="fs-carousel-wrap_title">
       <div class="fs-carousel-wrap_title-wrap fl-wrap">
         <h4>Trending Feed</h4>
-        <h5>Don't Miss And Stay Up-to-date. Top pic for you.</h5>
+        <h5>Top pick for you.</h5>
       </div>
       <div class="abs_bg"></div>
       <div class="gs-controls">
@@ -35,7 +35,7 @@
                 <div class="author-link">
                   <a href="">
                     <img
-                      src="{% if post.writer.avatar %}{{post.writer.avatar.url }}{% else %}{% static 'images/avatar/ceod.jpg' %}{% endif %}"
+                      src="{% if post.writer.avatar %}{{post.writer.avatar.url }}{% else %}{% static 'images/avatar/techlogo.png' %}{% endif %}"
                       alt="{{post.writer.username}}"
                     />
                     <span>By {{post.writer.username|upper}}</span>
