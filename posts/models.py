@@ -130,3 +130,13 @@ class CommentReply(models.Model):
 
     def __str__(self):
         return f"comment reply to {self.comment.email}"
+    
+
+
+class Tip(models.Model):
+    title=models.CharField(max_length=100)
+    url=models.URLField(max_length=1000)
+
+    def __str__(self):
+        return self.title
+    

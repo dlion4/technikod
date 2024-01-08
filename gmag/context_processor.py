@@ -1,5 +1,5 @@
 from category.models import Category, SubCategory, Topic, Tag
-from posts.models import Post
+from posts.models import Post, Tip
 from django.contrib.sites.shortcuts import get_current_site
 from tokens.models import TinyMceApiKey
 
@@ -16,6 +16,7 @@ def get_categories(request):
         recent=Post.objects.is_recent().order_by("?")[:4],
         side_categories=Category.objects.all().order_by("-id")[:5],
         lim_tags=Tag.objects.all().order_by("?")[:10],
+        tips=Tip.objects.all().order_by("?"),
     )
 
 def sites_context_data(request):

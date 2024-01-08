@@ -37,11 +37,15 @@
       <div class="header_news-ticker-wrap">
         <div class="hnt_title">Tech Tips :</div>
         <div class="header_news-ticker fl-wrap">
+          {% if tips %}
           <ul>
+            {% for tip in tips %}
             <li>
-              <a href=""> {{post.title}}</a>
+              <a href="{{ tip.url }}"> {{tip.title}}</a>
             </li>
+            {% endfor %}
           </ul>
+          {% endif %}
         </div>
         <div class="n_contr-wrap">
           <div class="n_contr p_btn"><i class="fas fa-caret-left"></i></div>

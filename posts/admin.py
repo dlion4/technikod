@@ -2,7 +2,7 @@ from django.contrib import admin
 from posts.forms.admin import PostAdminForm
 
 # Register your models here.
-from posts.models import Post, PostComment, PostImage, CommentReply
+from posts.models import Post, PostComment, PostImage, CommentReply, Tip
 
 
 def _approve_post(modelname, request, queryset):
@@ -53,3 +53,8 @@ class PostComment(admin.ModelAdmin):
 @admin.register(CommentReply)
 class AdminReply(admin.ModelAdmin):
     pass
+
+@admin.register(Tip)
+class AdminTip(admin.ModelAdmin):
+    list_display=["title"]
+
